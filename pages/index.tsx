@@ -1,24 +1,27 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import { GetStaticProps } from 'next'
+import { snippet } from '../lib/snippets'
+import Dots from '../components/Dots'
 
-export default function Home() {
+export default function Home({ about }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Appjeniksaan</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Appjeniksaan
-        </h1>
-
-        <p className={styles.description}>
-          Placeholder page
-        </p>
+    <div>
+      <main>
+        PLACEHOLDER
       </main>
+
+      <Dots />
+
+      <div dangerouslySetInnerHTML={{ __html: about.html }} />
 
     </div>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const about = await snippet('about')
+  return {
+    props: {
+      about
+    }
+  }
 }

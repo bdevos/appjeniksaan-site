@@ -1,0 +1,36 @@
+.container {
+  margin: 0 auto;
+  padding: 0 16px;
+  width: var(--break-width);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: linear-gradient(rgba(249, 245, 227, 0.95), rgba(249, 245, 227, 0.9) 70%, rgba(249, 245, 227, 0));
+  padding: 10px 0;
+}
+
+.header a {
+  text-decoration-color: var(--flame);
+  text-decoration-style: wavy;
+  text-decoration-skip-ink: none;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.header a:hover {
+  color: var(--flame);
+}
+
+@media(max-width: 720px) {
+  .container {
+    width: 100%;
+  }
+
+  .header {
+    text-align: center;
+  }
+}

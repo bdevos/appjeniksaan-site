@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 50px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+}
+
+.copy {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+@media(max-width: 720px) {
+  .footer {
+    display: block;
+    text-align: center;
+  }
+
+  .list {
+    margin-bottom: 20px;
+  }
+}

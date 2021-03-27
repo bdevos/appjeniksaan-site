@@ -1,0 +1,21 @@
+.header {
+  font-size: 1rem;
+}
+
+.dots {
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  list-style: none;
+  width: 200px;
+}
+
+.dots li {
+  flex: 1;
+  text-align: center;
+}
+
+.copy {
+  font-size: 0.9rem;
+  font-style: italic;
+}

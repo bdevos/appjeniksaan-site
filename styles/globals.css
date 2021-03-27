@@ -1,14 +1,50 @@
+:root {
+  /* https://coolors.co/14080e-5bc0eb-7d6d61-f9f5e3-f05d23 */
+
+  --xiketic: #14080E;
+  --celadon-blue: #1478A3;
+  --cyan-process: #5BC0EB;
+  --eggshell: #F9F5E3;
+  --flame: #F05D23;
+
+  --break-width: 720px;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--eggshell);
+}
+
+body {
+  color: var(--xiketic);
+  font-family: 'EB Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+h2 {
+  font-style: italic;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: var(--xiketic);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--cyan-process);
+}
+
+a:hover {
+  color: var(--celadon-blue);
 }
 
 * {
