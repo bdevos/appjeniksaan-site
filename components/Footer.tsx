@@ -4,13 +4,15 @@ import Link from 'next/link'
 export default function Footer() {
     return (<footer className={styles.footer}>
         <div>
-            <p className={styles.copy}>Links</p>
             <ul className={styles.list}>
                 <li>
-                    Archive
+                    <Link href="/posts">Posts</Link> / <Link href="/linked">Linked</Link>
                 </li>
                 <li>
-                    <a href="https://twitter.com/appjeniksaan">Twitter</a>
+                    <Link href="https://twitter.com/appjeniksaan">Twitter</Link>
+                </li>
+                <li>
+                    <Link href="/contact">Contact</Link>
                 </li>
                 <li>
                     <Link href="/privacy">Privacy Policy</Link>
@@ -18,7 +20,7 @@ export default function Footer() {
             </ul>
         </div>
         <div>
-            <p className={styles.copy}>&copy; 2021-present Appjeniksaan</p>
+            <p className={styles.copy}>Copyright &copy; 2021-present Appjeniksaan</p>
         </div>
     </footer>)
 }

@@ -1,0 +1,10 @@
+.title {
+  display: block;
+}
+
+.underline {
+  display: block;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-decoration: none;
+}

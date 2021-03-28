@@ -1,27 +1,41 @@
 import { GetStaticProps } from 'next'
-import { snippet } from '../lib/snippets'
+import { getContent, getHomeContent } from '../lib/content'
 import Dots from '../components/Dots'
+import Linked from '../components/Linked'
+import Post from '../components/Post'
 
-export default function Home({ about }) {
+export default function Home({ items, aboutHtml }) {
   return (
     <div>
       <main>
-        PLACEHOLDER
+        { items.map((item) => {
+          switch(item.type) {
+            case 'linked':
+              return <Linked key={item.slug} {...item} />
+            case 'post':
+              return <Post key={item.slug} {...item} />
+          }
+        })}
       </main>
 
       <Dots />
 
-      <div dangerouslySetInnerHTML={{ __html: about.html }} />
+      <aside>
+        <div dangerouslySetInnerHTML={{ __html: aboutHtml }} />
+      </aside>
 
     </div>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const about = await snippet('about')
+  const { html } = await getContent('snippet', 'about')
+  const items = await getHomeContent()
+
   return {
     props: {
-      about
+      items,
+      aboutHtml: html,
     }
   }
 }

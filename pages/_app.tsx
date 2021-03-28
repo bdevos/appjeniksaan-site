@@ -9,9 +9,8 @@ import Footer from '../components/Footer'
 export default function App({ Component, pageProps }: AppProps) {
     return <div>
         <Head>
-            <link rel="preconnect" href="https://fonts.gstatic.com" />
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&display=swap" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="description" content="Appjeniksaan is my personal software development shop to let me build things that I think are interesting or just fun to create." />
             <link rel="icon" href="/favicon.ico" />
             <title>Appjeniksaan</title>
         </Head>
