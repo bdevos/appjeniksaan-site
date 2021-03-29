@@ -19,7 +19,7 @@ export default function Posts({ posts }) {
         { posts.map((item) => (
           <li key={item.slug}>
             <span className={styles.title}>{item.title}</span>
-            <Link href={`/posts/${item.slug}`}>
+            <Link href={`/posts/${item.slug.join('/')}`}>
               <a className={styles.underline}>
                 {item.date}
               </a>

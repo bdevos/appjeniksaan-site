@@ -21,7 +21,7 @@ export default function Linked({ linked }) {
             <Link href={item.href}>
               <a className={styles.title}>{item.title}</a>
             </Link>
-            <Link href={`/linked/${item.slug}`}>
+            <Link href={`/linked/${item.slug.join('/')}`}>
               <a className={styles.underline}>
                 {item.date}
               </a>
