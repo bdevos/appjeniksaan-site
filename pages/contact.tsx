@@ -16,7 +16,7 @@ export default function Contact({ html }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { html } = await getContent('snippet', 'contact')
+  const { html } = await getContent('snippet', ['contact'])
   return {
       props: {
           html

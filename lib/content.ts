@@ -3,12 +3,14 @@ import path from 'path'
 import matter from 'gray-matter'
 import remark from 'remark'
 import html from 'remark-html'
+import prism from 'remark-prism'
+import { parseISO, compareDesc } from 'date-fns'
 
 type ContentType = 'post' | 'linked' | 'snippet'
 
 type BaseContent = {
     type: ContentType
-    slug: string
+    slug: string[]
     html: string
 }
 
@@ -31,6 +33,8 @@ type Linked = BaseContent & {
 
 const contentPath = [process.cwd(), 'content']
 
+const slugRegex = /(\d{4})-(\d{2})-(\d{2})-([\w.\-]+)\.md/
+
 const getPath = (type: ContentType) => {
     switch(type) {
         case 'post':
@@ -42,12 +46,15 @@ const getPath = (type: ContentType) => {
     }
 }
 
-export const getContent = async (type: ContentType, slug: string): Promise<Post | Snippet | Linked> => {
-    const fullPath = path.join(...[...getPath(type), `${slug}.md`])
+const dateCompare = ({ date: left }, {date: right}) => compareDesc(parseISO(left), parseISO(right))
+
+export const getContent = async (type: ContentType, slug: string[]): Promise<Post | Snippet | Linked> => {
+    const fullPath = path.join(...[...getPath(type), `${slug.join('-')}.md`])
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const matterResult = matter(fileContents)
 
     const processedContent = await remark()
+        .use(prism)
         .use(html)
         .process(matterResult.content)
 
@@ -76,23 +83,17 @@ export const getContent = async (type: ContentType, slug: string): Promise<Post 
     }
 }
 
+const getSlug = (fileName: string): string[] => fileName.match(slugRegex).slice(1)
+
 export const getSlugs = (type: ContentType) => {
     const fileNames = fs.readdirSync(path.join(...getPath(type)))
     return fileNames.map(fileName => {
+        const slug = getSlug(fileName)
+
         return {
-            params: {
-                slug: fileName.replace(/\.md$/, '')
-            }
+            params: { slug }
         }
     })
-}
-
-const sortByDate = (a: any, b: any) => {
-    if (a.date < b.date) {
-        return 1
-    } else {
-        return -1
-    }
 }
 
 export const getSorted = (type: ContentType) => {
@@ -104,8 +105,7 @@ export const getSorted = (type: ContentType) => {
     const fileNames = fs.readdirSync(directory)
     
     return fileNames.map(fileName => {
-        const slug = fileName.replace(/\.md$/, '')
-
+        const slug = getSlug(fileName)
         const fullPath = path.join(directory, fileName)
         const fileContents = fs.readFileSync(fullPath, 'utf8')
         const matterResult = matter(fileContents)
@@ -127,12 +127,12 @@ export const getSorted = (type: ContentType) => {
                     href: matterResult.data.href
                 }
         }
-    }).sort(sortByDate)
+    }).sort(dateCompare)
 }
 
 export const getHomeContent = async () => {
     const contentItems = await Promise.all([...getSorted('post'), ...getSorted('linked')]
-        .sort(sortByDate)
+        .sort(dateCompare)
         .slice(0, 5)
         .map(async ({ type, slug }) => {
             const content = await getContent(type, slug)

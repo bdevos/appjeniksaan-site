@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import '../styles/prism.css'
 import styles from '../styles/App.module.css'
 import { AppProps } from 'next/app'
 import Head from 'next/head'

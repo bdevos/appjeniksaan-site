@@ -11,9 +11,9 @@ export default function Home({ items, aboutHtml }) {
         { items.map((item) => {
           switch(item.type) {
             case 'linked':
-              return <Linked key={item.slug} {...item} />
+              return <Linked key={item.slug.join('-')} {...item} />
             case 'post':
-              return <Post key={item.slug} {...item} />
+              return <Post key={item.slug.join('-')} {...item} />
           }
         })}
       </main>
@@ -29,7 +29,7 @@ export default function Home({ items, aboutHtml }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { html } = await getContent('snippet', 'about')
+  const { html } = await getContent('snippet', ['about'])
   const items = await getHomeContent()
 
   return {

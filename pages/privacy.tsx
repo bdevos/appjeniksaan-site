@@ -16,7 +16,7 @@ export default function Privacy({ html }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { html } = await getContent('snippet', 'privacy')
+  const { html } = await getContent('snippet', ['privacy'])
   return {
       props: {
           html
