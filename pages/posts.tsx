@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import { getSorted } from '../lib/content'
 import styles from '../styles/Linked.module.css'
+import Date from '../components/Date'
 
 export default function Posts({ posts }) {
   return (
@@ -19,11 +19,7 @@ export default function Posts({ posts }) {
         { posts.map((item) => (
           <li key={item.slug}>
             <span className={styles.title}>{item.title}</span>
-            <Link href={`/posts/${item.slug.join('/')}`}>
-              <a className={styles.underline}>
-                {item.date}
-              </a>
-            </Link>
+            <Date date={item.date} slug={item.slug} type="posts" />
           </li>
         )) }
       </ul>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { GetStaticProps } from 'next'
 import { getSorted } from '../lib/content'
 import styles from '../styles/Linked.module.css'
+import Date from '../components/Date'
 
 export default function Linked({ linked }) {
   return (
@@ -17,15 +18,11 @@ export default function Linked({ linked }) {
       
       <ul>
         { linked.map((item) => (
-          <li key={item.slug}>
+          <li key={item.slug.join('-')}>
             <Link href={item.href}>
               <a className={styles.title}>{item.title}</a>
             </Link>
-            <Link href={`/linked/${item.slug.join('/')}`}>
-              <a className={styles.underline}>
-                {item.date}
-              </a>
-            </Link>
+            <Date date={item.date} slug={item.slug} type="linked" />
           </li>
         )) }
       </ul>

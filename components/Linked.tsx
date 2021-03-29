@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Date from './Date'
 import styles from './Post.module.css'
 
@@ -16,13 +15,7 @@ export default function Linked({ slug, date, href, title, html }: Props) {
         <h1 className={styles.title}>
             <a href={href}>{title}</a>
         </h1>
-        <div className={styles.date}>
-            <Link href={`/linked/${slug.join('/')}`}>
-                <a>
-                    <Date date={date} />
-                </a>
-            </Link>
-        </div>
+        <Date date={date} type="linked" slug={slug} />
         
         <div dangerouslySetInnerHTML={{ __html: html }} />
     </article>)
