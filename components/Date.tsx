@@ -1,6 +1,5 @@
 import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
-import { ContentType } from '../lib/content'
 import styles from './Date.module.css'
 
 type Props = {
