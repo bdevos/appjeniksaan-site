@@ -20,7 +20,7 @@ body {
 body {
   color: var(--xiketic);
   font-family: -apple-system-ui-serif, ui-serif, serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.6rem;
   font-weight: lighter;
 }
@@ -31,11 +31,16 @@ blockquote {
   margin: 0;
 }
 
+article,
+aside {
+  margin-bottom: 80px;
+}
+
 h1 {
-  font-weight: 200;
+  font-weight: normal;
   font-style: italic;
-  font-size: 2rem;
-  margin: 60px 0 10px;
+  font-size: 1.7rem;
+  margin: 40px 0 10px;
 }
 
 h2 {
