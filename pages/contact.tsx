@@ -8,9 +8,8 @@ export default function Contact({ html }) {
       <Head>
         <title>Contact</title>
       </Head>
-      
-      <div dangerouslySetInnerHTML={{ __html: html }} />
 
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </main>
   )
 }
@@ -18,8 +17,8 @@ export default function Contact({ html }) {
 export const getStaticProps: GetStaticProps = async () => {
   const { html } = await getContent('snippet', ['contact'])
   return {
-      props: {
-          html
-      }
+    props: {
+      html,
+    },
   }
 }

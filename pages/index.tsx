@@ -8,8 +8,8 @@ export default function Home({ items, aboutHtml }) {
   return (
     <div>
       <main>
-        { items.map((item) => {
-          switch(item.type) {
+        {items.map((item) => {
+          switch (item.type) {
             case 'linked':
               return <Linked key={item.slug.join('-')} {...item} />
             case 'post':
@@ -23,7 +23,6 @@ export default function Home({ items, aboutHtml }) {
       <aside>
         <div dangerouslySetInnerHTML={{ __html: aboutHtml }} />
       </aside>
-
     </div>
   )
 }
@@ -36,6 +35,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       items,
       aboutHtml: html,
-    }
+    },
   }
 }

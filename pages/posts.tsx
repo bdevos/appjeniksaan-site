@@ -14,16 +14,15 @@ export default function Posts({ posts }) {
       <h1>Posts</h1>
 
       <h2>March, 2021</h2>
-      
+
       <ul>
-        { posts.map((item) => (
+        {posts.map((item) => (
           <li key={item.slug}>
             <span className={styles.title}>{item.title}</span>
             <Date date={item.date} slug={item.slug} type="posts" />
           </li>
-        )) }
+        ))}
       </ul>
-
     </main>
   )
 }
@@ -31,8 +30,8 @@ export default function Posts({ posts }) {
 export const getStaticProps: GetStaticProps = async () => {
   const posts = getSorted('post')
   return {
-      props: {
-          posts
-      }
+    props: {
+      posts,
+    },
   }
 }

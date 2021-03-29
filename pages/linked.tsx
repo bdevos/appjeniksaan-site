@@ -15,18 +15,17 @@ export default function Linked({ linked }) {
       <h1>Linked</h1>
 
       <h2>March, 2021</h2>
-      
+
       <ul>
-        { linked.map((item) => (
+        {linked.map((item) => (
           <li key={item.slug.join('-')}>
             <Link href={item.href}>
               <a className={styles.title}>{item.title}</a>
             </Link>
             <Date date={item.date} slug={item.slug} type="linked" />
           </li>
-        )) }
+        ))}
       </ul>
-
     </main>
   )
 }
@@ -34,8 +33,8 @@ export default function Linked({ linked }) {
 export const getStaticProps: GetStaticProps = async () => {
   const linked = getSorted('linked')
   return {
-      props: {
-          linked
-      }
+    props: {
+      linked,
+    },
   }
 }

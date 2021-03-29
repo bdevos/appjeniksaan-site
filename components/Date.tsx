@@ -3,17 +3,17 @@ import Link from 'next/link'
 import styles from './Date.module.css'
 
 type Props = {
-    date: string
-    type: 'posts' | 'linked'
-    slug: string[]
+  date: string
+  type: 'posts' | 'linked'
+  slug: string[]
 }
 
 export default function Date({ date, type, slug }: Props) {
-    return <div className={styles.date}>
-        <Link href={`/${type}/${slug.join('/')}`}>
-            <a>
-                {format(parseISO(date), 'LLLL d, yyyy')}
-            </a>
-        </Link>
+  return (
+    <div className={styles.date}>
+      <Link href={`/${type}/${slug.join('/')}`}>
+        <a>{format(parseISO(date), 'LLLL d, yyyy')}</a>
+      </Link>
     </div>
+  )
 }

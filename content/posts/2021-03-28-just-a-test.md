@@ -10,7 +10,7 @@ This is just some test content, so please ignore it 😉.
 I don't know, it is test...
 
 ```javascript
-const bla = 'something';
+const bla = 'something'
 
 const funnyFunc = () => {
   const hello = 'darkness'

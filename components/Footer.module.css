@@ -29,7 +29,7 @@
   font-style: italic;
 }
 
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   .footer {
     display: block;
     text-align: center;

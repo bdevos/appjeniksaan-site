@@ -8,9 +8,8 @@ export default function Privacy({ html }) {
       <Head>
         <title>Privacy Policy</title>
       </Head>
-      
-      <div dangerouslySetInnerHTML={{ __html: html }} />
 
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </main>
   )
 }
@@ -18,8 +17,8 @@ export default function Privacy({ html }) {
 export const getStaticProps: GetStaticProps = async () => {
   const { html } = await getContent('snippet', ['privacy'])
   return {
-      props: {
-          html
-      }
+    props: {
+      html,
+    },
   }
 }
