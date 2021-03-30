@@ -1,15 +1,8 @@
+import { LinkedArticle } from '../lib/articles'
 import Date from './Date'
 import styles from './Post.module.css'
 
-type Props = {
-  slug: string[]
-  html: string
-  date: string
-  title: string
-  href: string
-}
-
-export default function Linked({ slug, date, href, title, html }: Props) {
+export default function Linked({ slug, date, href, title, html }: LinkedArticle) {
   return (
     <article>
       <h1 className={styles.title}>
@@ -17,7 +10,7 @@ export default function Linked({ slug, date, href, title, html }: Props) {
       </h1>
       <Date date={date} type="linked" slug={slug} />
 
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      {html && <div dangerouslySetInnerHTML={{ __html: html }} />}
     </article>
   )
 }

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
-import { getContent } from '../lib/content'
+import { getSnippet } from '../lib/snippets'
 
 export default function Privacy({ html }) {
   return (
@@ -15,7 +15,8 @@ export default function Privacy({ html }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { html } = await getContent('snippet', ['privacy'])
+  const { html } = await getSnippet('privacy')
+
   return {
     props: {
       html,

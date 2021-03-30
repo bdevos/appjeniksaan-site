@@ -7,8 +7,7 @@ export default function Footer() {
       <div>
         <ul className={styles.list}>
           <li>
-            <Link href="/posts">Posts</Link> /{' '}
-            <Link href="/linked">Linked</Link>
+            <Link href="/posts">Posts</Link> / <Link href="/linked">Linked</Link>
           </li>
           <li>
             <Link href="/privacy">Privacy Policy</Link>
@@ -22,9 +21,7 @@ export default function Footer() {
         </ul>
       </div>
       <div>
-        <p className={styles.copy}>
-          Copyright &copy; 2021-present Appjeniksaan
-        </p>
+        <p className={styles.copy}>Copyright &copy; 2021-present Appjeniksaan</p>
       </div>
     </footer>
   )

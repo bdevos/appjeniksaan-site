@@ -1,11 +1,7 @@
 .header {
   position: sticky;
   top: 0;
-  background: linear-gradient(
-    rgba(249, 245, 227, 0.95),
-    rgba(249, 245, 227, 0.9) 70%,
-    rgba(249, 245, 227, 0)
-  );
+  background: linear-gradient(rgba(249, 245, 227, 0.95), rgba(249, 245, 227, 0.9) 70%, rgba(249, 245, 227, 0));
   padding: 10px 0;
 }
 

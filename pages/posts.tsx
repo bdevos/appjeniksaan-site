@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
-import { getSorted } from '../lib/content'
+import { getSorted } from '../lib/articles'
 import styles from '../styles/Linked.module.css'
 import Date from '../components/Date'
 

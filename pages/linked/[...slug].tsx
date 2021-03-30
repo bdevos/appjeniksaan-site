@@ -1,9 +1,19 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
-import { getContent, getSlugs } from '../../lib/content'
+import { getArticle, getSlugs, LinkedArticle } from '../../lib/articles'
 import Linked from '../../components/Linked'
 
-export default function LinkedPage(props: any) {
-  return <Linked {...props} />
+type Props = {
+  article: LinkedArticle
+}
+
+type GetStaticPropsParams = {
+  params: {
+    slug: string[]
+  }
+}
+
+export default function LinkedPage({ article }: Props) {
+  return <Linked {...article} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -14,7 +24,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const props = await getContent('linked', params.slug as string[])
-  return { props }
+export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsParams) => {
+  const article = (await getArticle('linked', params.slug)) as LinkedArticle
+
+  return { props: { article } }
 }

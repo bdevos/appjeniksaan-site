@@ -1,44 +1,34 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import { getContent, getHomeContent } from '../lib/content'
+import { getHomeContent, Article, LinkedArticle, PostArticle } from '../lib/articles'
+import { getSnippet } from '../lib/snippets'
 import { generateFeed } from '../lib/feed'
 import Dots from '../components/Dots'
 import Linked from '../components/Linked'
 import Post from '../components/Post'
+import { isProduction } from '../lib/utils'
 
-const isProduction = process.env.NODE_ENV === 'production'
+type Props = {
+  aboutHtml: string
+  articles: Article[]
+}
 
-export default function Home({ items, aboutHtml }) {
+export default function Home({ aboutHtml, articles }: Props) {
   return (
     <div>
       <Head>
-        <link
-          rel="alternate"
-          type="application/rss+xml"
-          title="RSS Feed for Appjeniksaan"
-          href="/feed/rss.xml"
-        />
-        <link
-          rel="alternate"
-          type="application/atom+xml"
-          title="Atom Feed for Appjeniksaan"
-          href="/feed/atom.xml"
-        />
-        <link
-          rel="alternate"
-          type="application/feed+json"
-          title="JSON Feed for Appjeniksaan"
-          href="/feed/feed.json"
-        />
+        <link rel="alternate" type="application/rss+xml" title="RSS Feed for Appjeniksaan" href="/feed/rss.xml" />
+        <link rel="alternate" type="application/atom+xml" title="Atom Feed for Appjeniksaan" href="/feed/atom.xml" />
+        <link rel="alternate" type="application/feed+json" title="JSON Feed for Appjeniksaan" href="/feed/feed.json" />
       </Head>
 
       <main>
-        {items.map((item) => {
-          switch (item.type) {
+        {articles.map((article: Article) => {
+          switch (article.type) {
             case 'linked':
-              return <Linked key={item.slug.join('-')} {...item} />
+              return <Linked key={article.slug.join('-')} {...(article as LinkedArticle)} />
             case 'post':
-              return <Post key={item.slug.join('-')} {...item} />
+              return <Post key={article.slug.join('-')} {...(article as PostArticle)} />
           }
         })}
       </main>
@@ -61,13 +51,13 @@ export const getStaticProps: GetStaticProps = async () => {
     generateFeed()
   }
 
-  const { html } = await getContent('snippet', ['about'])
-  const items = await getHomeContent()
+  const { html } = await getSnippet('about')
+  const articles = await getHomeContent()
 
   return {
     props: {
-      items,
       aboutHtml: html,
+      articles,
     },
   }
 }
