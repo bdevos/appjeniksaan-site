@@ -11,13 +11,13 @@ export default function Footer() {
             <Link href="/linked">Linked</Link>
           </li>
           <li>
-            <Link href="https://twitter.com/appjeniksaan">Twitter</Link>
+            <Link href="/privacy">Privacy Policy</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="https://twitter.com/appjeniksaan">Twitter</Link>
           </li>
         </ul>
       </div>

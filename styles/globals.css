@@ -32,7 +32,8 @@ blockquote {
 }
 
 article,
-aside {
+aside,
+main {
   margin-bottom: 80px;
 }
 
