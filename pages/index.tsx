@@ -14,19 +14,19 @@ export default function Home({ items, aboutHtml }) {
           rel="alternate"
           type="application/rss+xml"
           title="RSS Feed for Appjeniksaan"
-          href="/rss.xml"
+          href="/feed/rss"
         />
         <link
           rel="alternate"
           type="application/atom+xml"
           title="Atom Feed for Appjeniksaan"
-          href="/atom.xml"
+          href="/feed/atom"
         />
         <link
           rel="alternate"
           type="application/feed+json"
           title="JSON Feed for Appjeniksaan"
-          href="/atom.xml"
+          href="/feed/json"
         />
       </Head>
 

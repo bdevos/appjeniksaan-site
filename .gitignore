@@ -34,6 +34,4 @@ yarn-error.log*
 .vercel
 
 # generated feeds
-/public/atom.xml
-/public/feed.json
-/public/rss.xml
+/public/feed
