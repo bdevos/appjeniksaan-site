@@ -21,9 +21,9 @@ export const generate = () => {
     favicon: 'https://appjeniksaan.nl/favicon.ico',
     copyright: 'Copyright 2021 - present, Appjeniksaan',
     feedLinks: {
-      json: 'https://appjeniksaan.nl/feed/json',
-      atom: 'https://appjeniksaan.nl/feed/atom',
-      rss: 'https://appjeniksaan.nl/feed/rss',
+      json: 'https://appjeniksaan.nl/feed/feed.json',
+      atom: 'https://appjeniksaan.nl/feed/atom.xml',
+      rss: 'https://appjeniksaan.nl/feed/rss.xml',
     },
     author: {
       name: 'Berry de Vos',
@@ -41,7 +41,7 @@ export const generate = () => {
     date: new Date(),
   })
 
-  writeToPublic('atom', feed.atom1())
-  writeToPublic('json', feed.json1())
-  writeToPublic('rss', feed.rss2())
+  writeToPublic('atom.xml', feed.atom1())
+  writeToPublic('feed.json', feed.json1())
+  writeToPublic('rss.xml', feed.rss2())
 }
