@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { Feed } from 'feed'
+import { description, host, title } from './constants'
 
 const feedDir = path.join(process.cwd(), 'public', 'feed')
 
@@ -11,19 +12,19 @@ const writeToPublic = (fileName: string, data: string) => {
   fs.writeFileSync(path.join(feedDir, fileName), data)
 }
 
-export const generate = () => {
+export const generateFeed = () => {
   const feed = new Feed({
-    title: 'Appjeniksaan',
-    description: '',
-    id: 'https://appjeniksaan.nl',
-    link: 'https://appjeniksaan.nl',
+    title,
+    description,
+    id: host,
+    link: host,
     language: 'en',
-    favicon: 'https://appjeniksaan.nl/favicon.ico',
+    favicon: `${host}/favicon.ico`,
     copyright: 'Copyright 2021 - present, Appjeniksaan',
     feedLinks: {
-      json: 'https://appjeniksaan.nl/feed/feed.json',
-      atom: 'https://appjeniksaan.nl/feed/atom.xml',
-      rss: 'https://appjeniksaan.nl/feed/rss.xml',
+      json: `${host}/feed/feed.json`,
+      atom: `${host}/feed/atom.xml`,
+      rss: `${host}/feed/rss.xml`,
     },
     author: {
       name: 'Berry de Vos',

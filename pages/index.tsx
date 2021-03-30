@@ -1,10 +1,12 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { getContent, getHomeContent } from '../lib/content'
-import { generate } from '../lib/feed'
+import { generateFeed } from '../lib/feed'
 import Dots from '../components/Dots'
 import Linked from '../components/Linked'
 import Post from '../components/Post'
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 export default function Home({ items, aboutHtml }) {
   return (
@@ -51,8 +53,14 @@ export default function Home({ items, aboutHtml }) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const isProduction = process.env.NODE_ENV === 'production'
-  generate()
+  if (isProduction) {
+    // Not 100% sure what the best place is to generate the feed.
+    // I do not like installing `ts-node` just to generate it at
+    // build. This way it is only called once when generating
+    // production, but because it is here it feels a bit hidden.
+    generateFeed()
+  }
+
   const { html } = await getContent('snippet', ['about'])
   const items = await getHomeContent()
 
