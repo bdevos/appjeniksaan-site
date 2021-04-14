@@ -1,9 +1,6 @@
 .footer {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: flex-end;
   padding-bottom: 50px;
+  text-align: center;
 }
 
 .footer p {
@@ -12,7 +9,7 @@
 
 .list {
   list-style: none;
-  margin: 0;
+  margin: 0 0 40px;
   padding: 0;
 }
 
@@ -29,13 +26,16 @@
   font-style: italic;
 }
 
-@media (max-width: 720px) {
+@media (min-width: 720px) {
   .footer {
-    display: block;
-    text-align: center;
+    display: flex;
+    text-align: start;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   .list {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 }
