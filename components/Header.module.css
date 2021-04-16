@@ -7,9 +7,9 @@
 }
 
 .header a {
-  text-decoration-color: var(--flame);
-  text-decoration-style: wavy;
-  text-decoration-skip-ink: none;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
   font-size: 1.2rem;
   line-height: 1.2rem;
   font-style: italic;
@@ -18,6 +18,25 @@
 
 .header a:hover {
   color: var(--flame);
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 125%;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 1;
+  text-decoration: underline;
+  text-decoration-color: var(--flame);
+  text-decoration-style: wavy;
+  text-decoration-skip-ink: none;
+  color: rgba(0, 0, 0, 0);
+}
+
+.scrollable {
+  position: relative;
 }
 
 @media (min-width: 720px) {
