@@ -1,9 +1,9 @@
-import { useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const useScrollOffset = () => {
   const [offset, setOffset] = useState(0)
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const updateOffset = () => setOffset(window.pageYOffset)
     window.addEventListener('scroll', updateOffset)
     return () => window.removeEventListener('scroll', updateOffset)

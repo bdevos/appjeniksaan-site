@@ -14,7 +14,7 @@ export default function Header() {
           <a>
             <span>{title}</span>
             <span aria-hidden="true" className={styles.overlay}>
-              <span className={styles.scrollable} style={{ left: `${(offset % 100) - 100}%` }}>
+              <span className={styles.scrollable} style={{ left: `${offset <= -100 ? -200 : (offset % 100) - 100}%` }}>
                 {`${title} ${title}`}
               </span>
             </span>
