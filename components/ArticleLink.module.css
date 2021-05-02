@@ -3,3 +3,8 @@
   font-size: 0.7rem;
   color: var(--cadet);
 }
+
+.link {
+  text-decoration: none;
+  margin-right: 5px;
+}

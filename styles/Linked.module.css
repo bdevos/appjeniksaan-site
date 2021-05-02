@@ -8,3 +8,9 @@
   font-style: italic;
   text-decoration: none;
 }
+
+.archive {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

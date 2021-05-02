@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import styles from './Footer.module.css'
-import Emoji from './Emoji'
 
 export default function Footer() {
   return (
@@ -9,9 +8,7 @@ export default function Footer() {
         <ul className={styles.list}>
           <li>
             <Link href="/archive">
-              <a>
-                Archive <Emoji emoji="🗄" label="Archive" />
-              </a>
+              <a>Archive</a>
             </Link>
           </li>
           <li>

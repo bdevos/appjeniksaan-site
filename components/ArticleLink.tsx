@@ -17,7 +17,9 @@ type PostLinkProps = {
 
 const LinkedLink = ({ article }: LinkedLinkProps) => (
   <>
-    <a href={article.href}>🔗</a>
+    <a className={styles.link} href={article.href}>
+      🔗
+    </a>
     <Link href={`/linked/${article.slug.join('/')}`}>{article.title}</Link>
     <span className={styles.date}>{format(parseISO(article.date), 'LLLL d')}</span>
   </>
