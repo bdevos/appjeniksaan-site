@@ -1,1 +1,1 @@
-Making software is an enjoyable path of discovery 🚀. This is my personal software development shop 🏪 to let me build things that I think are interesting or just fun to create 🤓.
+Appjeniksaan is my personal software development 🛠 shop to let me build sites and apps that I think are interesting or fun 🤪 to create. On this site I will try 🙈 to share my discoveries 🪐

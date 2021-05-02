@@ -1,6 +1,6 @@
 Because I do not like complicated privacy policies, I want to keep this one as simple as I possibly can.
 
-# Privacy Policy
+# 🔏 Privacy Policy
 
 1. This website does not collect any personal data
 2. This website does not track you

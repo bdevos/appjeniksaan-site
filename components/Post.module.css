@@ -1,3 +1,7 @@
 .title {
-  margin-bottom: 0;
+  margin-bottom: 5px;
+}
+
+.emoji {
+  margin-left: 10px;
 }

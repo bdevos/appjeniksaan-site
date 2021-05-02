@@ -28,6 +28,10 @@ type DateCompare = {
   date: string
 }
 
+export type ArticlesPerMonth = {
+  [id: string]: Article[]
+}
+
 const contentPath = [process.cwd(), 'content']
 
 const slugRegex = /(\d{4})-(\d{2})-(\d{2})-([\w.\-]+)\.md/
@@ -77,7 +81,7 @@ export const getSlugs = (type: ArticleType) => {
   })
 }
 
-export const getSorted = (type: ArticleType): Article[] => {
+const getArticlesByType = (type: ArticleType): Article[] => {
   const directory = path.join(...getPath(type))
   const fileNames = fs.readdirSync(directory)
 
@@ -99,7 +103,25 @@ export const getSorted = (type: ArticleType): Article[] => {
     .sort(dateCompare)
 }
 
-const getLatest = (limit: number) => [...getSorted('post'), ...getSorted('linked')].sort(dateCompare).slice(0, limit)
+const getMonthIdFromArticle = ({ date }: Article): string => {
+  const parsedDate = parseISO(date)
+  return `${parsedDate.getFullYear()}-${parsedDate.getMonth()}`
+}
+
+export const getArticlesPerMonth = (): ArticlesPerMonth => {
+  return [...getArticlesByType('post'), ...getArticlesByType('linked')].sort(dateCompare).reduce((acc, article) => {
+    const id = getMonthIdFromArticle(article)
+    const articles = acc[id] ?? []
+
+    return {
+      ...acc,
+      [id]: [...articles, article],
+    }
+  }, {} as ArticlesPerMonth)
+}
+
+const getLatest = (limit: number) =>
+  [...getArticlesByType('post'), ...getArticlesByType('linked')].sort(dateCompare).slice(0, limit)
 
 export const getHomeContent = async () => Promise.all(getLatest(5).map(({ type, slug }) => getArticle(type, slug)))
 
