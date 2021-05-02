@@ -3,6 +3,16 @@
   line-height: 1.1;
 }
 
+.title a {
+  text-decoration: none;
+}
+
+.underlined {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--flame);
+}
+
 .emoji {
-  margin-left: 10px;
+  text-decoration: none;
 }

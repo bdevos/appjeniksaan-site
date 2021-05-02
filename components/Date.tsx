@@ -12,7 +12,7 @@ export default function Date({ date, type, slug }: Props) {
   return (
     <div className={styles.date}>
       <Link href={`/${type}/${slug.join('/')}`}>
-        <a>🗓 {format(parseISO(date), 'LLLL d, yyyy')}</a>
+        <a>{format(parseISO(date), 'LLLL d, yyyy')}</a>
       </Link>
     </div>
   )

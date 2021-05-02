@@ -6,7 +6,10 @@ export default function Linked({ slug, date, href, title, html }: LinkedArticle)
   return (
     <article>
       <h1 className={styles.title}>
-        <a href={href}>🔗 {title}</a>
+        <a href={href}>
+          <span className={styles.emoji}>🔗 </span>
+          <span className={styles.underlined}>{title}</span>
+        </a>
       </h1>
       <Date date={date} type="linked" slug={slug} />
 
