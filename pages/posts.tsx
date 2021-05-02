@@ -1,10 +1,14 @@
 import Head from 'next/head'
 import { GetStaticProps } from 'next'
-import { getSorted } from '../lib/articles'
+import { getSorted, PostArticle } from '../lib/articles'
 import styles from '../styles/Linked.module.css'
 import Date from '../components/Date'
 
-export default function Posts({ posts }) {
+type Props = {
+  posts: PostArticle[]
+}
+
+export default function Posts({ posts }: Props) {
   return (
     <main>
       <Head>
@@ -17,7 +21,7 @@ export default function Posts({ posts }) {
 
       <ul>
         {posts.map((item) => (
-          <li key={item.slug}>
+          <li key={item.slug.join('-')}>
             <span className={styles.title}>{item.title}</span>
             <Date date={item.date} slug={item.slug} type="posts" />
           </li>

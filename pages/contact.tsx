@@ -2,7 +2,11 @@ import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import { getSnippet } from '../lib/snippets'
 
-export default function Contact({ html }) {
+type Props = {
+  html: string
+}
+
+export default function Contact({ html }: Props) {
   return (
     <main>
       <Head>

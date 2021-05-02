@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths } from 'next'
 import { getArticle, getSlugs, LinkedArticle } from '../../lib/articles'
 import Linked from '../../components/Linked'
 
@@ -24,8 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsParams) => {
+export const getStaticProps = async ({ params }: GetStaticPropsParams) => {
   const article = (await getArticle('linked', params.slug)) as LinkedArticle
-
   return { props: { article } }
 }

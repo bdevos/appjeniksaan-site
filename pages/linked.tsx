@@ -1,11 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { GetStaticProps } from 'next'
-import { getSorted } from '../lib/articles'
+import { LinkedArticle, getSorted } from '../lib/articles'
 import styles from '../styles/Linked.module.css'
 import Date from '../components/Date'
 
-export default function Linked({ linked }) {
+type Props = {
+  linked: LinkedArticle[]
+}
+
+export default function Linked({ linked }: Props) {
   return (
     <main>
       <Head>

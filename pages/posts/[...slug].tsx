@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next'
+import { GetStaticPaths } from 'next'
 import { PostArticle, getArticle, getSlugs } from '../../lib/articles'
 import Post from '../../components/Post'
 
@@ -24,7 +24,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsParams) => {
+export const getStaticProps = async ({ params }: GetStaticPropsParams) => {
   const article = (await getArticle('post', params.slug)) as PostArticle
   return { props: { article } }
 }

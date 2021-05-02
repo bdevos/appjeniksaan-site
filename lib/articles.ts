@@ -24,6 +24,10 @@ export type Article = LinkedArticle | PostArticle
 
 type ParseTo = 'html' | 'feed'
 
+type DateCompare = {
+  date: string
+}
+
 const contentPath = [process.cwd(), 'content']
 
 const slugRegex = /(\d{4})-(\d{2})-(\d{2})-([\w.\-]+)\.md/
@@ -37,7 +41,8 @@ const getPath = (type: ArticleType) => {
   }
 }
 
-const dateCompare = ({ date: left }, { date: right }) => compareDesc(parseISO(left), parseISO(right))
+const dateCompare = ({ date: left }: DateCompare, { date: right }: DateCompare) =>
+  compareDesc(parseISO(left), parseISO(right))
 
 export const getArticle = async (type: ArticleType, slug: string[], parseTo: ParseTo = 'html'): Promise<Article> => {
   const fullPath = path.join(...[...getPath(type), `${slug.join('-')}.md`])
@@ -58,7 +63,7 @@ export const getArticle = async (type: ArticleType, slug: string[], parseTo: Par
   }
 }
 
-const getSlug = (fileName: string): string[] => fileName.match(slugRegex).slice(1)
+const getSlug = (fileName: string): string[] => fileName.match(slugRegex)!.slice(1)
 
 export const getSlugs = (type: ArticleType) => {
   const fileNames = fs.readdirSync(path.join(...getPath(type)))
