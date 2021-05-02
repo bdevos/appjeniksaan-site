@@ -1,4 +1,4 @@
-# ✉️ Contact
+# Contact
 
 The easiest place to reach me is Twitter, where you can find me as [@appjeniksaan](https://twitter.com/appjeniksaan)
 
