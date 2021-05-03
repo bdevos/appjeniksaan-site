@@ -18,8 +18,8 @@ body {
 body {
   color: var(--onyx);
   font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
-  font-size: 1.1rem;
-  line-height: 1.6rem;
+  font-size: 1rem;
+  line-height: 1.8rem;
   font-weight: lighter;
 }
 
@@ -37,15 +37,14 @@ main {
 
 h1 {
   font-weight: lighter;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   margin: 40px 0 10px;
-  text-transform: uppercase;
 }
 
 h2 {
-  font-style: italic;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: lighter;
+  margin: 64px 0 8px;
 }
 
 a {
@@ -55,10 +54,26 @@ a {
   text-decoration-color: var(--flame);
 }
 
+img {
+  display: block;
+  margin: 16px auto 32px;
+  border-radius: 0.3em;
+  box-shadow: rgba(240, 93, 35, 0.4) 4px 4px, rgba(240, 93, 35, 0.3) 8px 8px, rgba(240, 93, 35, 0.2) 12px 12px,
+    rgba(240, 93, 35, 0.1) 16px 16px, rgba(240, 93, 35, 0.05) 20px 20px;
+  border: 1px solid rgba(240, 93, 35, 0.05);
+}
+
 a:hover {
   color: var(--flame);
 }
 
 * {
   box-sizing: border-box;
+}
+
+code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9rem;
+  background-color: rgba(240, 93, 35, 0.1);
+  outline: 2px solid rgba(240, 93, 35, 0.1);
 }
