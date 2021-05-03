@@ -1,6 +1,7 @@
 import { GetStaticPaths } from 'next'
 import { getArticle, getSlugs, LinkedArticle } from '../../lib/articles'
 import Linked from '../../components/Linked'
+import HeadInfo from '../../components/HeadInfo'
 
 type Props = {
   article: LinkedArticle
@@ -13,7 +14,17 @@ type GetStaticPropsParams = {
 }
 
 export default function LinkedPage({ article }: Props) {
-  return <Linked {...article} />
+  return (
+    <>
+      <HeadInfo
+        title={article.title}
+        description={`Linked to: ${article.href}`}
+        url={`/linked/${article.slug.join('/')}`}
+        type="article"
+      />
+      <Linked {...article} />
+    </>
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

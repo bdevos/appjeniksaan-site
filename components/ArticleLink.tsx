@@ -1,10 +1,10 @@
 import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
 import styles from './ArticleLink.module.css'
-import { Article, LinkedArticle, PostArticle } from '../lib/articles'
+import { BaseArticle, LinkedArticle, PostArticle } from '../lib/articles'
 
 type Props = {
-  article: Article
+  article: BaseArticle
 }
 
 type LinkedLinkProps = {
@@ -17,18 +17,18 @@ type PostLinkProps = {
 
 const LinkedLink = ({ article }: LinkedLinkProps) => (
   <>
+    <span className={styles.date}>{format(parseISO(article.date), 'do')}</span>
     <a className={styles.link} href={article.href}>
       🔗
     </a>
     <Link href={`/linked/${article.slug.join('/')}`}>{article.title}</Link>
-    <span className={styles.date}>{format(parseISO(article.date), 'LLLL d')}</span>
   </>
 )
 
 const PostLink = ({ article }: PostLinkProps) => (
   <>
+    <span className={styles.date}>{format(parseISO(article.date), 'do')}</span>
     <Link href={`/posts/${article.slug.join('/')}`}>{article.title}</Link>
-    <span className={styles.date}>{format(parseISO(article.date), 'LLLL d')}</span>
   </>
 )
 

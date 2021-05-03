@@ -1,7 +1,7 @@
 import styles from './Header.module.css'
 import appStyles from '../styles/App.module.css'
 import Link from 'next/link'
-import { title } from '../lib/constants'
+import { siteTitle } from '../lib/constants'
 import useScrollOffset from './useScrollOffset'
 
 export default function Header() {
@@ -12,10 +12,10 @@ export default function Header() {
       <div className={appStyles.container}>
         <Link href="/">
           <a>
-            <span>{title}</span>
+            <span>{siteTitle}</span>
             <span aria-hidden="true" className={styles.overlay}>
               <span className={styles.scrollable} style={{ left: `${offset <= -100 ? -200 : (offset % 100) - 100}%` }}>
-                {`${title} ${title}`}
+                {`${siteTitle} ${siteTitle}`}
               </span>
             </span>
           </a>

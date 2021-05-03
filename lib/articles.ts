@@ -6,7 +6,7 @@ import html from 'remark-html'
 import prism from 'remark-prism'
 import { parseISO, compareDesc } from 'date-fns'
 
-export type PostArticle = {
+export type BaseArticle = {
   html?: string
   date: string
   slug: string[]
@@ -14,7 +14,11 @@ export type PostArticle = {
   type: ArticleType
 }
 
-export type LinkedArticle = PostArticle & {
+export type PostArticle = BaseArticle & {
+  description: string
+}
+
+export type LinkedArticle = BaseArticle & {
   href: string
 }
 
@@ -29,7 +33,7 @@ type DateCompare = {
 }
 
 export type ArticlesPerMonth = {
-  [id: string]: Article[]
+  [id: string]: BaseArticle[]
 }
 
 const contentPath = [process.cwd(), 'content']
@@ -48,7 +52,11 @@ const getPath = (type: ArticleType) => {
 const dateCompare = ({ date: left }: DateCompare, { date: right }: DateCompare) =>
   compareDesc(parseISO(left), parseISO(right))
 
-export const getArticle = async (type: ArticleType, slug: string[], parseTo: ParseTo = 'html'): Promise<Article> => {
+export const getArticle = async (
+  type: ArticleType,
+  slug: string[],
+  parseTo: ParseTo = 'html'
+): Promise<BaseArticle> => {
   const fullPath = path.join(...[...getPath(type), `${slug.join('-')}.md`])
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
@@ -59,6 +67,7 @@ export const getArticle = async (type: ArticleType, slug: string[], parseTo: Par
 
   return {
     ...(type === 'linked' ? { href: matterResult.data.href } : {}),
+    ...(type === 'post' ? { description: matterResult.data.description } : {}),
     html: processedContent.toString(),
     date: matterResult.data.date,
     slug: slug,
@@ -81,7 +90,7 @@ export const getSlugs = (type: ArticleType) => {
   })
 }
 
-const getArticlesByType = (type: ArticleType): Article[] => {
+const getArticlesByType = (type: ArticleType): BaseArticle[] => {
   const directory = path.join(...getPath(type))
   const fileNames = fs.readdirSync(directory)
 
@@ -94,6 +103,7 @@ const getArticlesByType = (type: ArticleType): Article[] => {
 
       return {
         ...(type === 'linked' ? { href: matterResult.data.href } : {}),
+        ...(type === 'post' ? { description: matterResult.data.description } : {}),
         slug,
         type,
         date: matterResult.data.date,
@@ -103,7 +113,7 @@ const getArticlesByType = (type: ArticleType): Article[] => {
     .sort(dateCompare)
 }
 
-const getMonthIdFromArticle = ({ date }: Article): string => {
+const getMonthIdFromArticle = ({ date }: BaseArticle): string => {
   const parsedDate = parseISO(date)
   return `${parsedDate.getFullYear()}-${parsedDate.getMonth()}`
 }

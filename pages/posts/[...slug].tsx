@@ -1,6 +1,7 @@
 import { GetStaticPaths } from 'next'
 import { PostArticle, getArticle, getSlugs } from '../../lib/articles'
 import Post from '../../components/Post'
+import HeadInfo from '../../components/HeadInfo'
 
 type Props = {
   article: PostArticle
@@ -13,7 +14,17 @@ type GetStaticPropsParams = {
 }
 
 export default function PostPage({ article }: Props) {
-  return <Post {...article} />
+  return (
+    <>
+      <HeadInfo
+        title={article.title}
+        description={article.description}
+        url={`/posts/${article.slug.join('/')}`}
+        type="article"
+      />
+      <Post {...article} />
+    </>
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

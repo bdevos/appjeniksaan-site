@@ -1,6 +1,6 @@
-import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import { getSnippet } from '../lib/snippets'
+import HeadInfo from '../components/HeadInfo'
 
 type Props = {
   html: string
@@ -9,9 +9,7 @@ type Props = {
 export default function Contact({ html }: Props) {
   return (
     <main>
-      <Head>
-        <title>Contact</title>
-      </Head>
+      <HeadInfo title="Contact" url="/contact" />
 
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </main>

@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
 import { getHomeContent, Article, LinkedArticle, PostArticle } from '../lib/articles'
 import { getSnippet } from '../lib/snippets'
 import { generateFeed } from '../lib/feed'
@@ -7,6 +6,7 @@ import Dots from '../components/Dots'
 import Linked from '../components/Linked'
 import Post from '../components/Post'
 import { isProduction } from '../lib/utils'
+import HeadInfo from '../components/HeadInfo'
 
 type Props = {
   aboutHtml: string
@@ -16,11 +16,7 @@ type Props = {
 export default function Home({ aboutHtml, articles }: Props) {
   return (
     <div>
-      <Head>
-        <link rel="alternate" type="application/rss+xml" title="RSS Feed for Appjeniksaan" href="/feed/rss.xml" />
-        <link rel="alternate" type="application/atom+xml" title="Atom Feed for Appjeniksaan" href="/feed/atom.xml" />
-        <link rel="alternate" type="application/feed+json" title="JSON Feed for Appjeniksaan" href="/feed/feed.json" />
-      </Head>
+      <HeadInfo />
 
       <main>
         {articles.map((article: Article) => {
@@ -36,6 +32,7 @@ export default function Home({ aboutHtml, articles }: Props) {
       <Dots />
 
       <aside>
+        <h1>About</h1>
         <div dangerouslySetInnerHTML={{ __html: aboutHtml }} />
       </aside>
     </div>

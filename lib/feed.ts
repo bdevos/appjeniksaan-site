@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { Feed } from 'feed'
-import { description, host, title } from './constants'
+import { siteDescription, host, siteTitle } from './constants'
 import { getFeedContent } from './articles'
 import { parseISO } from 'date-fns'
 
@@ -16,8 +16,8 @@ const writeToPublic = (fileName: string, data: string) => {
 
 export const generateFeed = async () => {
   const feed = new Feed({
-    title,
-    description,
+    title: siteTitle,
+    description: siteDescription,
     id: host,
     link: host,
     language: 'en',

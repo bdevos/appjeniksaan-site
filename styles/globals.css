@@ -1,7 +1,7 @@
 :root {
   /* https://coolors.co/14080e-d5896f-56666b-f9f5e3-f05d23 */
 
-  --xiketic: #14080e;
+  --onyx: #39393a;
   --eggshell: #f9f5e3;
   --flame: #f05d23;
   --cadet: #56666b;
@@ -16,8 +16,8 @@ body {
 }
 
 body {
-  color: var(--xiketic);
-  font-family: -apple-system-ui-serif, ui-serif, serif;
+  color: var(--onyx);
+  font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
   font-size: 1.1rem;
   line-height: 1.6rem;
   font-weight: lighter;
@@ -36,9 +36,10 @@ main {
 }
 
 h1 {
-  font-weight: normal;
-  font-size: 1.8rem;
+  font-weight: lighter;
+  font-size: 1.6rem;
   margin: 40px 0 10px;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -48,7 +49,7 @@ h2 {
 }
 
 a {
-  color: var(--xiketic);
+  color: var(--onyx);
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-decoration-color: var(--flame);

@@ -1,4 +1,4 @@
-export const title = 'Appjeniksaan'
-export const description =
-  'Appjeniksaan is my personal software development shop to let me build things that I think are interesting or just fun to create'
+export const siteTitle = 'Appjeniksaan'
+export const siteDescription =
+  'My personal software development shop which lets me create sites and apps that I think are delightful or just fun to build'
 export const host = 'https://appjeniksaan.nl'

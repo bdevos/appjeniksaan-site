@@ -4,6 +4,7 @@ import { ArticlesPerMonth, getArticlesPerMonth } from '../lib/articles'
 import MonthHeader from '../components/MonthHeader'
 import ArticleLink from '../components/ArticleLink'
 import styles from '../styles/Archive.module.css'
+import HeadInfo from '../components/HeadInfo'
 
 type Props = {
   articlesPerMonth: ArticlesPerMonth
@@ -12,9 +13,7 @@ type Props = {
 export default function Linked({ articlesPerMonth }: Props) {
   return (
     <main>
-      <Head>
-        <title>Archive ― Appjeniksaan</title>
-      </Head>
+      <HeadInfo title="Archive" url="/archive" />
 
       <h1>🗄 Archive</h1>
 
