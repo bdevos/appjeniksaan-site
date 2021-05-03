@@ -154,7 +154,7 @@ This will look like the image below.
 
 ![ProgressViewStyle with provided label](/images/2021-05-03/ProgressViewStyle-label.png)
 
-## The complete CircularWithValueProgressViewStyle
+## Final code
 
 Everything put together gives us the following `ProgressViewStyle`:
 

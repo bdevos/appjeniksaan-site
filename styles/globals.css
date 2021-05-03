@@ -29,7 +29,14 @@ blockquote {
   margin: 0;
 }
 
-article,
+article {
+  margin: 160px 0 80px;
+}
+
+article:first-child {
+  margin-top: 0;
+}
+
 aside,
 main {
   margin-bottom: 80px;
@@ -58,8 +65,7 @@ img {
   display: block;
   margin: 16px auto 32px;
   border-radius: 0.3em;
-  box-shadow: rgba(240, 93, 35, 0.4) 4px 4px, rgba(240, 93, 35, 0.3) 8px 8px, rgba(240, 93, 35, 0.2) 12px 12px,
-    rgba(240, 93, 35, 0.1) 16px 16px, rgba(240, 93, 35, 0.05) 20px 20px;
+  box-shadow: rgba(240, 93, 35, 0.2) 4px 4px, rgba(240, 93, 35, 0.1) 8px 8px, rgba(240, 93, 35, 0.05) 12px 12px;
   border: 1px solid rgba(240, 93, 35, 0.05);
 }
 
