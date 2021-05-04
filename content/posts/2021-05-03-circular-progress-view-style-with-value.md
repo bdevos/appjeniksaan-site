@@ -1,5 +1,5 @@
 ---
-title: CircularProgressViewStyle with value in SwiftUI
+title: Circular ProgressViewStyle with value in SwiftUI
 date: 2021-05-03 13:30
 description: Creating a ProgressViewStyle in SwiftUI that shows the progress based on the provided value
 ---

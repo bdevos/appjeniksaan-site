@@ -4,8 +4,8 @@
   width: 100%;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 960px) {
   .container {
-    width: 720px;
+    width: 960px;
   }
 }
