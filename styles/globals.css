@@ -67,6 +67,7 @@ img {
   border-radius: 0.3em;
   box-shadow: rgba(240, 93, 35, 0.2) 4px 4px, rgba(240, 93, 35, 0.1) 8px 8px, rgba(240, 93, 35, 0.05) 12px 12px;
   border: 1px solid rgba(240, 93, 35, 0.05);
+  max-height: 640px;
 }
 
 a:hover {

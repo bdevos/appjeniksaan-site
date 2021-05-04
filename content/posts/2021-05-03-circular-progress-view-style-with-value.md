@@ -13,7 +13,7 @@ The `CircularProgressViewStyle` is the well known iOS spinner, but what if we wa
 
 With SwiftUI view style modifiers, we can implement this ourselves. Here are the two SwiftUI styles and below is the new `ProgressViewStyle` we are creating, all controlled by a Slider:
 
-![CircularWithValueProgressViewStyle](/images/2021-05-03/CircularWithValueProgressViewStyle.gif)
+![CircularWithValueProgressViewStyle](/images/2021-05-03/circular-with-value-progress.gif)
 
 ## Creating a ProgressViewStyle
 
@@ -54,7 +54,7 @@ ProgressView(value: 0.8)
 
 The above code will render a static view without the progress. The next step will be to add the ability to show the progress.
 
-![Static ProgressViewStyle shows rendered petals](/images/2021-05-03/ProgressViewStyle-static.png)
+![Static ProgressViewStyle shows rendered petals](/images/2021-05-03/circular-with-value-progress-static.png)
 
 ## Showing progress
 
@@ -90,7 +90,7 @@ Capsule()
 
 Which will look like this for 80% completion.
 
-![ProgressViewStyle adds opacity to show completion](/images/2021-05-03/ProgressViewStyle-opacity.png)
+![ProgressViewStyle adds opacity to show completion](/images/2021-05-03/circular-with-value-progress-opacity.png)
 
 ## Adding animation when progress at 100%
 
@@ -152,7 +152,7 @@ VStack {
 
 This will look like the image below.
 
-![ProgressViewStyle with provided label](/images/2021-05-03/ProgressViewStyle-label.png)
+![ProgressViewStyle with provided label](/images/2021-05-03/circular-with-value-progress-label.png)
 
 ## Final code
 
