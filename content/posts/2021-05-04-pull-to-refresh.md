@@ -230,26 +230,32 @@ The following view was used to create the above GIF.
 
 ```swift
 struct ContentView: View {
-    @State var names = ["Jarl", "Ehecatl", "Jayanti", "Surendra", "Medeia"]
+    static private let initialNames = ["Jarl", "Ehecatl", "Jayanti", "Surendra", "Medeia"]
+
+    @State var names = ContentView.initialNames
 
     var body: some View {
         PullToRefreshView() {
-            VStack {
-                Text("Names").font(.system(.largeTitle, design: .rounded))
-                Divider()
-            }
-            .padding()
+            Text("Names").font(.system(.largeTitle, design: .rounded))
+                .padding()
+            Divider()
 
             ForEach(names, id: \.self) { name in
                 Text(name).padding()
             }
         } onRefresh: { done in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
                 withAnimation {
                     names.insert(contentsOf: ["Nephele", "Vesta"], at: 0)
                 }
 
                 done()
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+                    withAnimation {
+                        names = ContentView.initialNames
+                    }
+                })
             })
         }
     }
