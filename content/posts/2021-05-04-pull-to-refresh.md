@@ -4,6 +4,12 @@ date: 2021-05-04 07:00
 description: Creating a Pull to Refresh ScrollView in SwiftUI
 ---
 
+### Deprecation warning
+
+2021-06-11: Please be aware that with the introduction of iOS 15 and the SwiftUI additions for 2021, this functionality is build into SwiftUI: [refreshable(action:)](<https://developer.apple.com/documentation/SwiftUI/View/refreshable(action:)>)
+
+---
+
 Yesterday I wrote an article about creating a [CircularProgressView which could show the progress](/posts/2021/05/03/circular-progress-view-style-with-value). Today I wanted to write about how you could use that `ProgressViewStyle` in creating a ScrollView with pull to request functionality.
 
 I wanted to create this pull to refresh functionality after [reading about tracking the scroll offset](https://swiftwithmajid.com/2020/09/24/mastering-scrollview-in-swiftui/) in the `ScrollView`.
