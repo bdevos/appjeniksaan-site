@@ -3,7 +3,6 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
-import prism from 'remark-prism'
 import { parseISO, compareDesc } from 'date-fns'
 
 export type BaseArticle = {
@@ -61,9 +60,7 @@ export const getArticle = async (
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const matterResult = matter(fileContents)
 
-  const processedContent = await remark()
-    .use([...(parseTo === 'html' ? [prism] : []), html])
-    .process(matterResult.content)
+  const processedContent = await remark().use(html).process(matterResult.content)
 
   return {
     ...(type === 'linked' ? { href: matterResult.data.href } : {}),

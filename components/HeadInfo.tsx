@@ -29,7 +29,7 @@ export default function HeadInfo({ title, description, url = '', type = 'website
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:creator" content="@appjeniksaan" />
 
-      <meta name="theme-color" content="#f05d23" />
+      <meta name="theme-color" content="#f9f5e3" />
 
       <link rel="icon" href="/favicon.ico" />
 
