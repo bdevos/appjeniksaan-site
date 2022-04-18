@@ -23,7 +23,7 @@
     "remark-html": "15.0.1"
   },
   "devDependencies": {
-    "@types/node": "16.11.26",
+    "@types/node": "16.11.27",
     "@types/react": "17.0.44",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.5",
