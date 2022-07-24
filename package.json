@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@types/node": "16.11.45",
-    "@types/react": "18.0.14",
+    "@types/react": "18.0.15",
     "eslint": "8.19.0",
     "eslint-config-next": "12.2.0",
     "husky": "8.0.1",
