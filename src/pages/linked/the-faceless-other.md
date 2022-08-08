@@ -1,7 +1,7 @@
 ---
 title: The Faceless Other
 href: https://sarvasvkulpati.com/blog/the-faceless-other
-date: 2021-06-11 14:45
+pubDate: 2021-06-11 14:45
 layout: ../../layouts/Linked.astro
 ---
 

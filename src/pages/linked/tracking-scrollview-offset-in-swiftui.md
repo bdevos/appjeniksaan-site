@@ -1,7 +1,7 @@
 ---
 title: Tracking ScrollView offset in SwiftUI
 href: https://swiftwithmajid.com/2020/09/24/mastering-scrollview-in-swiftui/
-date: 2021-05-03 08:46
+pubDate: 2021-05-03 08:46
 layout: ../../layouts/Linked.astro
 ---
 

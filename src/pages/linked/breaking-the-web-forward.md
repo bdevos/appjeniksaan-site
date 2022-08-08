@@ -1,7 +1,7 @@
 ---
 title: Breaking the web forward
 href: https://www.quirksmode.org/blog/archives/2021/08/breaking_the_we.html
-date: 2021-08-14 10:57
+pubDate: 2021-08-14 10:57
 layout: ../../layouts/Linked.astro
 ---
 

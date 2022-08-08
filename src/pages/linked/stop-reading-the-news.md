@@ -1,7 +1,7 @@
 ---
 title: Why You Should Stop Reading News
 href: https://fs.blog/2013/12/stop-reading-news/
-date: 2021-09-25 06:47
+pubDate: 2021-09-25 06:47
 layout: ../../layouts/Linked.astro
 ---
 

@@ -12,4 +12,5 @@ export default defineConfig({
       theme: 'dracula-soft',
     },
   },
+  site: 'https://appjeniksaan.nl',
 })

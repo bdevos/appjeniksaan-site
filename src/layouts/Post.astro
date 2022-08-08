@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { dateFormatter } from '../dateFormat'
 
 const { content } = Astro.props
 ---
@@ -10,7 +11,10 @@ const { content } = Astro.props
   type="article"
   url={content.url}
 >
-  <h1>{content.title}</h1>
-  <h2>{content.date}</h2>
-  <slot />
+  <acticle>
+    <h1>{content.title}</h1>
+    <h4>{dateFormatter.format(new Date(content.pubDate))}</h4>
+
+    <slot />
+  </acticle>
 </Layout>

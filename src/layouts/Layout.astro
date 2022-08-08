@@ -9,15 +9,11 @@ export interface Props {
 import Dots from '../components/Dots.astro'
 import Footer from '../components/Footer.astro'
 import Header from '../components/Header.astro'
+import { site } from '../constants'
 
 const { description, title, type = 'website', url = '' } = Astro.props as Props
 
-const siteTitle = 'Appjeniksaan'
-const siteDescription =
-  'My personal software development shop which lets me create sites and apps that I think are delightful or just fun to build'
-const host = 'https://appjeniksaan.nl'
-
-const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle
+const pageTitle = title ? `${title} - ${site.title}` : site.title
 ---
 
 <!DOCTYPE html>
@@ -28,17 +24,24 @@ const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <title>{pageTitle}</title>
-    <meta property="og:title" content={title ?? siteTitle} />
+    <meta property="og:title" content={title ?? site.title} />
 
-    <meta name="description" content={description ?? siteDescription} />
-    <meta property="og:description" content={description ?? siteDescription} />
+    <meta name="description" content={description ?? site.description} />
+    <meta property="og:description" content={description ?? site.description} />
 
     <meta property="og:type" content={type} />
-    <meta property="og:url" content={`${host}${url}`} />
-    <link rel="canonical" href={`${host}${url}`} />
+    <meta property="og:url" content={`${Astro.site}${url}`} />
+    <link rel="canonical" href={`${Astro.site}${url}`} />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:creator" content="@appjeniksaan" />
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="RSS Feed for appjeniksaan.nl"
+      href="/feed.xml"
+    />
 
     <meta
       name="theme-color"

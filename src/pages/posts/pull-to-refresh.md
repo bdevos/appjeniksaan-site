@@ -1,6 +1,6 @@
 ---
 title: Pull to Refresh in SwiftUI
-date: 2021-05-04 07:00
+pubDate: 2021-05-04 07:00
 description: Creating a Pull to Refresh ScrollView in SwiftUI
 layout: ../../layouts/Post.astro
 ---

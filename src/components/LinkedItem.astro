@@ -13,7 +13,7 @@ const { item } = Astro.props as Props
   <h2><a href={item.frontmatter.href}>{item.frontmatter.title}</a></h2>
   <h4>
     <a href={item.url}>
-      {dateFormatter.format(new Date(item.frontmatter.date))}
+      {dateFormatter.format(new Date(item.frontmatter.pubDate))}
     </a>
   </h4>
   <Fragment set:html={item.compiledContent()} />
