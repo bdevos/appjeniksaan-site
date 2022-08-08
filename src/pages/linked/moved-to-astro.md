@@ -1,7 +1,7 @@
 ---
 title: Moved to Astro 🚀
 href: https://astro.build
-date: 2022-08-08 17:23
+pubDate: 2022-08-08 17:23
 layout: ../../layouts/Linked.astro
 ---
 

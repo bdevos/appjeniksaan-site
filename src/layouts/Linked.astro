@@ -17,7 +17,8 @@ const { content } = Astro.props
         <span>{content.title}</span>
       </a>
     </h1>
-    <h4>{dateFormatter.format(new Date(content.date))}</h4>
+    <h4>{dateFormatter.format(new Date(content.pubDate))}</h4>
+
     <slot />
   </acticle>
 </Layout>

@@ -8,7 +8,7 @@ type InstanceWithType<T> = MarkdownInstance<T> & {
 
 interface Frontmatter {
   title: string
-  date: string
+  pubDate: string
 }
 
 export type Linked = Frontmatter & {
@@ -31,7 +31,7 @@ export type ItemsByMonth = {
 const parseMonth = (date: string) => date.substring(0, 7) // Returns the YYYY-MM part
 
 const sortByDate = (a: MDFrontmatter, b: MDFrontmatter) =>
-  a.frontmatter.date.localeCompare(b.frontmatter.date) * -1
+  a.frontmatter.pubDate.localeCompare(b.frontmatter.pubDate) * -1
 
 const appendType =
   (type: ItemType) => (item: MarkdownInstance<Linked | Post>) => ({
@@ -51,7 +51,7 @@ export const sortAndLimit = (
 
 export const splitByMonth = (items: MDItem[]): ItemsByMonth => {
   return items.reduce((acc, item) => {
-    const month = parseMonth(item.frontmatter.date)
+    const month = parseMonth(item.frontmatter.pubDate)
     const items = acc[month] ?? []
 
     return {
