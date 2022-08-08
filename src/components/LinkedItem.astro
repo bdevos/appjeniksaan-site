@@ -1,0 +1,26 @@
+---
+import type { MDLinked } from '../sortAndLimit'
+import { dateFormatter } from '../dateFormat'
+
+export interface Props {
+  item: MDLinked
+}
+
+const { item } = Astro.props as Props
+---
+
+<>
+  <h2><a href={item.frontmatter.href}>{item.frontmatter.title}</a></h2>
+  <h4>
+    <a href={item.url}>
+      {dateFormatter.format(new Date(item.frontmatter.date))}
+    </a>
+  </h4>
+  <Fragment set:html={item.compiledContent()} />
+</>
+
+<style>
+  h4 > a {
+    text-decoration: none;
+  }
+</style>

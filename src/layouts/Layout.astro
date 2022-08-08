@@ -1,0 +1,205 @@
+---
+export interface Props {
+  description?: string
+  title?: string
+  type?: 'article' | 'website'
+  url?: string
+}
+
+import Dots from '../components/Dots.astro'
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+
+const { description, title, type = 'website', url = '' } = Astro.props as Props
+
+const siteTitle = 'Appjeniksaan'
+const siteDescription =
+  'My personal software development shop which lets me create sites and apps that I think are delightful or just fun to build'
+const host = 'https://appjeniksaan.nl'
+
+const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <title>{pageTitle}</title>
+    <meta property="og:title" content={title ?? siteTitle} />
+
+    <meta name="description" content={description ?? siteDescription} />
+    <meta property="og:description" content={description ?? siteDescription} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={`${host}${url}`} />
+    <link rel="canonical" href={`${host}${url}`} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@appjeniksaan" />
+
+    <meta
+      name="theme-color"
+      content="#1a2b3b"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="theme-color" content="#f5f7f9" />
+  </head>
+
+  <body>
+    <div class="container">
+      <Header />
+
+      <slot />
+
+      <Dots />
+      <Footer />
+    </div>
+
+    <style is:global>
+      :root {
+        --yankees-blue-rgb: 26, 43, 59;
+        --cultured-rgb: 245, 247, 249;
+
+        --maximum-yellow: #ddff33;
+        --picton-blue: #33bbff;
+        --cultured: rgb(var(--cultured-rgb));
+        --yankees-blue: rgb(var(--yankees-blue-rgb));
+        --white: #fff;
+
+        --light-background-color: var(--cultured);
+        --dark-background-color: var(--yankees-blue);
+
+        --light-text-color: var(--yankees-blue);
+        --dark-text-color: var(--white);
+
+        --light-highlight-color: var(--picton-blue);
+        --dark-highlight-color: var(--maximum-yellow);
+
+        --text-color: var(--light-color);
+        --background-color: var(--light-background-color);
+        --highlight-color: var(--light-highlight-color);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --text-color: var(--dark-text-color);
+          --background-color: var(--dark-background-color);
+          --highlight-color: var(--dark-highlight-color);
+        }
+      }
+
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: var(--background-color);
+      }
+
+      body {
+        color: var(--text-color);
+        font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
+        font-size: 16px;
+        line-height: 1.8rem;
+        font-weight: lighter;
+      }
+
+      blockquote {
+        border-left: 2px solid var(--highlight-color);
+        padding-left: 10px;
+        margin: 0;
+      }
+
+      article {
+        margin: 160px 0 80px;
+      }
+
+      article:first-child {
+        margin-top: 0;
+      }
+
+      aside,
+      main {
+        margin-bottom: 80px;
+      }
+
+      h1 {
+        font-weight: lighter;
+        font-size: 1.8rem;
+        margin: 40px 0 8px;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+        font-weight: lighter;
+        margin: 64px 0 8px;
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        font-weight: lighter;
+        margin: 4px 0;
+      }
+
+      h4 {
+        font-size: 1rem;
+        font-weight: lighter;
+        margin: 0;
+        font-style: italic;
+        color: var(--cadet);
+      }
+
+      a {
+        color: var(--text-color);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+        text-decoration-color: var(--highlight-color);
+      }
+
+      img {
+        display: block;
+        margin: 16px auto 32px;
+        border-radius: 0.3em;
+        box-shadow: rgba(240, 93, 35, 0.2) 4px 4px,
+          rgba(240, 93, 35, 0.1) 8px 8px, rgba(240, 93, 35, 0.05) 12px 12px;
+        border: 1px solid rgba(240, 93, 35, 0.05);
+        max-height: 640px;
+      }
+
+      a:hover {
+        color: var(--highlight-color);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        font-size: 14px;
+      }
+
+      pre {
+        padding: 16px;
+        background-color: var(--yankees-blue) !important;
+        border: 5px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .container {
+        margin: 0 auto;
+        padding: 0 16px;
+        width: 100%;
+      }
+
+      @media (min-width: 960px) {
+        .container {
+          width: 960px;
+        }
+      }
+    </style>
+  </body>
+</html>

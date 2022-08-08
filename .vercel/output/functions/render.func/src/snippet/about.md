@@ -1,0 +1,1 @@
+Appjeniksaan is my personal software development 🛠 shop which lets me create sites and apps that I think are delightful or just fun 🤪 to build 🚀. On this site I will try 🙈 to share the interesting info I bump into on the www 🌍

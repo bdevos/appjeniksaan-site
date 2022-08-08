@@ -1,0 +1,7 @@
+.toggle-button {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}

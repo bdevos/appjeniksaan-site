@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ArchiveItem from '../components/ArchiveItem.astro'
+import MonthHeader from '../components/MonthHeader.astro'
+import { sortAndLimit, splitByMonth } from '../sortAndLimit'
+import type { Linked, Post } from '../sortAndLimit'
+
+const linked = Astro.glob<Linked>('../pages/linked/*.md')
+const posts = Astro.glob<Post>('../pages/posts/*.md')
+
+const items = splitByMonth(sortAndLimit(await linked, await posts))
+---
+
+<Layout title="Archive">
+  <main>
+    <h1>🗄 Archive</h1>
+    {Object.keys(items).map((month) => (
+      <section>
+        <MonthHeader month={month} />
+        <ul>
+          {items[month].map((item) => (
+            <ArchiveItem item={item} />
+          ))}
+        </ul>
+      </section>
+    ))}
+  </main>
+</Layout>
+
+<style>
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+</style>

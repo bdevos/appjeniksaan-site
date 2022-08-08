@@ -1,0 +1,24 @@
+---
+import type { MDPost } from '../sortAndLimit'
+import { dateFormatter } from '../dateFormat'
+
+export interface Props {
+  item: MDPost
+}
+
+const { item } = Astro.props as Props
+---
+
+<>
+  <h2><a href={item.url}>{item.frontmatter.title}</a></h2>
+  <h4>
+    {dateFormatter.format(new Date(item.frontmatter.date))}
+  </h4>
+  <p>{item.frontmatter.description}</p>
+</>
+
+<style>
+  h4 > a {
+    text-decoration: none;
+  }
+</style>

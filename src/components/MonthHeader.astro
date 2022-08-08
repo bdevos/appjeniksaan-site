@@ -1,0 +1,15 @@
+---
+import { monthFormatter } from '../dateFormat'
+
+export interface Props {
+  month: string
+}
+
+const { month: input } = Astro.props as Props
+
+const [year, month] = input.split('-').map((value) => parseInt(value, 10))
+
+const date = monthFormatter.format(new Date(Date.UTC(year, month)))
+---
+
+<h2>{date}</h2>
