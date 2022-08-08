@@ -1,22 +1,31 @@
 ---
-import ColorScheme from '../components/ColorScheme.astro'
-import { LogoScrolling } from './LogoScrolling'
-
-const title = 'Appjeniksaan'
+import { site } from '../constants'
 ---
 
-<header data-color-scheme="light">
+<header>
   <a href="/">
     <span id="logo" class="logo">
-      <span>{title}</span>
+      <span>{site.title}</span>
       <span aria-hidden="true" class="overlay">
-        <span class="scrollable">{`${title} ${title}`}</span>
+        <span class="scrollable">{`${site.title} ${site.title}`}</span>
       </span>
     </span>
-    <LogoScrolling client:only="preact" />
   </a>
-  <ColorScheme />
 </header>
+
+<script is:inline>
+  window.addEventListener('scroll', () => {
+    const offset = window.pageYOffset
+    const element = document.getElementById('logo')
+
+    if (element) {
+      element.style.setProperty(
+        '--offset',
+        `${offset <= -100 ? -200 : (offset % 100) - 100}%`
+      )
+    }
+  })
+</script>
 
 <style>
   header {
@@ -24,9 +33,7 @@ const title = 'Appjeniksaan'
     top: 0;
     padding: 10px 0;
     text-align: center;
-  }
 
-  header[data-color-scheme='light'] {
     background: linear-gradient(
       rgba(var(--cultured-rgb), 1),
       rgba(var(--cultured-rgb), 0.9) 50%,
@@ -34,12 +41,14 @@ const title = 'Appjeniksaan'
     );
   }
 
-  header[data-color-scheme='dark'] {
-    background: linear-gradient(
-      rgba(var(--yankees-blue-rgb), 1),
-      rgba(var(--yankees-blue-rgb), 0.9) 50%,
-      rgba(var(--yankees-blue-rgb), 0)
-    );
+  @media (prefers-color-scheme: dark) {
+    header {
+      background: linear-gradient(
+        rgba(var(--yankees-blue-rgb), 1),
+        rgba(var(--yankees-blue-rgb), 0.9) 50%,
+        rgba(var(--yankees-blue-rgb), 0)
+      );
+    }
   }
 
   a {
