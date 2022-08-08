@@ -1,6 +1,5 @@
 import type { FunctionComponent } from 'preact'
 import { useEffect, useRef } from 'preact/hooks'
-import './Logo.css'
 
 interface Props {
   title: string

@@ -1,6 +1,5 @@
 import type { FunctionComponent } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
-import './Toggle.css'
 
 type ColorScheme = 'light' | 'dark'
 
@@ -54,8 +53,6 @@ export const Toggle: FunctionComponent = () => {
 
   const handleClick = () => {
     const newColorScheme = colorScheme === 'dark' ? 'light' : 'dark'
-
-    console.log({ newColorScheme })
 
     setProperties(newColorScheme)
     setColorScheme(newColorScheme)
