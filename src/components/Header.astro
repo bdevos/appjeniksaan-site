@@ -1,11 +1,19 @@
 ---
 import ColorScheme from '../components/ColorScheme.astro'
-import { Logo } from './Logo'
+import { LogoScrolling } from './LogoScrolling'
+
+const title = 'Appjeniksaan'
 ---
 
 <header data-color-scheme="light">
   <a href="/">
-    <Logo client:only="preact" title="Appjeniksaan" />
+    <span id="logo" class="logo">
+      <span>{title}</span>
+      <span aria-hidden="true" class="overlay">
+        <span class="scrollable">{`${title} ${title}`}</span>
+      </span>
+    </span>
+    <LogoScrolling client:only="preact" />
   </a>
   <ColorScheme />
 </header>
@@ -44,7 +52,7 @@ import { Logo } from './Logo'
     }
   }
 
-  :global(.logo) {
+  .logo {
     display: inline-block;
     position: relative;
     text-decoration: none;
@@ -56,11 +64,11 @@ import { Logo } from './Logo'
     --offset: 0%;
   }
 
-  :global(.logo:hover) {
+  .logo:hover {
     color: var(--highlight-color);
   }
 
-  :global(.logo .overlay) {
+  .logo .overlay {
     position: absolute;
     left: 0;
     width: 100%;
@@ -75,7 +83,7 @@ import { Logo } from './Logo'
     color: rgba(0, 0, 0, 0);
   }
 
-  :global(.logo .scrollable) {
+  .logo .scrollable {
     position: relative;
     left: var(--offset);
   }
