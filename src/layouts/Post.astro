@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const { content } = Astro.props
+---
+
+<Layout
+  description={content.description}
+  title={content.title}
+  type="article"
+  url={content.url}
+>
+  <h1>{content.title}</h1>
+  <h2>{content.date}</h2>
+  <slot />
+</Layout>

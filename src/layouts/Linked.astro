@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { dateFormatter } from '../dateFormat'
+
+const { content } = Astro.props
+---
+
+<Layout
+  description={`Linked to: ${content.href}`}
+  title={content.title}
+  type="article"
+  url={content.url}
+>
+  <acticle>
+    <h1>
+      <a href={content.href}>
+        <span>{content.title}</span>
+      </a>
+    </h1>
+    <h4>{dateFormatter.format(new Date(content.date))}</h4>
+    <slot />
+  </acticle>
+</Layout>
