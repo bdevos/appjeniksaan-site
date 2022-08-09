@@ -1,0 +1,36 @@
+---
+export interface Props {
+  date: string
+  href?: string
+}
+
+import { dateFormatter } from '../dateFormat'
+
+const { date: rawDate, href } = Astro.props as Props
+
+const date = dateFormatter.format(new Date(rawDate))
+---
+
+<p class="date">
+  {!!href ? <a href={href}>{date}</a> : date}
+</p>
+
+<style>
+  .date {
+    font-size: 1rem;
+    font-weight: lighter;
+    margin: 0;
+    font-style: italic;
+    color: rgba(var(--yankees-blue-rgb), 0.6);
+  }
+  a {
+    text-decoration: none;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .date,
+    a {
+      color: rgba(var(--cultured-rgb), 0.6);
+    }
+  }
+</style>

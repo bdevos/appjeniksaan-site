@@ -5,4 +5,4 @@ layout: ../layouts/Page.astro
 
 # Contact
 
-[@appjeniksaan](https://twitter.com/appjeniksaan) 🐦 or [hello@appjeniksaan.nl](mailto:hello@appjeniksaan.nl) 📧
+You can reach me on Twitter [@appjeniksaan](https://twitter.com/appjeniksaan) or send a message by mail [hello@appjeniksaan.nl](mailto:hello@appjeniksaan.nl).
