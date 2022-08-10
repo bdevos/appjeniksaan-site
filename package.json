@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@astrojs/rss": "0.2.2",
-    "@astrojs/vercel": "0.4.0",
+    "@astrojs/vercel": "1.0.0",
     "astro": "1.0.0-rc.8",
     "prettier": "2.7.1",
     "prettier-plugin-astro": "0.4.1"
