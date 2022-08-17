@@ -11,12 +11,12 @@ const { date: rawDate, href } = Astro.props as Props
 const date = dateFormatter.format(new Date(rawDate))
 ---
 
-<p class="date">
+<date>
   {!!href ? <a href={href}>{date}</a> : date}
-</p>
+</date>
 
 <style>
-  .date {
+  date {
     font-size: 1rem;
     font-weight: lighter;
     margin: 0;
@@ -28,7 +28,7 @@ const date = dateFormatter.format(new Date(rawDate))
   }
 
   @media (prefers-color-scheme: dark) {
-    .date,
+    date,
     a {
       color: rgba(var(--cultured-rgb), 0.6);
     }
