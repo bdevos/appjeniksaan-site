@@ -28,37 +28,10 @@ import { site } from '../constants'
 </script>
 
 <style>
-  header {
-    position: sticky;
-    top: 0;
-    padding: 10px 0;
-    text-align: center;
-
-    background: linear-gradient(
-      rgba(var(--cultured-rgb), 1),
-      rgba(var(--cultured-rgb), 0.9) 50%,
-      rgba(var(--cultured-rgb), 0)
-    );
-  }
-
-  @media (prefers-color-scheme: dark) {
-    header {
-      background: linear-gradient(
-        rgba(var(--yankees-blue-rgb), 1),
-        rgba(var(--yankees-blue-rgb), 0.9) 50%,
-        rgba(var(--yankees-blue-rgb), 0)
-      );
-    }
-  }
+  @import 'open-props/media';
 
   a {
     text-underline-offset: 1px;
-  }
-
-  @media (min-width: 960px) {
-    header {
-      text-align: start;
-    }
   }
 
   .logo {
@@ -95,5 +68,11 @@ import { site } from '../constants'
   .logo .scrollable {
     position: relative;
     left: var(--offset);
+  }
+
+  @media (--OSdark) {
+    .logo {
+      color: white;
+    }
   }
 </style>

@@ -11,7 +11,7 @@ const { content } = Astro.props
   type="article"
   url={content.url}
 >
-  <acticle>
+  <article>
     <h1>
       <a href={content.href}>
         <span>{content.title}</span>
@@ -20,5 +20,5 @@ const { content } = Astro.props
     <Date date={content.pubDate} />
 
     <slot />
-  </acticle>
+  </article>
 </Layout>

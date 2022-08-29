@@ -14,16 +14,18 @@ const items = splitByMonth(sortAndLimit(await linked, await posts))
 <Layout title="Archive">
   <main>
     <h1>🗄 Archive</h1>
-    {Object.keys(items).map((month) => (
-      <section>
-        <MonthHeader month={month} />
-        <ul>
-          {items[month].map((item) => (
-            <ArchiveItem item={item} />
-          ))}
-        </ul>
-      </section>
-    ))}
+    {
+      Object.keys(items).map((month) => (
+        <section>
+          <MonthHeader month={month} />
+          <ul>
+            {items[month].map((item) => (
+              <ArchiveItem item={item} />
+            ))}
+          </ul>
+        </section>
+      ))
+    }
   </main>
 </Layout>
 

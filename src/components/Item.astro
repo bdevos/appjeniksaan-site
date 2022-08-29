@@ -9,12 +9,13 @@ export interface Props {
 
 const { item } = Astro.props as Props
 ---
-<article>
-  {item.type === 'linked' ? <LinkedItem item={item as MDLinked} /> : <PostItem item={item as MDPost} />}
-</article>
 
-<style>
-  h2 {
-    border: solid black;
+<article>
+  {
+    item.type === 'linked' ? (
+      <LinkedItem item={item as MDLinked} />
+    ) : (
+      <PostItem item={item as MDPost} />
+    )
   }
-</style>
+</article>

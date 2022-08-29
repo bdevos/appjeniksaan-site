@@ -10,7 +10,7 @@ const { item } = Astro.props as Props
 ---
 
 <>
-  <h2><a href={item.url}>{item.frontmatter.title}</a></h2>
+  <h1><a href={item.url}>{item.frontmatter.title}</a></h1>
   <Date date={item.frontmatter.pubDate} />
   <p>{item.frontmatter.description}</p>
 </>
