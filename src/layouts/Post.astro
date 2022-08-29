@@ -11,10 +11,10 @@ const { content } = Astro.props
   type="article"
   url={content.url}
 >
-  <acticle>
+  <article>
     <h1>{content.title}</h1>
     <Date date={content.pubDate} />
 
     <slot />
-  </acticle>
+  </article>
 </Layout>

@@ -13,7 +13,7 @@ const day = dayFormatter.format(new Date(item.frontmatter.pubDate))
 
 <li>
   <span class="day">{day}</span>
-  <h3><a href={item.url}>{item.frontmatter.title}</a></h3>
+  <h3 class="title"><a href={item.url}>{item.frontmatter.title}</a></h3>
 </li>
 
 <style>
@@ -21,11 +21,17 @@ const day = dayFormatter.format(new Date(item.frontmatter.pubDate))
     display: flex;
     align-items: center;
   }
+
   .day {
     font-style: italic;
-    font-size: 2.6rem;
-    color: var(--highlight-color);
+    font-size: var(--font-size-5);
     width: 3ch;
     text-align: center;
+  }
+
+  .title {
+    font-size: var(--font-size-2);
+    font-weight: var(--font-weight-4);
+    margin-block: var(--size-2);
   }
 </style>

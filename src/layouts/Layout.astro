@@ -45,10 +45,10 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
 
     <meta
       name="theme-color"
-      content="#1a2b3b"
+      content="#ffd43b"
       media="(prefers-color-scheme: dark)"
     />
-    <meta name="theme-color" content="#f5f7f9" />
+    <meta name="theme-color" content="#339af0" />
   </head>
 
   <body>
@@ -62,144 +62,174 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
     </div>
 
     <style is:global>
+      @import 'open-props/normalize';
+      @import 'open-props/media';
+
       :root {
-        --yankees-blue-rgb: 26, 43, 59;
-        --cultured-rgb: 245, 247, 249;
-
-        --maximum-yellow: #ddff33;
-        --picton-blue: #33bbff;
-        --cultured: rgb(var(--cultured-rgb));
-        --yankees-blue: rgb(var(--yankees-blue-rgb));
-        --white: #fff;
-
-        --light-background-color: var(--cultured);
-        --dark-background-color: var(--yankees-blue);
-
-        --light-text-color: var(--yankees-blue);
-        --dark-text-color: var(--white);
-
-        --light-highlight-color: var(--picton-blue);
-        --dark-highlight-color: var(--maximum-yellow);
-
-        --text-color: var(--light-color);
-        --background-color: var(--light-background-color);
-        --highlight-color: var(--light-highlight-color);
+        --link: var(--text1-light);
+        --link-visited: var(--text1-light);
+        --highlight-color: var(--blue-5);
       }
 
       @supports (color: color(display-p3 1 1 1)) {
         :root {
-          --light-highlight-color: color(display-p3 0.2 0.73 1);
+          --highlight-color: color(display-p3 0.2 0.73 1);
           --dark-highlight-color: color(display-p3 0.87 1 0.2);
         }
       }
 
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --text-color: var(--dark-text-color);
-          --background-color: var(--dark-background-color);
-          --highlight-color: var(--dark-highlight-color);
-        }
-      }
-
-      html,
       body {
-        padding: 0;
-        margin: 0;
-        background-color: var(--background-color);
-      }
-
-      body {
-        color: var(--text-color);
-        font-family: -apple-system-ui-serif, ui-serif, 'Georgia', serif;
-        font-size: 16px;
-        line-height: 1.8rem;
-        font-weight: lighter;
-      }
-
-      blockquote {
-        border-left: 2px solid var(--highlight-color);
-        padding-left: 10px;
+        line-height: var(--font-lineheight-4);
         margin: 0;
       }
 
       article {
-        margin: 160px 0 80px;
+        margin-block: var(--size-8);
       }
 
-      article:first-child {
-        margin-top: 0;
-      }
-
-      aside,
-      main {
-        margin-bottom: 80px;
+      :where(p, h1, h2, h3, li, pre) {
+        max-inline-size: none;
       }
 
       h1 {
-        font-weight: lighter;
-        font-size: 1.8rem;
-        margin: 40px 0 8px;
+        font-size: var(--font-size-6);
+        margin-block: var(--size-8);
+      }
+
+      article h1 {
+        margin-block: var(--size-0);
       }
 
       h2 {
-        font-size: 1.5rem;
-        font-weight: lighter;
-        margin: 64px 0 8px;
+        font-size: var(--font-size-5);
+        margin-block: var(--size-8) var(--size-4);
       }
 
       h3 {
-        font-size: 1.1rem;
-        font-weight: lighter;
-        margin: 4px 0;
+        font-size: var(--font-size-4);
+        margin-block: var(--size-4);
       }
 
       a {
-        color: var(--text-color);
         text-decoration: underline;
         text-decoration-thickness: 2px;
-        text-underline-offset: 3px;
+        text-underline-offset: 1px;
         text-decoration-color: var(--highlight-color);
-      }
-
-      img {
-        display: block;
-        margin: 16px auto 32px;
-        border-radius: 0.3em;
-        box-shadow: rgba(240, 93, 35, 0.2) 4px 4px,
-          rgba(240, 93, 35, 0.1) 8px 8px, rgba(240, 93, 35, 0.05) 12px 12px;
-        border: 1px solid rgba(240, 93, 35, 0.05);
-        max-height: 640px;
       }
 
       a:hover {
         color: var(--highlight-color);
       }
 
-      * {
-        box-sizing: border-box;
+      p {
+        margin-block-end: var(--size-2);
+      }
+
+      img {
+        display: block;
+        margin: var(--size-4) auto var(--size-6);
+        box-shadow: var(--shadow-3);
+        border-radius: var(--radius-2);
+        max-height: 640px;
       }
 
       code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        font-size: 14px;
+        font-family: var(--font-mono);
+        font-size: var(--font-size-0);
+        line-height: var(--font-lineheight-1);
       }
 
       pre {
-        padding: 16px;
-        background-color: var(--yankees-blue) !important;
-        border: 5px solid rgba(255, 255, 255, 0.2);
+        padding: var(--size-3);
+        margin-block: var(--size-4) var(--size-6);
+        box-shadow: var(--shadow-3);
+        border-radius: var(--radius-2);
+        width: 100%;
       }
 
       .container {
         margin: 0 auto;
-        padding: 0 16px;
+        padding: 0 var(--size-3);
         width: 100%;
       }
 
-      @media (min-width: 960px) {
+      header {
+        position: sticky;
+        top: 0;
+        padding: 10px 0;
+        text-align: center;
+
+        background: linear-gradient(
+          hsl(var(--gray-0-hsl) / 100%),
+          hsl(var(--gray-0-hsl) / 90%) 60%,
+          hsl(var(--gray-0-hsl) / 0%) 100%
+        );
+      }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+        text-align: center;
+      }
+
+      date {
+        display: block;
+        font-size: var(--font-size-3);
+        font-weight: var(--font-weight-2);
+        font-style: italic;
+        color: var(--gray-7);
+        margin-block-end: var(--size-4);
+      }
+
+      @media (--OSdark) {
+        :root {
+          --highlight-color: var(--yellow-4);
+        }
+
+        @supports (color: color(display-p3 1 1 1)) {
+          :root {
+            --highlight-color: color(display-p3 0.87 1 0.2);
+          }
+        }
+
+        html {
+          --link: var(--text1-dark);
+          --link-visited: var(--text1-dark);
+        }
+
+        header {
+          background: linear-gradient(
+            hsl(var(--gray-9-hsl) / 100%),
+            hsl(var(--gray-9-hsl) / 90%) 60%,
+            hsl(var(--gray-9-hsl) / 0%)
+          );
+        }
+        date {
+          color: var(--gray-5);
+        }
+      }
+
+      @media (--lg-n-above) {
         .container {
-          width: 960px;
+          width: var(--size-lg);
+        }
+
+        header {
+          text-align: start;
+        }
+
+        footer {
+          display: flex;
+          text-align: start;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: flex-end;
+        }
+
+        footer ul {
+          margin-bottom: 0;
         }
       }
     </style>
