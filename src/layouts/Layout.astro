@@ -129,7 +129,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
       code {
         font-family: var(--font-mono);
         font-size: var(--font-size-1);
-        line-height: var(--font-lineheight-1);
       }
 
       pre {
@@ -137,7 +136,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         margin-block: var(--size-4) var(--size-6);
         box-shadow: var(--shadow-3);
         border-radius: var(--radius-2);
-        width: 100%;
       }
 
       .container {
@@ -223,6 +221,13 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
 
         footer ul {
           margin-block-end: 0;
+        }
+      }
+
+      @media (--md-n-below) {
+        h1 {
+          font-size: var(--font-size-5);
+          margin-block: var(--size-8);
         }
       }
     </style>
