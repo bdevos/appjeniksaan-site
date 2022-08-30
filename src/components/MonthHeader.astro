@@ -9,7 +9,7 @@ const { month: input } = Astro.props as Props
 
 const [year, month] = input.split('-').map((value) => parseInt(value, 10))
 
-const date = monthFormatter.format(new Date(Date.UTC(year, month)))
+const date = monthFormatter.format(new Date(`${year}-${month}`))
 ---
 
 <h2 class="header">{date}</h2>
