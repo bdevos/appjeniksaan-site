@@ -13,7 +13,7 @@
   "devDependencies": {
     "@astrojs/rss": "1.0.2",
     "@astrojs/vercel": "2.1.0",
-    "astro": "1.4.4",
+    "astro": "1.4.7",
     "open-props": "1.4.16",
     "postcss-custom-media": "8.0.2",
     "postcss-jit-props": "1.0.7",
