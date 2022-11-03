@@ -80,8 +80,8 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         margin-block: var(--size-8);
       }
 
-      :where(p, h1, h2, h3, li, pre) {
-        max-inline-size: none;
+      :where(p, h1, h2, h3, li, pre, blockquote) {
+        max-inline-size: none !important;
       }
 
       h1 {
