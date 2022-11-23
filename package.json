@@ -17,7 +17,7 @@
     "open-props": "1.4.25",
     "postcss-custom-media": "9.0.1",
     "postcss-jit-props": "1.0.7",
-    "prettier": "2.7.1",
+    "prettier": "2.8.0",
     "prettier-plugin-astro": "0.7.0"
   }
 }
