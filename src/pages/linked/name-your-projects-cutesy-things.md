@@ -7,4 +7,4 @@ layout: ../../layouts/Linked.astro
 
 A name is just a name. When naming a software system based on its functionality you hamper it growing or pivoting into another direction.
 
-Great advice from [~ntietz](https://ntietz.com), pick a name that's fun, strange or cutesy.
+Great advice from [~ntietz](https://ntietz.com). Pick a name that's fun, strange or cutesy.
