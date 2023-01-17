@@ -5,4 +5,4 @@ layout: ../layouts/Page.astro
 
 # Contact
 
-[hello@appjeniksaan.nl](mailto:hello@appjeniksaan.nl).
+[hello@appjeniksaan.nl](mailto:hello@appjeniksaan.nl)
