@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --check ."
+    "format": "prettier --check .",
+    "create": "deno run --allow-read --allow-write create.ts"
   },
   "devDependencies": {
     "@astrojs/rss": "2.0.0",

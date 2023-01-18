@@ -8,4 +8,10 @@ To run the development server:
 npm run dev
 ```
 
+To create a new post or linked article:
+
+```bash
+npm run create
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
