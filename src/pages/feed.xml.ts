@@ -28,5 +28,6 @@ export const get = () =>
       description:
         (item as any).frontmatter.description ?? item?.compiledContent() ?? '',
     })),
+    updated: new Date(items[0].frontmatter.pubDate),
     stylesheet: '/rss/styles.xsl',
   })
