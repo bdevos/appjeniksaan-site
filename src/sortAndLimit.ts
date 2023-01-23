@@ -16,7 +16,7 @@ export type Linked = Frontmatter & {
 }
 
 export type Post = Frontmatter & {
-  description: string
+  description?: string
 }
 
 export type MDPost = MarkdownInstance<Post>
