@@ -17,4 +17,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Echo
-        run: echo Last success: ${{ steps.last_success.outputs.LAST_SUCCESS }}
+        run: echo "Last success: ${{ steps.last_success.outputs.LAST_SUCCESS }}"
