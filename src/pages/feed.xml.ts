@@ -25,8 +25,7 @@ export const get = () =>
       link: `${item.url}`,
       title: item.frontmatter.title,
       pubDate: new Date(item.frontmatter.pubDate),
-      description:
-        (item as any).frontmatter.description ?? item?.compiledContent() ?? '',
+      description: item?.compiledContent() ?? '',
     })),
     updated: new Date(items[0].frontmatter.pubDate),
   })
