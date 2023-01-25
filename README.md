@@ -1,4 +1,6 @@
-This should become the appjeniksaan.nl website, for now I'll start small.
+# Appjeniksaan.nl
+
+This repo contains the source for [appjeniksaan.nl](https://appjeniksaan.nl).
 
 ## Getting Started
 
@@ -13,5 +15,3 @@ To create a new post or linked article:
 ```bash
 npm run create
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
