@@ -27,8 +27,9 @@ export const get = async (context: APIContext) => {
       title: item.data.title,
       pubDate: new Date(item.data.pubDate),
       description:
-        item.collection === 'posts' ? item.data.description : undefined,
-      content: sanitizeHtml(parser.render(item.body)),
+        item.collection === 'posts' && item.data.description
+          ? item.data.description
+          : sanitizeHtml(parser.render(item.body)),
     })),
   })
 }
