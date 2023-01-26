@@ -2,7 +2,6 @@
 title: Why You Should Stop Reading News
 href: https://fs.blog/2013/12/stop-reading-news/
 pubDate: 2021-09-25 06:47
-layout: ../../layouts/Linked.astro
 ---
 
 At moments I am addicted to the news. Sometimes I break free for some time, but I always get sucked back in.

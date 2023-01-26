@@ -2,7 +2,6 @@
 title: Circular ProgressViewStyle with value in SwiftUI
 pubDate: 2021-05-03 13:30
 description: Creating a ProgressViewStyle in SwiftUI that shows the progress based on the provided value
-layout: ../../layouts/Post.astro
 ---
 
 The `ProgressView` in SwiftUI comes in two different distinct view styles (plus a default style):

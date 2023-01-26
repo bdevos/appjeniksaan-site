@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import ArchiveItem from '../components/ArchiveItem.astro'
-import MonthHeader from '../components/MonthHeader.astro'
+import { getCollection } from 'astro:content'
+import Layout from '@layouts/Layout.astro'
+import ArchiveItem from '@components/ArchiveItem.astro'
+import MonthHeader from '@components/MonthHeader.astro'
 import { sortAndLimit, splitByMonth } from '../sortAndLimit'
-import type { Linked, Post } from '../sortAndLimit'
 
-const linked = Astro.glob<Linked>('../pages/linked/*.md')
-const posts = Astro.glob<Post>('../pages/posts/*.md')
+const linked = getCollection('linked')
+const posts = getCollection('posts')
 
 const items = splitByMonth(sortAndLimit(await linked, await posts))
 ---

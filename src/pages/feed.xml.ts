@@ -1,31 +1,35 @@
 import rss from '@astrojs/rss'
-import type { MDItem } from '../sortAndLimit'
+import { getCollection } from 'astro:content'
+import sanitizeHtml from 'sanitize-html'
+import MarkdownIt from 'markdown-it'
 import { site } from '../constants'
 
-const sortByDate = (a: any, b: any) =>
-  a.frontmatter.pubDate.localeCompare(b.frontmatter.pubDate) * -1
+import type { LinkedOrPosts } from '../sortAndLimit'
+import type { APIContext } from 'astro'
 
-const postsImportResult = import.meta.glob<MDItem>('./posts/*.md', {
-  eager: true,
-})
-const linkedImportResult = import.meta.glob<MDItem>('./linked/*.md', {
-  eager: true,
-})
-const posts = Object.values(postsImportResult)
-const linked = Object.values(linkedImportResult)
+const parser = new MarkdownIt()
 
-const items = [...posts, ...linked].sort(sortByDate)
+const sortByDate = (a: LinkedOrPosts, b: LinkedOrPosts) =>
+  a.data.pubDate.localeCompare(b.data.pubDate) * -1
 
-export const get = () =>
-  rss({
+export const get = async (context: APIContext) => {
+  const linked = getCollection('linked')
+  const posts = getCollection('posts')
+
+  const items = [...(await linked), ...(await posts)].sort(sortByDate)
+
+  return rss({
     title: site.title,
     description: site.description,
-    site: import.meta.env.SITE,
+    site: context.site?.toString() ?? '',
     items: items.map((item) => ({
-      link: `${item.url}`,
-      title: item.frontmatter.title,
-      pubDate: new Date(item.frontmatter.pubDate),
-      description: item?.compiledContent() ?? '',
+      link: `${item.collection}/${item.slug}`,
+      title: item.data.title,
+      pubDate: new Date(item.data.pubDate),
+      description:
+        item.collection === 'posts' && item.data.description
+          ? item.data.description
+          : sanitizeHtml(parser.render(item.body)),
     })),
-    updated: new Date(items[0].frontmatter.pubDate),
   })
+}

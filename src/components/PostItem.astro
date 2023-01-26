@@ -1,28 +1,19 @@
 ---
-import type { MDPost } from '../sortAndLimit'
+import type { CollectionEntry } from 'astro:content'
 import Date from './Date.astro'
 
-export interface Props {
-  item: MDPost
+interface Props {
+  item: CollectionEntry<'posts'>
 }
 
-const { item } = Astro.props as Props
+const { item } = Astro.props
+const { Content } = await item.render()
 ---
 
 <>
-  <h1><a href={item.url}>{item.frontmatter.title}</a></h1>
-  <Date date={item.frontmatter.pubDate} />
+  <h1><a href={`${item.collection}/${item.slug}`}>{item.data.title}</a></h1>
+  <Date date={item.data.pubDate} />
 
-  {item.frontmatter.description && <p>{item.frontmatter.description}</p>}
-  {
-    !item.frontmatter.description && (
-      <Fragment set:html={item.compiledContent()} />
-    )
-  }
+  {item.data.description && <p>{item.data.description}</p>}
+  {!item.data.description && <Content />}
 </>
-
-<style>
-  h4 > a {
-    text-decoration: none;
-  }
-</style>

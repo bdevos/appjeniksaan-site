@@ -2,7 +2,6 @@
 title: RSS to Email on Github Actions
 href: https://github.com/bdevos/rss-to-email
 pubDate: 2023-01-24 11:01
-layout: ../../layouts/Linked.astro
 ---
 
 Over the past couple of years, I have moved away from using reader apps and now consume most of my tech news through newsletters. This new method of consuming content feels more relaxed and puts a dedicated mailbox at the center of the experience. However, there were a few exceptions, and one of them was reading updates from [Daring Fireball](https://daringfireball.net) through my Twitter feed. But with the recent Twitter situation 💩, I have been avoiding it more and more, but sometimes feel I am missing out.

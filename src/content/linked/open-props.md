@@ -2,7 +2,6 @@
 title: Open Props
 href: https://open-props.style
 pubDate: 2022-08-29 17:52
-layout: ../../layouts/Linked.astro
 ---
 
 Wanted to play around with Open Props from [@argyleink](https://twitter.com/argyleink) in combination with the new [Astro](https://astro.build) setup.

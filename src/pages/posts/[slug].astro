@@ -1,0 +1,27 @@
+---
+import { getEntryBySlug } from 'astro:content'
+import Date from '@components/Date.astro'
+import Layout from '@layouts/Layout.astro'
+
+const { slug } = Astro.params
+
+const entry = await getEntryBySlug('posts', slug!)
+
+if (!entry) return Astro.redirect('/404')
+
+const { Content } = await entry.render()
+---
+
+<Layout
+  description={entry.data.description}
+  title={entry.data.title}
+  type="article"
+  url={`${entry.collection}/${entry.slug}`}
+>
+  <article>
+    <h1>{entry.data.title}</h1>
+    <Date date={entry.data.pubDate} />
+
+    <Content />
+  </article>
+</Layout>

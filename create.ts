@@ -8,7 +8,6 @@ const postData = (title: string, pubDate: string) => `
 title: ${title}
 pubDate: ${pubDate}
 description: ...
-layout: ../../layouts/Post.astro
 ---
 
 `
@@ -18,12 +17,12 @@ const linkedData = (title: string, pubDate: string) => `
 title: ${title}
 href: https://...
 pubDate: ${pubDate}
-layout: ../../layouts/Linked.astro
 ---
 
 `
 
-const path = (slug: string, type: PageType) => `./src/pages/${type}/${slug}.md`
+const path = (slug: string, type: PageType) =>
+  `./src/content/${type}/${slug}.md`
 
 const pageExists = async (slug: string, type: PageType) => {
   try {

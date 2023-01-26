@@ -2,7 +2,6 @@
 title: In Pursuit of Production Minimalism
 href: https://brandur.org/minimalism
 pubDate: 2022-11-03 10:56
-layout: ../../layouts/Linked.astro
 ---
 
 While browsing through some old Google Tasks items, I came across this post from 2017.
