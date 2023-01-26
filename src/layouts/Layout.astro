@@ -148,19 +148,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         width: 100%;
       }
 
-      header {
-        position: sticky;
-        top: 0;
-        padding: 10px 0;
-        text-align: center;
-
-        background: linear-gradient(
-          hsl(var(--gray-0-hsl) / 100%),
-          hsl(var(--gray-0-hsl) / 90%) 60%,
-          hsl(var(--gray-0-hsl) / 0%) 100%
-        );
-      }
-
       footer {
         display: flex;
         flex-direction: column;
@@ -194,13 +181,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
           --link-visited: var(--text1-dark);
         }
 
-        header {
-          background: linear-gradient(
-            hsl(var(--gray-9-hsl) / 100%),
-            hsl(var(--gray-9-hsl) / 90%) 60%,
-            hsl(var(--gray-9-hsl) / 0%)
-          );
-        }
         date {
           color: var(--gray-5);
         }
@@ -209,10 +189,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
       @media (--lg-n-above) {
         .container {
           width: var(--size-lg);
-        }
-
-        header {
-          text-align: start;
         }
 
         footer {
