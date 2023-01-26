@@ -2,7 +2,6 @@
 title: Moved to Astro 🚀
 href: https://astro.build
 pubDate: 2022-08-08 17:23
-layout: ../../layouts/Linked.astro
 ---
 
 Recently I discovered Astro as a new way to build websites that host static content. Since the previous version of this blog was a way for me to try out [Next.js](https://nextjs.org). It was fun to see the differences between the two.

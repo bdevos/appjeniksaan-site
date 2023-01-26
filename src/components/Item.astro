@@ -1,10 +1,10 @@
 ---
-import type { MDItem, MDLinked, MDPost } from '../sortAndLimit'
+import type { CollectionEntry } from 'astro:content'
 import LinkedItem from './LinkedItem.astro'
 import PostItem from './PostItem.astro'
 
-export interface Props {
-  item: MDItem
+interface Props {
+  item: CollectionEntry<'linked'> | CollectionEntry<'posts'>
 }
 
 const { item } = Astro.props as Props
@@ -12,10 +12,10 @@ const { item } = Astro.props as Props
 
 <article>
   {
-    item.type === 'linked' ? (
-      <LinkedItem item={item as MDLinked} />
+    item.collection === 'linked' ? (
+      <LinkedItem item={item} />
     ) : (
-      <PostItem item={item as MDPost} />
+      <PostItem item={item} />
     )
   }
 </article>

@@ -1,57 +1,27 @@
-import type { MarkdownInstance } from 'astro'
+import type { CollectionEntry } from 'astro:content'
 
-type ItemType = 'linked' | 'post'
-
-type InstanceWithType<T> = MarkdownInstance<T> & {
-  type: ItemType
-}
-
-interface Frontmatter {
-  title: string
-  pubDate: string
-}
-
-export type Linked = Frontmatter & {
-  href: string
-}
-
-export type Post = Frontmatter & {
-  description?: string
-}
-
-export type MDPost = MarkdownInstance<Post>
-export type MDLinked = MarkdownInstance<Linked>
-type MDFrontmatter = MarkdownInstance<Frontmatter>
-export type MDItem = InstanceWithType<Linked | Post>
+export type LinkedOrPosts = CollectionEntry<'posts'> | CollectionEntry<'linked'>
 
 export type ItemsByMonth = {
-  [month: string]: MDItem[]
+  [month: string]: LinkedOrPosts[]
 }
 
 const parseMonth = (date: string) => date.substring(0, 7) // Returns the YYYY-MM part
 
-const sortByDate = (a: MDFrontmatter, b: MDFrontmatter) =>
-  a.frontmatter.pubDate.localeCompare(b.frontmatter.pubDate) * -1
-
-const appendType =
-  (type: ItemType) => (item: MarkdownInstance<Linked | Post>) => ({
-    type,
-    ...item,
-  })
+const sortByDate = (a: LinkedOrPosts, b: LinkedOrPosts) =>
+  a.data.pubDate.localeCompare(b.data.pubDate) * -1
 
 export const sortAndLimit = (
-  linked: MDLinked[],
-  posts: MDPost[],
+  linked: CollectionEntry<'linked'>[],
+  posts: CollectionEntry<'posts'>[],
   limit?: number
-): MDItem[] => {
-  return [...linked.map(appendType('linked')), ...posts.map(appendType('post'))]
-    .sort(sortByDate)
-    .slice(0, limit)
+): LinkedOrPosts[] => {
+  return [...linked, ...posts].sort(sortByDate).slice(0, limit)
 }
 
-export const splitByMonth = (items: MDItem[]): ItemsByMonth => {
+export const splitByMonth = (items: LinkedOrPosts[]): ItemsByMonth => {
   return items.reduce((acc, item) => {
-    const month = parseMonth(item.frontmatter.pubDate)
+    const month = parseMonth(item.data.pubDate)
     const items = acc[month] ?? []
 
     return {

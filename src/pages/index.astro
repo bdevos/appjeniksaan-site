@@ -1,14 +1,14 @@
 ---
-import type { Linked, Post } from '../sortAndLimit'
+import { getCollection } from 'astro:content'
 
-import Layout from '../layouts/Layout.astro'
-import About from '../components/About.astro'
-import Item from '../components/Item.astro'
+import Layout from '@layouts/Layout.astro'
+import About from '@components/About.astro'
+import Item from '@components/Item.astro'
 
 import { sortAndLimit } from '../sortAndLimit'
 
-const linked = Astro.glob<Linked>('../pages/linked/*.md')
-const posts = Astro.glob<Post>('../pages/posts/*.md')
+const linked = getCollection('linked')
+const posts = getCollection('posts')
 
 const items = sortAndLimit(await linked, await posts, 10)
 ---

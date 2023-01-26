@@ -1,7 +1,6 @@
 ---
 title: Last successful Github Action workflow
 pubDate: 2023-01-23 06:01
-layout: ../../layouts/Post.astro
 ---
 
 I recently worked on a project where I needed to determine the date and time of the last successful workflow run of a Github Action. After piecing together information from various sources, I decided to share my findings in case it may be helpful for others in the future.

@@ -1,19 +1,21 @@
 ---
-import type { MDItem } from '../sortAndLimit'
+import type { CollectionEntry } from 'astro:content'
 import { dayFormatter } from '../dateFormat'
 
-export interface Props {
-  item: MDItem
+interface Props {
+  item: CollectionEntry<'linked'> | CollectionEntry<'posts'>
 }
 
-const { item } = Astro.props as Props
+const { item } = Astro.props
 
-const day = dayFormatter.format(new Date(item.frontmatter.pubDate))
+const day = dayFormatter.format(new Date(item.data.pubDate))
 ---
 
 <li>
   <span class="day">{day}</span>
-  <h3 class="title"><a href={item.url}>{item.frontmatter.title}</a></h3>
+  <h3 class="title">
+    <a href={`${item.collection}/${item.slug}`}>{item.data.title}</a>
+  </h3>
 </li>
 
 <style>

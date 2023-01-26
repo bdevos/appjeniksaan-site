@@ -1,16 +1,17 @@
 ---
-import type { MDLinked } from '../sortAndLimit'
+import type { CollectionEntry } from 'astro:content'
 import Date from './Date.astro'
 
-export interface Props {
-  item: MDLinked
+interface Props {
+  item: CollectionEntry<'linked'>
 }
 
-const { item } = Astro.props as Props
+const { item } = Astro.props
+const { Content } = await item.render()
 ---
 
 <>
-  <h1><a href={item.frontmatter.href}>{item.frontmatter.title}</a></h1>
-  <Date date={item.frontmatter.pubDate} href={item.url} />
-  <Fragment set:html={item.compiledContent()} />
+  <h1><a href={item.data.href}>{item.data.title}</a></h1>
+  <Date date={item.data.pubDate} href={`${item.collection}/${item.slug}`} />
+  <Content />
 </>
