@@ -20,15 +20,16 @@ const day = dayFormatter.format(new Date(item.data.pubDate))
 
 <style>
   li {
-    display: flex;
+    display: grid;
     align-items: center;
+    grid-template-columns: 2ch 1fr;
+    gap: var(--size-3);
   }
 
   .day {
-    font-style: italic;
-    font-size: var(--font-size-5);
-    min-width: 3ch;
-    text-align: center;
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-7);
+    justify-self: center;
   }
 
   .title {
