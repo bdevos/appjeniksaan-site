@@ -2,6 +2,7 @@
 import { getEntryBySlug } from 'astro:content'
 import Date from '@components/Date.astro'
 import Layout from '@layouts/Layout.astro'
+import LinkedHeader from '@components/LinkedHeader.astro'
 
 const { slug } = Astro.params
 
@@ -22,8 +23,7 @@ const { Content } = await entry.render()
     <h1>
       <a href={entry.data.href}>{entry.data.title}</a>
     </h1>
-    <Date date={entry.data.pubDate} />
-
+    <LinkedHeader href={entry.data.href} pubDate={entry.data.pubDate} />
     <Content />
   </article>
 </Layout>

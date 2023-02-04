@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import Date from './Date.astro'
+import LinkedHeader from '@components/LinkedHeader.astro'
 
 interface Props {
   item: CollectionEntry<'linked'>
@@ -12,6 +12,10 @@ const { Content } = await item.render()
 
 <>
   <h1><a href={item.data.href}>{item.data.title}</a></h1>
-  <Date date={item.data.pubDate} href={`${item.collection}/${item.slug}`} />
+  <LinkedHeader
+    pubDate={item.data.pubDate}
+    localHref={`${item.collection}/${item.slug}`}
+    href={item.data.href}
+  />
   <Content />
 </>

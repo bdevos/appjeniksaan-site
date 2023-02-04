@@ -1,12 +1,12 @@
 ---
-export interface Props {
+interface Props {
   date: string
   href?: string
 }
 
 import { dateFormatter } from '../dateFormat'
 
-const { date: rawDate, href } = Astro.props as Props
+const { date: rawDate, href } = Astro.props
 
 const date = dateFormatter.format(new Date(rawDate))
 ---
@@ -16,7 +16,22 @@ const date = dateFormatter.format(new Date(rawDate))
 </date>
 
 <style>
+  @import 'open-props/media';
+
+  date {
+    display: inline-block;
+    font-size: var(--font-size-3);
+    font-weight: var(--font-weight-2);
+    color: var(--gray-7);
+  }
+
   a {
     text-decoration: none;
+  }
+
+  @media (--OSdark) {
+    date {
+      color: var(--gray-5);
+    }
   }
 </style>

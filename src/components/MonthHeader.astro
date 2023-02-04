@@ -1,11 +1,11 @@
 ---
 import { monthFormatter } from '../dateFormat'
 
-export interface Props {
+interface Props {
   month: string
 }
 
-const { month: input } = Astro.props as Props
+const { month: input } = Astro.props
 
 const [year, month] = input.split('-').map((value) => parseInt(value, 10))
 
