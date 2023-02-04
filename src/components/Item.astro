@@ -1,13 +1,13 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import LinkedItem from './LinkedItem.astro'
-import PostItem from './PostItem.astro'
+import LinkedItem from '@components/LinkedItem.astro'
+import PostItem from '@components/PostItem.astro'
 
 interface Props {
   item: CollectionEntry<'linked'> | CollectionEntry<'posts'>
 }
 
-const { item } = Astro.props as Props
+const { item } = Astro.props
 ---
 
 <article>

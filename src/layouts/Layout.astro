@@ -88,6 +88,16 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         white-space: normal !important;
       }
 
+      :where(blockquote) {
+        margin-block-start: var(--size-4) !important;
+        padding-block: var(--size-2) !important;
+        border-color: var(--gray-4);
+      }
+
+      :where(blockquote) p {
+        margin-block-end: 0 !important;
+      }
+
       h1 {
         font-size: var(--font-size-6);
         margin-block: var(--size-8);
@@ -156,14 +166,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         text-align: center;
       }
 
-      date {
-        display: block;
-        font-size: var(--font-size-3);
-        font-weight: var(--font-weight-2);
-        color: var(--gray-7);
-        margin-block-end: var(--size-4);
-      }
-
       @media (--OSdark) {
         :root {
           --highlight-color: var(--yellow-4);
@@ -182,6 +184,10 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
 
         date {
           color: var(--gray-5);
+        }
+
+        :where(blockquote) {
+          border-color: var(--gray-7);
         }
       }
 
