@@ -17,6 +17,9 @@ export default {
           'sans-serif',
         ],
       },
+      gridTemplateColumns: {
+        archive: '3ch 1fr',
+      },
     },
   },
   plugins: [],

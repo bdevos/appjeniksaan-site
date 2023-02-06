@@ -4,7 +4,11 @@
 
 @layer base {
   h1 {
-    @apply font-black font-sans text-4xl my-8;
+    @apply font-black font-sans text-4xl mt-12 mb-4;
+  }
+
+  hr {
+    @apply my-12 border-t-2 border-neutral-300;
   }
 
   article {
@@ -15,13 +19,29 @@
     @apply mb-0;
   }
 
+  article h2 {
+    @apply font-bold font-sans text-3xl mt-12 mb-4;
+  }
+
+  article h3 {
+    @apply font-bold font-sans text-2xl mt-12 mb-4;
+  }
+
+  article img {
+    @apply mx-auto my-8 rounded drop-shadow max-h-[40rem];
+  }
+
+  article pre {
+    @apply p-4 rounded drop-shadow mt-4 mb-8;
+  }
+
   a {
     /* var(--highlight-color) */
     @apply underline decoration-2 underline-offset-1 decoration-red-500 hover:text-red-500;
   }
 
   p {
-    @apply mb-2 text-lg leading-8 text-zinc-800;
+    @apply mb-4 text-lg leading-8 text-zinc-800;
   }
 
   blockquote {
