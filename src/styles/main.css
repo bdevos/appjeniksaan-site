@@ -37,8 +37,8 @@
 
       header {
         background: linear-gradient(
-          color(display-p3 0 0 0 / 100%),
-          color(display-p3 0 0 0 / 90%) 70%,
+          color(display-p3 0 0 0),
+          color(display-p3 0 0 0 / 70%) 70%,
           color(display-p3 0 0 0 / 0%) 100%
         );
       }
