@@ -45,7 +45,7 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
     />
   </head>
 
-  <body>
+  <body class="leading-7">
     <Header />
 
     <div class="mx-auto max-w-5xl px-4">
@@ -56,9 +56,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
     </div>
 
     <style is:global>
-      /* @import 'open-props/normalize';
-      @import 'open-props/media'; */
-
       /* :root {
         --link: var(--text1-light);
         --link-visited: var(--text1-light);
@@ -70,10 +67,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
           --highlight-color: color(display-p3 0.2 0.73 1);
           --dark-highlight-color: color(display-p3 0.87 1 0.2);
         }
-      }
-
-      body {
-        line-height: var(--font-lineheight-4);
       }
 
       :not(pre) > code {
@@ -98,24 +91,9 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         margin-block: var(--size-4);
       }
 
-      img {
-        display: block;
-        margin: var(--size-4) auto var(--size-6);
-        box-shadow: var(--shadow-3);
-        border-radius: var(--radius-2);
-        max-height: 40rem;
-      }
-
       code {
         font-family: var(--font-mono);
         font-size: var(--font-size-1);
-      }
-
-      pre {
-        padding: var(--size-3);
-        margin-block: var(--size-4) var(--size-6);
-        box-shadow: var(--shadow-3);
-        border-radius: var(--radius-2);
       } */
 
       /* @media (--OSdark) {
