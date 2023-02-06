@@ -10,6 +10,7 @@ import Dots from '@components/Dots.astro'
 import Footer from '@components/Footer.astro'
 import Header from '@components/Header.astro'
 import { site } from '../constants'
+import '../styles/main.css'
 
 const { description, title, type = 'website', url = '' } = Astro.props as Props
 
@@ -17,7 +18,7 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-neutral-100 dark:bg-zinc-800">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -47,7 +48,7 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
   <body>
     <Header />
 
-    <div class="container">
+    <div class="mx-auto max-w-5xl px-4">
       <slot />
 
       <Dots />
@@ -55,10 +56,10 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
     </div>
 
     <style is:global>
-      @import 'open-props/normalize';
-      @import 'open-props/media';
+      /* @import 'open-props/normalize';
+      @import 'open-props/media'; */
 
-      :root {
+      /* :root {
         --link: var(--text1-light);
         --link-visited: var(--text1-light);
         --highlight-color: var(--blue-5);
@@ -73,11 +74,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
 
       body {
         line-height: var(--font-lineheight-4);
-        margin: 0;
-      }
-
-      article {
-        margin-block: var(--size-8);
       }
 
       p,
@@ -105,7 +101,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
       }
 
       h1 {
-        font-size: var(--font-size-6);
         margin-block: var(--size-8);
       }
 
@@ -121,21 +116,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
       h3 {
         font-size: var(--font-size-4);
         margin-block: var(--size-4);
-      }
-
-      a {
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
-        text-underline-offset: 1px;
-        text-decoration-color: var(--highlight-color);
-      }
-
-      a:hover {
-        color: var(--highlight-color);
-      }
-
-      p {
-        margin-block-end: var(--size-2);
       }
 
       img {
@@ -162,17 +142,9 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         margin: 0 auto;
         padding: 0 var(--size-3);
         width: 100%;
-      }
+      } */
 
-      footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: var(--size-10);
-        text-align: center;
-      }
-
-      @media (--OSdark) {
+      /* @media (--OSdark) {
         :root {
           --highlight-color: var(--yellow-4);
         }
@@ -195,32 +167,22 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         blockquote {
           border-color: var(--gray-7);
         }
-      }
+      } */
 
-      @media (--lg-n-above) {
+      /* @media (--lg-n-above) {
         .container {
           width: var(--size-lg);
         }
 
-        footer {
-          display: flex;
-          text-align: start;
-          flex-direction: row-reverse;
-          justify-content: space-between;
-          align-items: flex-end;
-        }
+        
+      } */
 
-        footer ul {
-          margin-block-end: 0;
-        }
-      }
-
-      @media (--md-n-below) {
+      /* @media (--md-n-below) {
         h1 {
           font-size: var(--font-size-5);
           margin-block: var(--size-8);
         }
-      }
+      } */
     </style>
   </body>
 </html>

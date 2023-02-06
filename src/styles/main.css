@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply font-black font-sans text-4xl;
+  }
+
+  article {
+    @apply my-12;
+  }
+
+  a {
+    /* var(--highlight-color) */
+    @apply underline decoration-2 underline-offset-1 decoration-red-500 hover:text-red-500;
+  }
+
+  p {
+    @apply mb-2 text-lg leading-8 text-zinc-800;
+  }
+
+  blockquote {
+    @apply mt-4 py-2 pl-4 border-l-4 border-neutral-300;
+  }
+
+  blockquote p {
+    @apply mb-0;
+  }
+
+  .decoration-skip-ink-none {
+    text-decoration-skip-ink: none;
+  }
+}
