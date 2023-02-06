@@ -1,38 +1,18 @@
-<footer>
+<footer
+  class="flex flex-col items-center mb-20 text-center md:text-start md:flex-row-reverse md:justify-between md:items-end"
+>
   <div>
-    <ul>
-      <li><a href="/archive">Archive</a></li>
-      <li><a href="/privacy">Privacy Policy</a></li>
+    <ul class="mb-12 md:mb-0">
+      <li class="mt-2"><a href="/archive">Archive</a></li>
+      <li class="mt-2">
+        <a href="/privacy">Privacy Policy</a>
+      </li>
     </ul>
   </div>
-  <div class="copy">
+  <div class="text-base">
     Made with <a href="https://astro.build/">Astro</a> 🚀 + Hosted by ▲ <a
       href="https://vercel.com/"
       >Vercel
     </a>
   </div>
 </footer>
-
-<style>
-  p {
-    margin: 0;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-block-end: var(--size-8);
-  }
-
-  li {
-    margin-block-start: var(--size-2);
-  }
-
-  li a {
-    text-decoration-thickness: 1px;
-  }
-
-  .copy {
-    font-size: var(--font-size-1);
-  }
-</style>

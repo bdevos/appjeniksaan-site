@@ -11,27 +11,16 @@ const { date: rawDate, href } = Astro.props
 const date = dateFormatter.format(new Date(rawDate))
 ---
 
-<date>
-  {!!href ? <a href={href}>{date}</a> : date}
+<date
+  class="inline-block text-lg font-extralight text-neutral-700 dark:text-neutral-300"
+>
+  {
+    !!href ? (
+      <a href={href} class="no-underline">
+        {date}
+      </a>
+    ) : (
+      date
+    )
+  }
 </date>
-
-<style>
-  @import 'open-props/media';
-
-  date {
-    display: inline-block;
-    font-size: var(--font-size-3);
-    font-weight: var(--font-weight-2);
-    color: var(--gray-7);
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  @media (--OSdark) {
-    date {
-      color: var(--gray-5);
-    }
-  }
-</style>

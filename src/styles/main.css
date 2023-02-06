@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --highlight-color: #339af0;
+    --background-color-hsl: 0 0% 96%;
+    --background-color: hsl(var(--background-color-hsl));
+  }
+
+  header {
+    background: linear-gradient(
+      hsl(var(--background-color-hsl) / 100%),
+      hsl(var(--background-color-hsl) / 90%) 70%,
+      hsl(var(--background-color-hsl) / 0%) 100%
+    );
+  }
+
+  @supports (color: color(display-p3 1 1 1)) {
+    :root {
+      --highlight-color: color(display-p3 0.2 0.73 1);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --highlight-color: #ffd43b;
+      --background-color-hsl: 0 0% 15%;
+    }
+
+    @supports (color: color(display-p3 1 1 1)) {
+      :root {
+        --highlight-color: color(display-p3 0.87 1 0.2);
+        --background-color: color(display-p3 0 0 0);
+      }
+
+      header {
+        background: linear-gradient(
+          color(display-p3 0 0 0),
+          color(display-p3 0 0 0 / 70%) 70%,
+          color(display-p3 0 0 0 / 0%) 100%
+        );
+      }
+    }
+  }
+
+  h1 {
+    @apply font-black font-sans text-4xl mt-12 mb-4;
+  }
+
+  hr {
+    @apply my-12 border-t-2 border-neutral-300;
+  }
+
+  article {
+    @apply my-12;
+  }
+
+  article h1 {
+    @apply mb-2;
+  }
+
+  article h2 {
+    @apply font-bold font-sans text-3xl mt-12 mb-4;
+  }
+
+  article h3 {
+    @apply font-bold font-sans text-2xl mt-12 mb-4;
+  }
+
+  article img {
+    @apply mx-auto my-8 rounded shadow-md max-h-[40rem];
+  }
+
+  article pre {
+    @apply p-4 rounded shadow-md mt-4 mb-8;
+  }
+
+  a {
+    @apply underline decoration-2 underline-offset-1 decoration-highlight hover:text-highlight;
+  }
+
+  code {
+    @apply font-mono;
+  }
+
+  :not(pre) > code {
+    @apply whitespace-normal py-1 px-1.5 rounded bg-neutral-200 dark:bg-neutral-700 text-base;
+  }
+
+  p {
+    @apply mb-4 text-lg leading-8;
+  }
+
+  blockquote {
+    @apply mt-4 py-2 pl-4 border-l-4 border-neutral-300;
+  }
+
+  blockquote p {
+    @apply mb-0;
+  }
+
+  ol {
+    @apply list-decimal text-lg leading-8 my-8 ml-12;
+  }
+
+  .decoration-skip-ink-none {
+    text-decoration-skip-ink: none;
+  }
+}

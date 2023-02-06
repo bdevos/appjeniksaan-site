@@ -2,18 +2,35 @@
 import { site } from '../constants'
 ---
 
-<header>
-  <div class="container header">
-    <a href="/">
-      <span id="logo" class="logo">
-        <span>{site.title}</span>
-        <span aria-hidden="true" class="overlay">
-          <span class="scrollable">{`${site.title} ${site.title}`}</span>
-        </span>
+<header class="sticky top-0 py-2">
+  <div
+    class="mx-auto max-w-5xl px-4 flex items-center justify-center md:justify-between"
+  >
+    <a
+      id="logo"
+      href="/"
+      class="relative inline-block no-underline text-xl font-normal hover:text-highlight underline-offset-1"
+    >
+      <span>{site.title}</span>
+      <span
+        aria-hidden="true"
+        class="absolute left-0 w-full h-[125%] overflow-hidden whitespace-nowrap z-10 underline decoration-highlight decoration-wavy decoration-skip-ink-none text-black/0"
+      >
+        <span class="relative" style={{ left: 'var(--offset, 0%)' }}
+          >{`${site.title} ${site.title}`}</span
+        >
       </span>
     </a>
-    <a href="https://github.com/bdevos/appjeniksaan-site" class="github">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96" role="img">
+    <a
+      href="https://github.com/bdevos/appjeniksaan-site"
+      class="hidden md:block"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 98 96"
+        role="img"
+        class="h-6 w-[1.5625rem] fill-neutral-800 dark:fill-white hover:fill-highlight"
+      >
         <title>Github logo</title>
         <path
           fill-rule="evenodd"
@@ -37,102 +54,3 @@ import { site } from '../constants'
     }
   })
 </script>
-
-<style>
-  @import 'open-props/media';
-
-  header {
-    position: sticky;
-    top: 0;
-    padding: var(--size-2) 0;
-
-    background: linear-gradient(
-      hsl(var(--gray-0-hsl) / 100%),
-      hsl(var(--gray-0-hsl) / 90%) 70%,
-      hsl(var(--gray-0-hsl) / 0%) 100%
-    );
-  }
-
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  a {
-    text-underline-offset: 1px;
-  }
-
-  .logo {
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    font-size: var(--font-size-3);
-    font-weight: var(--font-weight-4);
-
-    --offset: 0%;
-  }
-
-  .logo:hover {
-    color: var(--highlight-color);
-  }
-
-  .logo .overlay {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 125%;
-    overflow: hidden;
-    white-space: nowrap;
-    z-index: 1;
-    text-decoration: underline;
-    text-decoration-color: var(--highlight-color);
-    text-decoration-style: wavy;
-    text-decoration-skip-ink: none;
-    color: rgba(0, 0, 0, 0);
-  }
-
-  .logo .scrollable {
-    position: relative;
-    left: var(--offset);
-  }
-
-  .github {
-    display: none;
-  }
-
-  .github svg {
-    height: 1.5rem;
-    width: 1.5625rem;
-    box-shadow: none;
-    fill: var(--text-1);
-  }
-
-  .github svg:hover {
-    fill: var(--highlight-color);
-  }
-
-  @media (--OSdark) {
-    .logo {
-      color: white;
-    }
-
-    header {
-      background: linear-gradient(
-        hsl(var(--gray-9-hsl) / 100%),
-        hsl(var(--gray-9-hsl) / 90%) 70%,
-        hsl(var(--gray-9-hsl) / 0%)
-      );
-    }
-  }
-
-  @media (--lg-n-above) {
-    .header {
-      justify-content: space-between;
-    }
-
-    .github {
-      display: block;
-    }
-  }
-</style>

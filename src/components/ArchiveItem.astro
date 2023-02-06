@@ -11,30 +11,9 @@ const { item } = Astro.props
 const day = dayFormatter.format(new Date(item.data.pubDate))
 ---
 
-<li>
-  <span class="day">{day}</span>
-  <h3 class="title">
+<li class="my-2 grid grid-cols-archive items-center gap-4">
+  <span class="text-2xl font-bold justify-self-center">{day}</span>
+  <h3 class="text-lg">
     <a href={`${item.collection}/${item.slug}`}>{item.data.title}</a>
   </h3>
 </li>
-
-<style>
-  li {
-    display: grid;
-    align-items: center;
-    grid-template-columns: 2ch 1fr;
-    gap: var(--size-3);
-  }
-
-  .day {
-    font-size: var(--font-size-4);
-    font-weight: var(--font-weight-7);
-    justify-self: center;
-  }
-
-  .title {
-    font-size: var(--font-size-2);
-    font-weight: var(--font-weight-4);
-    margin-block: var(--size-2);
-  }
-</style>
