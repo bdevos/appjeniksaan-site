@@ -2,21 +2,19 @@
 import { site } from '../constants'
 ---
 
-<header
-  class="sticky top-0 pt-2 pb-2 bg-gradient-to-b from-neutral-100 via-neutral-100"
->
+<header class="sticky top-0 py-2">
   <div
     class="mx-auto max-w-5xl px-4 flex items-center justify-center md:justify-between"
   >
     <a
       id="logo"
       href="/"
-      class="relative inline-block no-underline text-xl font-normal hover:text-red-500 underline-offset-1"
+      class="relative inline-block no-underline text-xl font-normal hover:text-highlight underline-offset-1"
     >
       <span>{site.title}</span>
       <span
         aria-hidden="true"
-        class="absolute left-0 w-full h-[125%] overflow-hidden whitespace-nowrap z-10 underline decoration-red-500 decoration-wavy decoration-skip-ink-none text-black/0"
+        class="absolute left-0 w-full h-[125%] overflow-hidden whitespace-nowrap z-10 underline decoration-highlight decoration-wavy decoration-skip-ink-none text-black/0"
       >
         <span class="relative" style={{ left: 'var(--offset, 0%)' }}
           >{`${site.title} ${site.title}`}</span
@@ -31,7 +29,7 @@ import { site } from '../constants'
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 98 96"
         role="img"
-        class="h-6 w-[1.5625rem] fill-red-500 hover:fill-red-700"
+        class="h-6 w-[1.5625rem] fill-neutral-800 dark:fill-white hover:fill-highlight"
       >
         <title>Github logo</title>
         <path
@@ -56,27 +54,3 @@ import { site } from '../constants'
     }
   })
 </script>
-
-<style>
-  /* header {
-    background: linear-gradient(
-      hsl(var(--gray-0-hsl) / 100%),
-      hsl(var(--gray-0-hsl) / 90%) 70%,
-      hsl(var(--gray-0-hsl) / 0%) 100%
-    );
-  } */
-  /*
-  @media (--OSdark) {
-    .logo {
-      color: white;
-    }
-
-    header {
-      background: linear-gradient(
-        hsl(var(--gray-9-hsl) / 100%),
-        hsl(var(--gray-9-hsl) / 90%) 70%,
-        hsl(var(--gray-9-hsl) / 0%)
-      );
-    }
-  } */
-</style>

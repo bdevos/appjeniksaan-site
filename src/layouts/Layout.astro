@@ -18,7 +18,10 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-neutral-100 dark:bg-zinc-800">
+<html
+  lang="en"
+  class="bg-neutral-100 dark:bg-background text-neutral-800 dark:text-white"
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -60,13 +63,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         --link: var(--text1-light);
         --link-visited: var(--text1-light);
         --highlight-color: var(--blue-5);
-      }
-
-      @supports (color: color(display-p3 1 1 1)) {
-        :root {
-          --highlight-color: color(display-p3 0.2 0.73 1);
-          --dark-highlight-color: color(display-p3 0.87 1 0.2);
-        }
       }
 
       :not(pre) > code {
