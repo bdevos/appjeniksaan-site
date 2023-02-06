@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         highlight: 'var(--highlight-color)',
-        background: 'hsl(var(--background-color-hsl))',
+        background: 'var(--background-color)',
       },
       fontFamily: {
         display: ['Londrina Solid', 'sans-serif'],

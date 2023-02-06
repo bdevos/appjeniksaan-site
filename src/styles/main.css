@@ -6,6 +6,7 @@
   :root {
     --highlight-color: #339af0;
     --background-color-hsl: 0 0% 96%;
+    --background-color: hsl(var(--background-color-hsl));
   }
 
   header {
