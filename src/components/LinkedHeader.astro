@@ -16,22 +16,12 @@ const domain = extractDomain(href)
 
 <Subheading>
   <Date date={pubDate} href={localHref} />
-  {domain && <span> &mdash; {domain}</span>}
+  {
+    domain && (
+      <span class="italic font-extralight text-neutral-700 dark:text-neutral-500">
+        {' '}
+        &mdash; {domain}
+      </span>
+    )
+  }
 </Subheading>
-
-<style>
-  /* @import 'open-props/media'; */
-
-  span {
-    font-size: var(--font-size-1);
-    font-weight: var(--font-weight-2);
-    color: var(--gray-7);
-    font-style: italic;
-  }
-
-  @media (--OSdark) {
-    span {
-      color: var(--gray-5);
-    }
-  }
-</style>
