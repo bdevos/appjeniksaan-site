@@ -76,28 +76,8 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         line-height: var(--font-lineheight-4);
       }
 
-      p,
-      h1,
-      h2,
-      h3,
-      li,
-      pre,
-      blockquote {
-        max-inline-size: none;
-      }
-
       :not(pre) > code {
         white-space: normal;
-      }
-
-      blockquote {
-        margin-block-start: var(--size-4);
-        padding-block: var(--size-2);
-        border-color: var(--gray-4);
-      }
-
-      blockquote p {
-        margin-block-end: 0;
       }
 
       h1 {
@@ -136,12 +116,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
         margin-block: var(--size-4) var(--size-6);
         box-shadow: var(--shadow-3);
         border-radius: var(--radius-2);
-      }
-
-      .container {
-        margin: 0 auto;
-        padding: 0 var(--size-3);
-        width: 100%;
       } */
 
       /* @media (--OSdark) {
@@ -159,22 +133,6 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
           --link: var(--text1-dark);
           --link-visited: var(--text1-dark);
         }
-
-        date {
-          color: var(--gray-5);
-        }
-
-        blockquote {
-          border-color: var(--gray-7);
-        }
-      } */
-
-      /* @media (--lg-n-above) {
-        .container {
-          width: var(--size-lg);
-        }
-
-        
       } */
 
       /* @media (--md-n-below) {

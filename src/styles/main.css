@@ -4,11 +4,15 @@
 
 @layer base {
   h1 {
-    @apply font-black font-sans text-4xl;
+    @apply font-black font-sans text-4xl my-8;
   }
 
   article {
     @apply my-12;
+  }
+
+  article h1 {
+    @apply mb-0;
   }
 
   a {
@@ -26,6 +30,10 @@
 
   blockquote p {
     @apply mb-0;
+  }
+
+  ol {
+    @apply list-decimal text-lg leading-8 text-zinc-800 my-8 ml-12;
   }
 
   .decoration-skip-ink-none {
