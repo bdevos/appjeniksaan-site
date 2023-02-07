@@ -11,9 +11,7 @@ const { date: rawDate, href } = Astro.props
 const date = dateFormatter.format(new Date(rawDate))
 ---
 
-<date
-  class="inline-block text-lg font-extralight text-neutral-700 dark:text-neutral-300"
->
+<date class="inline-block font-light text-stone-700 dark:text-stone-300">
   {
     !!href ? (
       <a href={href} class="no-underline">

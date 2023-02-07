@@ -9,7 +9,9 @@ export default {
       },
       fontFamily: {
         display: ['Londrina Solid', 'sans-serif'],
+        shadow: ['Londrina Shadow', 'sans-serif'],
         sans: [
+          'Satoshi',
           'system-ui',
           '-apple-system',
           'Segoe UI',
