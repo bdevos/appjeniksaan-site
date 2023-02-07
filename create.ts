@@ -3,8 +3,7 @@ import paramCase from 'https://deno.land/x/case/paramCase.ts'
 
 type PageType = 'linked' | 'posts'
 
-const postData = (title: string, pubDate: string) => `
----
+const postData = (title: string, pubDate: string) => `---
 title: ${title}
 pubDate: ${pubDate}
 description: ...
@@ -12,8 +11,7 @@ description: ...
 
 `
 
-const linkedData = (title: string, pubDate: string) => `
----
+const linkedData = (title: string, pubDate: string) => `---
 title: ${title}
 href: https://...
 pubDate: ${pubDate}
