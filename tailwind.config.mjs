@@ -7,12 +7,9 @@ export default {
         highlight: 'var(--highlight-color)',
         background: 'var(--background-color)',
       },
-      dropShadow: {
-        flat: '0 1px 0 rgba(0, 0, 0, 0.5)',
-      },
       fontFamily: {
         display: ['Londrina Solid', 'sans-serif'],
-        shadow: ['Londrina Shadow', 'Londrina Solid', 'sans-serif'],
+        shadow: ['Londrina Shadow', 'sans-serif'],
         sans: [
           'Satoshi',
           'system-ui',
@@ -42,15 +39,5 @@ export default {
       },
     },
   },
-  // preflight: {
-  //   '@font-face': [
-  //     {
-  //       fontFamily: 'Londrina Solid',
-  //       fontWeight: '900',
-  //       src: `url('/fonts/londrinasolid-black-webfont.woff2') format('woff2'),
-  //             url('/fonts/londrinasolid-black-webfont.woff') format('woff')`,
-  //     },
-  //   ],
-  // },
   plugins: [],
 }
