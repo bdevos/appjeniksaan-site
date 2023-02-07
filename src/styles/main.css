@@ -107,7 +107,6 @@ header {
   @supports (color: color(display-p3 1 1 1)) {
     :root {
       --highlight-color: color(display-p3 0.87 1 0.2);
-      --background-color: color(display-p3 0 0 0);
     }
   }
 }
