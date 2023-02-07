@@ -20,7 +20,10 @@ const domain = extractDomain(href)
     domain && (
       <span class="font-light text-stone-600 dark:text-stone-400">
         {' '}
-        &mdash; {domain}
+        &mdash;
+        <a href={href} class="font-display no-underline">
+          {domain}
+        </a>
       </span>
     )
   }
