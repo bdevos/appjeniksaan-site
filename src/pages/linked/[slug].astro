@@ -19,7 +19,7 @@ const { Content } = await entry.render()
   url={`${entry.collection}/${entry.slug}`}
 >
   <article>
-    <h1 class="text-4xl">
+    <h1>
       <a href={entry.data.href}>{entry.data.title}</a>
     </h1>
     <LinkedHeader href={entry.data.href} pubDate={entry.data.pubDate} />

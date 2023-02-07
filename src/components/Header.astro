@@ -9,12 +9,12 @@ import { site } from '../constants'
     <a
       id="logo"
       href="/"
-      class="relative inline-block no-underline text-xl font-normal hover:text-highlight underline-offset-1"
+      class="font-display relative inline-block no-underline text-2xl font-light hover:text-highlight underline-offset-1 text-stone-700 dark:text-stone-100"
     >
       <span>{site.title}</span>
       <span
         aria-hidden="true"
-        class="absolute left-0 w-full h-[125%] overflow-hidden whitespace-nowrap z-10 underline decoration-highlight decoration-wavy decoration-skip-ink-none text-black/0"
+        class="absolute left-0 w-full h-[125%] overflow-hidden whitespace-nowrap z-10 underline decoration-highlight decoration-wavy decoration-skip-ink-none text-transparent"
       >
         <span class="relative" style={{ left: 'var(--offset, 0%)' }}
           >{`${site.title} ${site.title}`}</span
@@ -29,7 +29,7 @@ import { site } from '../constants'
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 98 96"
         role="img"
-        class="h-6 w-[1.5625rem] fill-neutral-800 dark:fill-white hover:fill-highlight"
+        class="h-6 w-[1.5625rem] fill-stone-700 dark:fill-stone-100 hover:fill-highlight"
       >
         <title>Github logo</title>
         <path
