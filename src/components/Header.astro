@@ -2,7 +2,7 @@
 import { site } from '../constants'
 ---
 
-<header class="sticky top-0 py-2">
+<header class="sticky top-0 py-2 bg-gradient-to-b from-background">
   <div
     class="mx-auto max-w-5xl px-4 flex items-center justify-center md:justify-between"
   >
@@ -11,7 +11,7 @@ import { site } from '../constants'
       href="/"
       class="font-display relative inline-block no-underline text-2xl font-light hover:text-highlight underline-offset-1 text-stone-700 dark:text-stone-100"
     >
-      <span>{site.title}</span>
+      <span class="drop-shadow-header">{site.title}</span>
       <span
         aria-hidden="true"
         class="absolute left-0 w-full h-[125%] overflow-hidden whitespace-nowrap z-10 underline decoration-highlight decoration-wavy decoration-skip-ink-none text-transparent"
@@ -29,7 +29,7 @@ import { site } from '../constants'
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 98 96"
         role="img"
-        class="h-6 w-[1.5625rem] fill-stone-700 dark:fill-stone-100 hover:fill-highlight"
+        class="h-6 w-[1.5625rem] fill-stone-700 dark:fill-stone-100 hover:fill-highlight drop-shadow-header"
       >
         <title>Github logo</title>
         <path

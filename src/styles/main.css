@@ -80,16 +80,7 @@
 
 :root {
   --highlight-color: #339af0;
-  --background-color-hsl: 0 0% 96%;
-  --background-color: hsl(var(--background-color-hsl));
-}
-
-header {
-  background: linear-gradient(
-    hsl(var(--background-color-hsl) / 100%),
-    hsl(var(--background-color-hsl) / 90%) 70%,
-    hsl(var(--background-color-hsl) / 0%) 100%
-  );
+  --background-color: #f5f5f4;
 }
 
 @supports (color: color(display-p3 1 1 1)) {
@@ -101,21 +92,13 @@ header {
 @media (prefers-color-scheme: dark) {
   :root {
     --highlight-color: #ffd43b;
-    --background-color-hsl: 0 0% 15%;
+    --background-color: #262626;
   }
 
   @supports (color: color(display-p3 1 1 1)) {
     :root {
       --highlight-color: color(display-p3 0.87 1 0.2);
       --background-color: color(display-p3 0 0 0);
-    }
-
-    header {
-      background: linear-gradient(
-        color(display-p3 0 0 0),
-        color(display-p3 0 0 0 / 70%) 70%,
-        color(display-p3 0 0 0 / 0%) 100%
-      );
     }
   }
 }
