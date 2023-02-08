@@ -1,26 +1,12 @@
 ---
-import { site } from '../constants'
+import Logo from './Logo.astro'
 ---
 
 <header class="sticky top-0 py-2 bg-gradient-to-b from-background">
   <div
     class="mx-auto max-w-5xl px-4 flex items-center justify-center md:justify-between"
   >
-    <a
-      id="logo"
-      href="/"
-      class="font-display relative inline-block no-underline text-2xl font-light hover:text-highlight underline-offset-1 text-stone-700 dark:text-stone-100"
-    >
-      <span class="drop-shadow-header">{site.title}</span>
-      <span
-        aria-hidden="true"
-        class="absolute left-0 w-full h-[125%] overflow-hidden whitespace-nowrap z-10 underline decoration-highlight decoration-wavy decoration-skip-ink-none text-transparent"
-      >
-        <span class="relative" style={{ left: 'var(--offset, 0%)' }}
-          >{`${site.title} ${site.title}`}</span
-        >
-      </span>
-    </a>
+    <Logo />
     <a
       href="https://github.com/bdevos/appjeniksaan-site"
       class="hidden md:block"
@@ -40,17 +26,3 @@ import { site } from '../constants'
     </a>
   </div>
 </header>
-
-<script>
-  window.addEventListener('scroll', () => {
-    const offset = window.pageYOffset
-    const element = document.getElementById('logo')
-
-    if (element) {
-      element.style.setProperty(
-        '--offset',
-        `${offset <= -100 ? -200 : (offset % 100) - 100}%`
-      )
-    }
-  })
-</script>
