@@ -17,16 +17,4 @@ import { site } from '../constants'
   </span>
 </a>
 
-<script>
-  window.addEventListener('scroll', () => {
-    const offset = window.pageYOffset
-    const element = document.getElementById('wavy')
-
-    if (element) {
-      element.style.setProperty(
-        '--offset',
-        `${offset <= -100 ? -200 : (offset % 100) - 100}%`
-      )
-    }
-  })
-</script>
+<script src="../scripts/wavyOffset.ts"></script>
