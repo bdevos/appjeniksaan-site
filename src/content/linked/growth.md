@@ -1,5 +1,5 @@
 ---
-title: Growth
+title: Growth is a 🔥
 href: https://ez.substack.com/p/the-rot-economy
 pubDate: 2023-02-10 08:39
 ---
