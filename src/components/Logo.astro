@@ -4,29 +4,38 @@ import { site } from '../constants'
 
 <a
   href="/"
-  class="font-display relative inline-block no-underline text-2xl font-light hover:text-highlight underline-offset-1 text-stone-700 dark:text-stone-100"
+  class="font-display hover:text-highlight relative inline-block text-2xl font-light text-stone-700 no-underline underline-offset-1 dark:text-stone-100"
 >
   <span class="drop-shadow-header">{site.title}</span>
   <span
     aria-hidden="true"
-    class="absolute left-0 w-full h-[125%] overflow-hidden whitespace-nowrap z-10 underline decoration-highlight decoration-wavy decoration-skip-ink-none text-transparent"
+    class="decoration-highlight decoration-skip-ink-none absolute left-0 z-10 h-[125%] w-full overflow-hidden whitespace-nowrap text-transparent underline decoration-wavy"
   >
     <span id="wavy" class="relative" style={{ left: 'var(--offset, 0%)' }}
-      >{`${site.title} ${site.title}`}</span
-    >
+    ></span>
   </span>
 </a>
 
 <script>
   window.addEventListener('scroll', () => {
     const offset = window.pageYOffset
-    const element = document.getElementById('wavy')
+    const wavy = document.getElementById('wavy')
 
-    if (element) {
-      element.style.setProperty(
+    if (wavy) {
+      wavy.style.setProperty(
         '--offset',
         `${offset <= -100 ? -200 : (offset % 100) - 100}%`
       )
+    }
+  })
+
+  window.addEventListener('load', () => {
+    const wavy = document.getElementById('wavy')
+    const title = document.querySelector('a[href="/"] > span:first-of-type')
+
+    if (wavy && title) {
+      const site = (title.textContent || '').trim()
+      wavy.innerText = `${site} ${site}`
     }
   })
 </script>
