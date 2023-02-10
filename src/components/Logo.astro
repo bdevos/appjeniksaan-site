@@ -17,11 +17,12 @@ import { site } from '../constants'
 </a>
 
 <script>
-  window.addEventListener('scroll', () => {
-    const offset = window.pageYOffset
-    const wavy = document.getElementById('wavy')
+  const wavy = document.getElementById('wavy')
 
+  window.addEventListener('scroll', () => {
     if (wavy) {
+      const offset = window.pageYOffset
+
       wavy.style.setProperty(
         '--offset',
         `${offset <= -100 ? -200 : (offset % 100) - 100}%`
@@ -30,11 +31,10 @@ import { site } from '../constants'
   })
 
   window.addEventListener('load', () => {
-    const wavy = document.getElementById('wavy')
-    const title = document.querySelector('a[href="/"] > span:first-of-type')
+    if (wavy) {
+      const title = document.querySelector('a[href="/"] > span:first-of-type')
+      const site = title?.textContent?.trim() ?? ''
 
-    if (wavy && title) {
-      const site = (title.textContent || '').trim()
       wavy.innerText = `${site} ${site}`
     }
   })
