@@ -15,16 +15,16 @@ const domain = extractDomain(href)
 ---
 
 <Subheading>
-  <Date date={pubDate} href={localHref} />
   {
     domain && (
       <span class="font-light text-stone-600 dark:text-stone-400">
-        {' '}
-        &mdash;
+        Source:
         <a href={href} class="font-display no-underline">
           {domain}
         </a>
+        &mdash;
       </span>
     )
   }
+  <Date date={pubDate} href={localHref} />
 </Subheading>
