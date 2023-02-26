@@ -1,3 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Date from '@components/Date.astro'
+import { extractDomain } from 'src/extractDomain'
+
+interface Props {
+  item: CollectionEntry<'linked'> | CollectionEntry<'posts'>
+}
+
+const { item } = Astro.props
+---
+
 <div class="mb-4">
-  <slot />
+  {
+    item.collection === 'linked' && (
+      <span class="font-light text-stone-600 dark:text-stone-400">
+        Source:
+        <a href={item.data.href} class="font-display no-underline">
+          {extractDomain(item.data.href)}
+        </a>
+        &mdash;
+      </span>
+    )
+  }
+
+  <Date item={item} />
 </div>

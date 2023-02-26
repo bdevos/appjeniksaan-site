@@ -1,6 +1,5 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import Date from '@components/Date.astro'
 import Subheading from '@components/Subheading.astro'
 
 interface Props {
@@ -9,15 +8,11 @@ interface Props {
 
 const { item } = Astro.props
 const { Content } = await item.render()
-
-const href = `${item.collection}/${item.slug}`
 ---
 
 <>
-  <h1><a href={href}>{item.data.title}</a></h1>
-  <Subheading>
-    <Date date={item.data.pubDate} href={href} />
-  </Subheading>
+  <h1><a href={`${item.collection}/${item.slug}`}>{item.data.title}</a></h1>
+  <Subheading item={item} />
 
   {item.data.description && <p>{item.data.description}</p>}
   {!item.data.description && <Content />}

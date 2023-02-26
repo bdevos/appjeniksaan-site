@@ -1,6 +1,5 @@
 ---
 import { getEntryBySlug } from 'astro:content'
-import Date from '@components/Date.astro'
 import Layout from '@layouts/Layout.astro'
 import Subheading from '@components/Subheading.astro'
 
@@ -21,9 +20,7 @@ const { Content } = await entry.render()
 >
   <article>
     <h1>{entry.data.title}</h1>
-    <Subheading>
-      <Date date={entry.data.pubDate} />
-    </Subheading>
+    <Subheading item={entry} />
 
     <Content />
   </article>
