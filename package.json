@@ -14,7 +14,7 @@
   "devDependencies": {
     "@astrojs/rss": "2.2.0",
     "@astrojs/tailwind": "3.1.0",
-    "@astrojs/vercel": "3.1.4",
+    "@astrojs/vercel": "3.2.0",
     "@types/markdown-it": "12.2.3",
     "@types/sanitize-html": "2.8.1",
     "astro": "2.0.18",
