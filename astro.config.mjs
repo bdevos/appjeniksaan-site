@@ -4,6 +4,9 @@ import tailwind from '@astrojs/tailwind'
 
 // https://astro.build/config
 export default defineConfig({
+  experimental: {
+    assets: false,
+  },
   output: 'server',
   adapter: vercel(),
   markdown: {
