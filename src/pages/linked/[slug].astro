@@ -1,7 +1,13 @@
 ---
-import { getEntryBySlug } from 'astro:content'
+import { getCollection, getEntryBySlug } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import Subheading from '@components/Subheading.astro'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('linked')
+
+  return posts.map(({ slug }) => ({ params: { slug } }))
+}
 
 const { slug } = Astro.params
 
