@@ -3,6 +3,7 @@
   src: url('/fonts/LondrinaSolid-Light.woff2') format('woff2'),
     url('/fonts/LondrinaSolid-Light.woff') format('woff');
   font-weight: 300;
+  font-display: block;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   src: url('/fonts/LondrinaShadow-Regular.woff2') format('woff2'),
     url('/fonts/LondrinaShadow-Regular.woff') format('woff');
   font-weight: 400;
+  font-display: block;
 }
 
 @font-face {
