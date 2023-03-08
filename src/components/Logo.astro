@@ -52,7 +52,7 @@ import { site } from '../constants'
         wavy.innerText = wavy.innerText + titleArray.shift()
 
         if (titleArray.length > 0) {
-          setTimeout(appendTitle, 5)
+          setTimeout(appendTitle, 25)
         } else {
           scrollEventListener(reducedMotion.matches)
         }
