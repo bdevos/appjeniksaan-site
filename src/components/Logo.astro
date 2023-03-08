@@ -9,10 +9,12 @@ import { site } from '../constants'
   <span class="drop-shadow-header">{site.title}</span>
   <span
     aria-hidden="true"
-    class="decoration-highlight decoration-skip-ink-none absolute left-0 z-10 h-[125%] w-full overflow-hidden whitespace-nowrap text-transparent underline decoration-wavy"
+    class="absolute left-0 z-10 h-[125%] w-full overflow-hidden"
   >
-    <span id="wavy" class="relative" style={{ left: 'var(--offset, 0%)' }}
-    ></span>
+    <span
+      id="wavy"
+      class="decoration-highlight decoration-skip-ink-none relative whitespace-nowrap text-transparent underline decoration-wavy"
+      style={{ left: 'var(--offset, 0%)' }}></span>
   </span>
 </a>
 
