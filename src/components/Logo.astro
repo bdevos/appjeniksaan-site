@@ -46,12 +46,19 @@ import { site } from '../constants'
     if (wavy) {
       const title = document.querySelector('a[href="/"] > span:first-of-type')
       const site = title?.textContent?.trim() ?? ''
+      const titleArray = `${site} ${site}`.split('')
 
-      setTimeout(() => {
-        wavy.innerText = `${site} ${site}`
+      const appendTitle = () => {
+        wavy.innerText = wavy.innerText + titleArray.shift()
 
-        scrollEventListener(reducedMotion.matches)
-      }, 0)
+        if (titleArray.length > 0) {
+          setTimeout(appendTitle, 5)
+        } else {
+          scrollEventListener(reducedMotion.matches)
+        }
+      }
+
+      appendTitle()
     }
   })
 </script>
