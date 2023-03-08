@@ -19,7 +19,7 @@ import { site } from '../constants'
 <script>
   const wavy = document.getElementById('wavy')
 
-  window.addEventListener('scroll', () => {
+  const onScroll = () => {
     if (wavy) {
       const offset = window.pageYOffset
 
@@ -28,7 +28,17 @@ import { site } from '../constants'
         `${offset <= -100 ? -200 : (offset % 100) - 100}%`
       )
     }
-  })
+  }
+
+  const scrollEventListener = (hasReducedMotion: boolean) =>
+    hasReducedMotion
+      ? window.removeEventListener('scroll', onScroll)
+      : window.addEventListener('scroll', onScroll)
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+  reducedMotion.addEventListener('change', ({ matches: hasReducedMotion }) =>
+    scrollEventListener(hasReducedMotion)
+  )
 
   window.addEventListener('load', () => {
     if (wavy) {
@@ -36,6 +46,8 @@ import { site } from '../constants'
       const site = title?.textContent?.trim() ?? ''
 
       wavy.innerText = `${site} ${site}`
+
+      scrollEventListener(reducedMotion.matches)
     }
   })
 </script>
