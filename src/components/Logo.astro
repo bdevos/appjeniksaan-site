@@ -47,9 +47,11 @@ import { site } from '../constants'
       const title = document.querySelector('a[href="/"] > span:first-of-type')
       const site = title?.textContent?.trim() ?? ''
 
-      wavy.innerText = `${site} ${site}`
+      setTimeout(() => {
+        wavy.innerText = `${site} ${site}`
 
-      scrollEventListener(reducedMotion.matches)
+        scrollEventListener(reducedMotion.matches)
+      }, 1000)
     }
   })
 </script>
