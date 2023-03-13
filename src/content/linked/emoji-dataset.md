@@ -11,12 +11,9 @@ The format of the file is quite minimal due to the overhead of the JSON format a
 ```json
 {
     "g": "Smileys & Emotion", // Group Name
-    "s": [
-      {
-        "s": "face-smiling", // Subgroup Name
-        "e": [
-          ["😀", "grinning face"],
-          ["😃", "grinning face with big eyes"],
+    "e": [
+        ["😀", "grinning face"],
+        ["😃", "grinning face with big eyes"],
 ```
 
 The parser bundles the base emoji with the skin tone variants which are included in the following format:
