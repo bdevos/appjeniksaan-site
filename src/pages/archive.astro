@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import ArchiveItem from '@components/ArchiveItem.astro'
 import MonthHeader from '@components/MonthHeader.astro'
-import { sortAndLimit, splitByMonth } from '../sortAndLimit'
+import { sortAndLimit, splitByMonth } from '@src/sortAndLimit'
 
 const linked = getCollection('linked')
 const posts = getCollection('posts')

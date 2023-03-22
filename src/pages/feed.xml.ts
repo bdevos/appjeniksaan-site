@@ -2,9 +2,9 @@ import rss from '@astrojs/rss'
 import { getCollection } from 'astro:content'
 import sanitizeHtml from 'sanitize-html'
 import MarkdownIt from 'markdown-it'
-import { site } from '../constants'
+import { site } from '@src/constants'
 
-import type { LinkedOrPosts } from '../sortAndLimit'
+import type { LinkedOrPosts } from '@src/sortAndLimit'
 import type { APIContext } from 'astro'
 
 const parser = new MarkdownIt()
