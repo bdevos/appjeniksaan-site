@@ -44,6 +44,9 @@ export default {
       gridTemplateColumns: {
         archive: '3ch 1fr',
       },
+      transitionProperty: {
+        underline: 'text-underline-offset',
+      },
     },
   },
   plugins: [],
