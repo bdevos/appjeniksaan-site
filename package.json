@@ -17,7 +17,7 @@
     "@astrojs/vercel": "3.2.3",
     "@types/markdown-it": "12.2.3",
     "@types/sanitize-html": "2.9.0",
-    "astro": "2.2.1",
+    "astro": "2.2.2",
     "markdown-it": "13.0.1",
     "prettier": "2.8.7",
     "prettier-plugin-astro": "0.8.0",
