@@ -5,7 +5,9 @@ import tailwind from '@astrojs/tailwind'
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: vercel(),
+  adapter: vercel({
+    analytics: false,
+  }),
   markdown: {
     shikiConfig: {
       theme: 'vitesse-dark',
