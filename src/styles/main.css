@@ -42,11 +42,7 @@
   }
 
   a {
-    @apply underline decoration-highlight decoration-2 underline-offset-1 hover:text-highlight md:transition-underline;
-  }
-
-  a:hover {
-    @apply underline-offset-4;
+    @apply underline decoration-highlight decoration-wavy hover:text-highlight;
   }
 
   h1 a {
