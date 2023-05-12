@@ -3,17 +3,21 @@ import paramCase from 'https://deno.land/x/case/paramCase.ts'
 
 type PageType = 'linked' | 'posts'
 
+type PromptReturn = {
+  type: PageType
+  href?: string
+}
+
 const postData = (title: string, pubDate: string) => `---
 title: ${title}
 pubDate: ${pubDate}
-description: ...
 ---
 
 `
 
-const linkedData = (title: string, pubDate: string) => `---
+const linkedData = (title: string, pubDate: string, href: string) => `---
 title: ${title}
-href: https://...
+href: ${href}
 pubDate: ${pubDate}
 ---
 
@@ -31,20 +35,29 @@ const pageExists = async (slug: string, type: PageType) => {
   }
 }
 
-const askType = (): PageType => {
+const promptArgs = (): PromptReturn => {
   const type = prompt('Enter type ([P]osts / [L]inked):', 'L')
 
-  return type?.toLowerCase().startsWith('p') ? 'posts' : 'linked'
+  if (type?.toLowerCase().startsWith('p')) {
+    return { type: 'posts' }
+  } else {
+    const href = prompt('Enter href', 'https://...')!
+
+    return { type: 'linked', href }
+  }
 }
 
 const createPlaceholderFile = async (
   slug: string,
   type: PageType,
-  title: string
+  title: string,
+  href?: string
 ) => {
   const pubDate = format(new Date(), 'yyyy-MM-dd HH:mm')
   const data =
-    type === 'linked' ? linkedData(title, pubDate) : postData(title, pubDate)
+    type === 'linked'
+      ? linkedData(title, pubDate, href!)
+      : postData(title, pubDate)
 
   await Deno.writeTextFile(path(slug, type), data)
 }
@@ -60,9 +73,9 @@ const main = async () => {
     console.log('Slug already exists')
     await main()
   } else {
-    const type = askType()
+    const { type, href } = promptArgs()
 
-    await createPlaceholderFile(slug, type, title)
+    await createPlaceholderFile(slug, type, title, href)
   }
 }
 
