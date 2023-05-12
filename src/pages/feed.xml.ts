@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss'
-import { getCollection } from 'astro:content'
+import { CollectionEntry, getCollection } from 'astro:content'
 import sanitizeHtml from 'sanitize-html'
 import MarkdownIt from 'markdown-it'
 import { site } from '@src/constants'
@@ -12,6 +12,9 @@ const parser = new MarkdownIt()
 const sortByDate = (a: LinkedOrPosts, b: LinkedOrPosts) =>
   a.data.pubDate.localeCompare(b.data.pubDate) * -1
 
+const parseLinkedCustomData = (item: CollectionEntry<'linked'>): string =>
+  `<link rel="alternate" type="text/html" href="${item.data.href}"/>`
+
 export const get = async (context: APIContext) => {
   const linked = getCollection('linked')
   const posts = getCollection('posts')
@@ -23,6 +26,8 @@ export const get = async (context: APIContext) => {
     description: site.description,
     site: context.site?.toString() ?? '',
     items: items.map((item) => ({
+      customData:
+        item.collection === 'linked' ? parseLinkedCustomData(item) : undefined,
       link: `${item.collection}/${item.slug}`,
       title: item.data.title,
       pubDate: new Date(item.data.pubDate),
