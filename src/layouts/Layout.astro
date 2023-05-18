@@ -25,6 +25,35 @@ const pageTitle = title ? `${title} - ${site.title}` : site.title
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
+    <link
+      rel="preload"
+      href="/fonts/LondrinaShadow-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/LondrinaSolid-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Satoshi-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/Satoshi-Light.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <title>{pageTitle}</title>
     <meta property="og:title" content={title ?? site.title} />
 

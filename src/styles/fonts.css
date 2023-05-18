@@ -1,27 +1,23 @@
 @font-face {
   font-family: 'Londrina Solid';
-  src: url('/fonts/LondrinaSolid-Light.woff2') format('woff2'),
-    url('/fonts/LondrinaSolid-Light.woff') format('woff');
+  src: url('/fonts/LondrinaSolid-Light.woff2') format('woff2');
   font-weight: 300;
 }
 
 @font-face {
   font-family: 'Londrina Shadow';
-  src: url('/fonts/LondrinaShadow-Regular.woff2') format('woff2'),
-    url('/fonts/LondrinaShadow-Regular.woff') format('woff');
+  src: url('/fonts/LondrinaShadow-Regular.woff2') format('woff2');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Regular.woff2') format('woff2'),
-    url('/fonts/Satoshi-Regular.woff') format('woff');
+  src: url('/fonts/Satoshi-Regular.woff2') format('woff2');
   font-weight: 400;
 }
 
 @font-face {
   font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Light.woff2') format('woff2'),
-    url('/fonts/Satoshi-Light.woff') format('woff');
+  src: url('/fonts/Satoshi-Light.woff2') format('woff2');
   font-weight: 300;
 }
