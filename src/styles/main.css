@@ -79,13 +79,23 @@
 }
 
 :root {
-  --highlight-color: oklch(0.7 0.2 235);
-  --background-color: oklch(0.97 0 0);
+  --highlight-color: #00adff;
+  --background-color: #f5f5f5;
+
+  @supports (color: oklch(0 0 0)) {
+    --highlight-color: oklch(0.7 0.2 235);
+    --background-color: oklch(0.97 0 0);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --highlight-color: oklch(0.93 0.26 120);
-    --background-color: oklch(0 0 0);
+    --highlight-color: #d4fe00;
+    --background-color: #000;
+
+    @supports (color: oklch(0 0 0)) {
+      --highlight-color: oklch(0.93 0.26 120);
+      --background-color: oklch(0 0 0);
+    }
   }
 }
