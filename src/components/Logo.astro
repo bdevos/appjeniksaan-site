@@ -46,19 +46,8 @@ import { site } from '@src/constants'
     if (wavy) {
       const title = document.querySelector('a[href="/"] > span:first-of-type')
       const site = title?.textContent?.trim() ?? ''
-      const titleArray = `${site} ${site}`.split('')
 
-      const appendTitle = () => {
-        wavy.innerText = wavy.innerText + titleArray.shift()
-
-        if (titleArray.length > 0) {
-          setTimeout(appendTitle, 25)
-        } else {
-          scrollEventListener(reducedMotion.matches)
-        }
-      }
-
-      appendTitle()
+      wavy.innerText = `${site} ${site}`
     }
   })
 </script>
