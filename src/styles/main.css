@@ -72,10 +72,6 @@
   ol {
     @apply my-8 ml-12 list-decimal text-lg leading-8;
   }
-
-  .decoration-skip-ink-none {
-    text-decoration-skip-ink: none;
-  }
 }
 
 :root {
