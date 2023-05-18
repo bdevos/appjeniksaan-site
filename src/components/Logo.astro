@@ -48,6 +48,7 @@ import { site } from '@src/constants'
       const site = title?.textContent?.trim() ?? ''
 
       wavy.innerText = `${site} ${site}`
+      scrollEventListener(reducedMotion.matches)
     }
   })
 </script>
