@@ -7,13 +7,6 @@ export default {
         highlight: 'var(--highlight-color)',
         background: 'var(--background-color)',
       },
-      dropShadow: {
-        header: [
-          '0 0 2px var(--background-color)',
-          '0 0 5px var(--background-color)',
-          '0 0 10px var(--background-color)',
-        ],
-      },
       fontFamily: {
         display: ['Londrina Solid', 'sans-serif'],
         shadow: ['Londrina Shadow', 'sans-serif'],

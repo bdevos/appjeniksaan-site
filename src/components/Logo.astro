@@ -4,22 +4,25 @@ import { site } from '@src/constants'
 
 <a
   href="/"
-  class="relative inline-block font-display text-2xl font-light text-stone-700 no-underline hover:text-highlight dark:text-stone-100"
+  class="relative inline-block overflow-hidden pb-1 font-display text-2xl font-light text-stone-700 no-underline hover:text-highlight dark:text-stone-100"
 >
-  <span class="drop-shadow-header">{site.title}</span>
-  <span
+  {site.title}
+
+  <div
+    id="wavy"
     aria-hidden="true"
-    class="absolute left-0 z-10 h-[125%] w-full overflow-hidden"
+    class="absolute left-0 top-0 z-10 whitespace-nowrap text-transparent underline decoration-highlight decoration-wavy"
+    style={{
+      textDecorationSkipInk: 'none',
+      transform: 'translateX(var(--offset, -50%))',
+    }}
   >
-    <span
-      id="wavy"
-      class="relative whitespace-nowrap text-transparent underline decoration-highlight decoration-wavy"
-      style={{ left: 'var(--offset, 0%)', textDecorationSkipInk: 'none' }}
-    ></span>
-  </span>
+  </div>
 </a>
 
 <script>
+  const slowDownFactor = 0.5
+  const hueChangeFactor = 0.1
   const wavy = document.getElementById('wavy')
   const startHue = parseInt(
     getComputedStyle(document.documentElement).getPropertyValue('--hue')
@@ -27,17 +30,17 @@ import { site } from '@src/constants'
 
   const onScroll = () => {
     const offset = window.pageYOffset
-    if (wavy) {
-      wavy.style.setProperty(
-        '--offset',
-        `${offset <= -100 ? -200 : (offset % 100) - 100}%`
-      )
-    }
 
     document.documentElement.style.setProperty(
       '--hue',
-      `${startHue + offset / 10}`
+      `${startHue + offset * hueChangeFactor}`
     )
+
+    if (wavy) {
+      const wavyOffset = ((offset * slowDownFactor) % 100) / 2
+
+      wavy.style.setProperty('--offset', `-${wavyOffset}%`)
+    }
   }
 
   const scrollEventListener = (hasReducedMotion: boolean) =>
@@ -52,7 +55,7 @@ import { site } from '@src/constants'
 
   window.addEventListener('load', () => {
     if (wavy) {
-      const title = document.querySelector('a[href="/"] > span:first-of-type')
+      const title = document.querySelector('a[href="/"]')
       const site = title?.textContent?.trim() ?? ''
 
       wavy.innerText = `${site} ${site}`
