@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
-    "preview": "astro preview",
+    "preview": "deno run --allow-read --allow-net https://deno.land/std@0.106.0/http/file_server.ts dist",
     "astro": "astro",
     "format": "prettier --check .",
     "create": "deno run --allow-read --allow-write create.ts"

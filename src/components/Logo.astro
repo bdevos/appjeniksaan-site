@@ -24,11 +24,8 @@ import { site } from '@src/constants'
   const slowDownFactor = 0.5
   const hueChangeFactor = 0.1
   const wavy = document.getElementById('wavy')
-  const startHue = getComputedStyle(document.documentElement).getPropertyValue(
-    '--hue'
-  )
 
-  console.log({ startHue })
+  let startHue = 0
 
   const onScroll = () => {
     const offset = window.pageYOffset
@@ -53,6 +50,10 @@ import { site } from '@src/constants'
   )
 
   window.addEventListener('load', () => {
+    startHue = parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--hue')
+    )
+
     if (wavy) {
       const title = document.querySelector('a[href="/"]')
       const site = title?.textContent?.trim() ?? ''
