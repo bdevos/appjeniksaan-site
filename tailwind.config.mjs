@@ -6,6 +6,7 @@ export default {
       colors: {
         highlight: 'var(--highlight-color)',
         background: 'var(--background-color)',
+        'background-middle': 'oklch(var(--background-l) 0 0 / .75)',
       },
       fontFamily: {
         display: ['Londrina Solid', 'sans-serif'],
