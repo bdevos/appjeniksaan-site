@@ -29,6 +29,8 @@ import { site } from '@src/constants'
     10
   )
 
+  console.log({ startHue })
+
   const onScroll = () => {
     const offset = window.pageYOffset
     const newHue = startHue + Math.max(offset, 0) * hueChangeFactor
