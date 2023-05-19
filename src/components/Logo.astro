@@ -21,16 +21,23 @@ import { site } from '@src/constants'
 
 <script>
   const wavy = document.getElementById('wavy')
+  const startHue = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--hue')
+  )
 
   const onScroll = () => {
+    const offset = window.pageYOffset
     if (wavy) {
-      const offset = window.pageYOffset
-
       wavy.style.setProperty(
         '--offset',
         `${offset <= -100 ? -200 : (offset % 100) - 100}%`
       )
     }
+
+    document.documentElement.style.setProperty(
+      '--hue',
+      `${startHue + offset / 10}`
+    )
   }
 
   const scrollEventListener = (hasReducedMotion: boolean) =>
