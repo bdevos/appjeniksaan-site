@@ -24,12 +24,12 @@ import { site } from '@src/constants'
   const slowDownFactor = 0.5
   const hueChangeFactor = 0.1
   const wavy = document.getElementById('wavy')
-  const startHue = parseInt(
-    getComputedStyle(document.documentElement).getPropertyValue('--hue')
+  const startHue = getComputedStyle(document.documentElement).getPropertyValue(
+    '--hue'
   )
 
   const onScroll = () => {
-    const offset = window.pageYOffset
+    const offset = Math.max(window.pageYOffset, 0)
 
     document.documentElement.style.setProperty(
       '--hue',
