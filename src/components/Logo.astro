@@ -14,7 +14,7 @@ import { site } from '@src/constants'
     class="absolute left-0 top-0 z-10 whitespace-nowrap text-transparent underline decoration-highlight decoration-wavy"
     style={{
       textDecorationSkipInk: 'none',
-      transform: 'translateX(var(--offset, -50%))',
+      transform: 'translateX(var(--offset, 0%))',
     }}
   >
   </div>
@@ -24,22 +24,20 @@ import { site } from '@src/constants'
   const slowDownFactor = 0.5
   const hueChangeFactor = 0.1
   const wavy = document.getElementById('wavy')
-  const startHue = getComputedStyle(document.documentElement).getPropertyValue(
-    '--hue'
+  const startHue = parseInt(
+    getComputedStyle(document.documentElement).getPropertyValue('--hue'),
+    10
   )
 
   const onScroll = () => {
-    const offset = Math.max(window.pageYOffset, 0)
+    const offset = window.pageYOffset
+    const newHue = startHue + Math.max(offset, 0) * hueChangeFactor
 
-    document.documentElement.style.setProperty(
-      '--hue',
-      `${startHue + offset * hueChangeFactor}`
-    )
+    document.documentElement.style.setProperty('--hue', `${newHue}`)
 
     if (wavy) {
-      const wavyOffset = ((offset * slowDownFactor) % 100) / 2
-
-      wavy.style.setProperty('--offset', `-${wavyOffset}%`)
+      const wavyOffset = (((offset * slowDownFactor) % 100) / 2) * -1
+      wavy.style.setProperty('--offset', `${wavyOffset}%`)
     }
   }
 
