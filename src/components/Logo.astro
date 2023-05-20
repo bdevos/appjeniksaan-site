@@ -30,7 +30,7 @@ import { site } from '@src/constants'
 
   const onScroll = () => {
     const offset = window.pageYOffset
-    hue = Math.floor(startHue + offset * hueChangeFactor) % 360
+    hue = (startHue + offset * hueChangeFactor) % 360
     document.documentElement.style.setProperty('--hue', `${hue}`)
 
     if (wavy) {
@@ -67,7 +67,7 @@ import { site } from '@src/constants'
 
   document.onvisibilitychange = () => {
     if (document.visibilityState === 'hidden') {
-      sessionStorage.setItem('startHue', `${hue}`)
+      sessionStorage.setItem('startHue', `${Math.floor(hue)}`)
     }
   }
 </script>
