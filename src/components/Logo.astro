@@ -29,7 +29,7 @@ import { site } from '@src/constants'
   let startHue = 0
 
   const onScroll = () => {
-    const offset = window.pageYOffset
+    const offset = window.scrollY
     hue = (startHue + offset * hueChangeFactor) % 360
     document.documentElement.style.setProperty('--hue', `${hue}`)
 
