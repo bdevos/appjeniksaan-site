@@ -21,10 +21,6 @@
     @apply mb-20;
   }
 
-  article :is(h1, h2) {
-    text-wrap: balance;
-  }
-
   article h1 {
     @apply mb-0;
   }
