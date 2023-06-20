@@ -21,7 +21,7 @@
     @apply mb-20;
   }
 
-  article :is(h1, h2, h3) {
+  article :is(h1, h2) {
     text-wrap: balance;
   }
 
