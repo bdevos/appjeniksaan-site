@@ -18,7 +18,7 @@
     "@types/sanitize-html": "2.9.0",
     "astro": "2.7.3",
     "markdown-it": "13.0.1",
-    "prettier": "2.8.8",
+    "prettier": "3.0.0",
     "prettier-plugin-astro": "0.10.0",
     "prettier-plugin-tailwindcss": "0.3.0",
     "sanitize-html": "2.11.0",
