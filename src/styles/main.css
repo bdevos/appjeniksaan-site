@@ -23,14 +23,17 @@
 
   article h1 {
     @apply mb-0;
+    text-wrap: balance;
   }
 
   article h2 {
     @apply mb-4 mt-12 font-display text-3xl font-light md:text-4xl;
+    text-wrap: balance;
   }
 
   article h3 {
     @apply mb-4 mt-8 font-display text-2xl font-light md:text-2xl;
+    text-wrap: balance;
   }
 
   article img {
