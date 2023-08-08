@@ -61,7 +61,7 @@ blockquote {
   @apply my-6 border-l-4 border-highlight pl-4;
 }
 
-blockquote p {
+blockquote p:last-of-type {
   @apply mb-0;
 }
 
