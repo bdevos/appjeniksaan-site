@@ -15,8 +15,8 @@ devDependencies:
     specifier: 13.0.2
     version: 13.0.2
   '@types/sanitize-html':
-    specifier: 2.9.2
-    version: 2.9.2
+    specifier: 2.9.3
+    version: 2.9.3
   astro:
     specifier: 3.3.1
     version: 3.3.1
@@ -904,8 +904,8 @@ packages:
     resolution: {integrity: sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g==}
     dev: true
 
-  /@types/sanitize-html@2.9.2:
-    resolution: {integrity: sha512-7TAQFoXdwjSvebOl0oKh5QXGrI+uyTc8Here+WcR9vpLEE7wxpoK6Vuvw++dsmL+Yw8K91x76tLoWchD5pqpRg==}
+  /@types/sanitize-html@2.9.3:
+    resolution: {integrity: sha512-1rsSdEJLV7utAG+Fms2uP+nSmmYmOhUUSSZvUz4wF2wlA0M5/A/gVgnpWZ7EKaPWsrrxWiSuNJqSBW8dh2isBA==}
     dependencies:
       htmlparser2: 8.0.2
     dev: true
