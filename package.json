@@ -14,7 +14,7 @@
   "devDependencies": {
     "@astrojs/rss": "3.0.0",
     "@astrojs/tailwind": "5.0.2",
-    "@types/markdown-it": "13.0.4",
+    "@types/markdown-it": "13.0.5",
     "@types/sanitize-html": "2.9.3",
     "astro": "3.3.3",
     "markdown-it": "13.0.2",
