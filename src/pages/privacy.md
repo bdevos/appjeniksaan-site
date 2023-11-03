@@ -14,4 +14,4 @@ Because I do not like complicated privacy policies, I want to keep this one as s
 
 If I change this policy in the future, I will let visitors know on the homepage of this website.
 
-In case you have any concerns or think I am missing something, please reach out to [hello@appjeniksaan.nl](mailto:hello@appjeniksaan.nl).
+In case you have any concerns or think I am missing something, please reach out to [berry@appjeniksaan.nl](mailto:berry@appjeniksaan.nl).
