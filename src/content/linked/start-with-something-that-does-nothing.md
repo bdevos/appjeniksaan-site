@@ -1,5 +1,5 @@
 ---
-title: Start with something that does nothing
+title: Start with Something That Does Nothing
 href: https://devblogs.microsoft.com/oldnewthing/20230725-00/?p=108482
 pubDate: 2023-11-26 08:18
 ---
