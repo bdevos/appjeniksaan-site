@@ -18,7 +18,7 @@ const parseLinkedAsEnclosure = (item: CollectionEntry<'linked'>) => ({
   type: 'text/html',
 })
 
-export const get = async (context: APIContext) => {
+export async function GET(context: APIContext) {
   const linked = getCollection('linked')
   const posts = getCollection('posts')
 
