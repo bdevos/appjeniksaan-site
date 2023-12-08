@@ -12,7 +12,7 @@
     "create": "deno run --allow-read --allow-write create.ts"
   },
   "devDependencies": {
-    "@astrojs/rss": "3.0.0",
+    "@astrojs/rss": "4.0.1",
     "@astrojs/tailwind": "5.0.3",
     "@types/markdown-it": "13.0.7",
     "@types/sanitize-html": "2.9.5",
