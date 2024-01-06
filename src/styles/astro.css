@@ -54,7 +54,7 @@ code {
 }
 
 p {
-  @apply mb-4 text-lg leading-8;
+  @apply mb-4 text-lg text-pretty leading-8;
 }
 
 blockquote {
