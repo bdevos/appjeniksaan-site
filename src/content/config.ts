@@ -13,6 +13,7 @@ const postsCollection = defineCollection({
     title: z.string(),
     pubDate: z.string(),
     description: z.string().optional(),
+    href: z.string().optional(),
   }),
 })
 

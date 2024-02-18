@@ -8,10 +8,11 @@ interface Props {
 
 const { item } = Astro.props
 const { Content } = await item.render()
+const href = item.data.href ? item.data.href : `${item.collection}/${item.slug}`
 ---
 
 <>
-  <h1><a href={`${item.collection}/${item.slug}`}>{item.data.title}</a></h1>
+  <h1><a href={href}>{item.data.title}</a></h1>
   <Subheading item={item} />
 
   {item.data.description && <p>{item.data.description}</p>}

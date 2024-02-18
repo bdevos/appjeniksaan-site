@@ -1,6 +1,6 @@
 ---
 title: Reading Activity
-href: https://appjeniksaan.nl/reading
+href: /reading
 pubDate: 2024-02-18 11:07
 ---
 
