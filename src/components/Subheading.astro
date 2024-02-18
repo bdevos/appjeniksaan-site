@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import Date from '@components/Date.astro'
+import DateBlock from '@components/DateBlock.astro'
 import { extractDomain } from '@src/extractDomain'
 
 interface Props {
@@ -23,5 +23,5 @@ const { item } = Astro.props
     )
   }
 
-  <Date item={item} />
+  <DateBlock item={item} />
 </div>

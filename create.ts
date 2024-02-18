@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { format } from 'https://deno.land/std/datetime/mod.ts'
 import paramCase from 'https://deno.land/x/case/paramCase.ts'
 
@@ -51,7 +52,7 @@ const createPlaceholderFile = async (
   slug: string,
   type: PageType,
   title: string,
-  href?: string
+  href?: string,
 ) => {
   const pubDate = format(new Date(), 'yyyy-MM-dd HH:mm')
   const data =
