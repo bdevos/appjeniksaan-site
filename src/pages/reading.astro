@@ -5,9 +5,9 @@ import { splitReadingByMonth } from '@src/sortAndLimit'
 import MonthHeader from '@components/MonthHeader.astro'
 import ReadingItem from '@components/ReadingItem.astro'
 
-const readingActivity = getCollection('reading')
+const readingActivity = await getCollection('reading')
 
-const items = splitReadingByMonth(await readingActivity)
+const items = splitReadingByMonth(readingActivity.toSorted((a, b) => b.data.completed.getTime() - a.data.completed.getTime()))
 ---
 
 <Layout title="Reading Activity">
