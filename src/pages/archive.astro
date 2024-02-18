@@ -3,12 +3,12 @@ import { getCollection } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import ArchiveItem from '@components/ArchiveItem.astro'
 import MonthHeader from '@components/MonthHeader.astro'
-import { sortAndLimit, splitByMonth } from '@src/sortAndLimit'
+import { sortAndLimit, splitPostByMonth } from '@src/sortAndLimit'
 
 const linked = getCollection('linked')
 const posts = getCollection('posts')
 
-const items = splitByMonth(sortAndLimit(await linked, await posts))
+const items = splitPostByMonth(sortAndLimit(await linked, await posts))
 ---
 
 <Layout title="Archive">

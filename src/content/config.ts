@@ -16,7 +16,17 @@ const postsCollection = defineCollection({
   }),
 })
 
+const readingCollection = defineCollection({
+  schema: z.object({
+    author: z.string(),
+    completed: z.date(),
+    isbn: z.string(),
+    title: z.string(),
+  }),
+})
+
 export const collections = {
   linked: linkedCollection,
   posts: postsCollection,
+  reading: readingCollection,
 }

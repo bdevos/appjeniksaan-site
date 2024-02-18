@@ -1,0 +1,44 @@
+---
+import { getCollection, getEntryBySlug } from 'astro:content'
+import Layout from '@layouts/Layout.astro'
+import { dateFormatter } from '@src/dateFormat'
+
+export async function getStaticPaths() {
+  const readingActivity = await getCollection('reading')
+
+  return readingActivity.map(({ slug }) => ({ params: { slug } }))
+}
+
+const { slug } = Astro.params
+
+const entry = await getEntryBySlug('reading', slug!)
+
+if (!entry) return Astro.redirect('/404')
+---
+
+<Layout
+  description={`Reading Activity: ${entry.data.title}`}
+  title={entry.data.title}
+  type="article"
+  url={`${entry.collection}/${entry.slug}`}
+>
+  <article>
+    <h1>
+      {entry.data.title}
+    </h1>
+    <dl class="divide-y divide-stone-200 dark:divide-stone-800 mt-6">
+      <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200">Completed</dt>
+        <dd class="mt-1 text-md leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0">{dateFormatter.format(entry.data.completed)}</dd>
+      </div>
+      <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200">Author</dt>
+        <dd class="mt-1 text-md leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0">{entry.data.author}</dd>
+      </div>
+      <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200">ISBN</dt>
+        <dd class="mt-1 text-sm font-mono leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0">{entry.data.isbn}</dd>
+      </div>
+    </dl>
+  </article>
+</Layout>

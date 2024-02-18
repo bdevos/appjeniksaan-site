@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content'
+import Layout from '@layouts/Layout.astro'
+import { splitReadingByMonth } from '@src/sortAndLimit'
+import MonthHeader from '@components/MonthHeader.astro'
+import ReadingItem from '@components/ReadingItem.astro'
+
+const readingActivity = await getCollection('reading')
+
+const items = splitReadingByMonth(readingActivity.sort((a, b) => b.data.completed.getTime() - a.data.completed.getTime()))
+---
+
+<Layout title="Reading Activity">
+  <main>
+    <h1>Reading Activity</h1>
+    <p>As of August 2023 I started documenting my reading activity, below are the books I've completed reading.</p>
+    {
+      Object.keys(items).map((month) => (
+        <section>
+          <MonthHeader month={month} />
+          <ul>
+            {items[month].map((item) => (
+              <ReadingItem item={item} />
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </main>
+</Layout>
