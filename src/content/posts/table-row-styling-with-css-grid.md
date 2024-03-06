@@ -59,7 +59,7 @@ And the styling to make it into a table:
 }
 .row {
   display: grid; 
-  grid-template-columns: subgrid; /* Is a subgrid! */
+  grid-template-columns: subgrid; /* Every row is a subgrid */
   grid-column: 1 / -1; /* Spans from the first to the last column */
 }
 .row:first-of-type {
@@ -77,6 +77,7 @@ The code above is a very simplified example, but with `CSS Grid` and `subgrid` t
   display: grid; 
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1em;
+  min-width: min-content;
 }
 .row {
   display: grid; 
