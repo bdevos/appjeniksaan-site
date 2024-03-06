@@ -3,98 +3,107 @@ title: Table row styling with CSS Grid
 pubDate: 2024-02-24 06:40
 ---
 
-Recently I was creating a table layout with `CSS Grid` but when searching how to style even / odd row backgrounds, the suggestions online were pretty outdated. Since `subgrid` support has become [widely available](https://caniuse.com/css-subgrid), I think there are better solutions.
+Recently I ran into styling issues with a table layout where a lot of columns had to take the minimum amount of space, so certain other columns could take all the room available. The default `table` styling in CSS is not very flexible, so it would be great to use CSS Grid row such a layout. But with a normal CSS Grid layout you will not have the option to easily style even / odd row backgrounds. When searching how to style even / odd row backgrounds, the suggestions online were pretty outdated. Since `subgrid` support has become [widely available](https://caniuse.com/css-subgrid), I think there are better solutions.
 
 ## An example table
 
-<div class="table rounded shadow-md border border-stone-200 dark:border-stone-700">
-  <div class="row">
-    <div>Programming Language</div>
-    <div>Creator</div>
-    <div>First Release</div>
-  </div>
-  <div class="row">
-    <div>C</div>
-    <div>Dennis Ritchie</div>
-    <div>1972</div>    
-  </div>
-  <div class="row">
-    <div>Python</div>
-    <div>Guido van Rossum</div>
-    <div>1991</div>
-  </div>
-  <div class="row">
-    <div>JavaScript</div>
-    <div>Brendan Eich</div>
-    <div>1995</div>
-  </div>
-</div>
+<table class="rounded shadow-md border border-stone-200 dark:border-stone-700">
+  <thead>
+    <tr>
+      <th>Programming Language</div>
+      <th>Creator</div>
+      <th>First Release</div>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C</td>
+      <td>Dennis Ritchie</td>
+      <td>1972</td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td>Guido van Rossum</td>
+      <td>1991</td>
+    </tr>
+    <tr>
+      <td>JavaScript</td>
+      <td>Brendan Eich</td>
+      <td>1995</td>
+    </tr>
+  </tbody>
+</table>
 
 ## The code
 
 To create the table above, we can use the HTML:
 
 ```html
-<div class="table">
-  <div class="row">
-    <div>Programming Language</div>
-    <div>Creator</div>
-    <div>First Release</div>
-  </div>
-  <div class="row">
-    <div>C</div>
-    <div>Dennis Ritchie</div>
-    <div>1972</div>    
-  </div>
-  <!-- [...additional rows] -->
-</div>
+<table>
+  <thead>
+    <tr>  
+      <th>Programming Language</th>
+      <th>Creator</th>
+      <th>First Release</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>C</td>
+      <td>Dennis Ritchie</td>
+      <td>1972</td>
+    </tr>
+    <!-- [...additional rows] -->
+  </tbody>
+</table>
 ```
 
-And the styling to make it into a table:
+And the styling to make it into a CSS Grid based table:
 
 ```css
-.table {
+table {
   display: grid; 
   grid-template-columns: repeat(3, 1fr); /* 3 columns of even width */
 }
-.row {
+thead, tbody, tr {
   display: grid; 
-  grid-template-columns: subgrid; /* Every row is a subgrid */
-  grid-column: 1 / -1; /* Spans from the first to the last column */
+  grid-template-columns: subgrid; /* thead, tbody and tr are subgrid */
+  grid-column: 1 / -1; /* from the first to the last column */
 }
-.row:first-of-type {
+thead tr, tbody tr:nth-of-type(even) {
+  background-color: white; /* the header and even rows get alternative background-color */
+}
+th {
   font-weight: bold;
-}
-.row:nth-of-type(even) {
-  background-color: white; /* Even rows get alternative background-color */
 }
 ```
 
-The code above is a very simplified example, but with `CSS Grid` and `subgrid` the options for creating advanced layouts are almost limitless.
+The code above is a very simplified example, but with `CSS Grid` and `subgrid` the options for creating advanced table layouts are almost limitless.
 
 <style type="text/css">
-.table {
+table {
   display: grid; 
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 1em;
-  min-width: min-content;
 }
-.row {
+thead, tbody, tr {
   display: grid; 
   grid-template-columns: subgrid; 
   grid-column: 1 / -1;
+}
+tr {
   padding-inline: 0.5em;
   padding-block: 0.25em;
 }
-.row:first-of-type {
+thead tr, tbody tr:nth-of-type(even) {
+  background-color: rgb(231, 229, 228);
+}
+th {
+  text-align: start;
   font-family: sans-serif;
   font-weight: bold;
 }
-.row:nth-of-type(even) {
-  background-color: rgb(231, 229, 228);
-}
 @media (prefers-color-scheme: dark) {
-  .row:nth-of-type(even) {
+  thead tr, tr:nth-of-type(even) {
     background-color: rgb(68, 64, 60);
   }
 }
