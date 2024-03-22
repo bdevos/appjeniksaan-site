@@ -103,7 +103,7 @@ th {
   font-weight: bold;
 }
 @media (prefers-color-scheme: dark) {
-  thead tr, tr:nth-of-type(even) {
+  thead tr, tbody tr:nth-of-type(even) {
     background-color: rgb(68, 64, 60);
   }
 }
