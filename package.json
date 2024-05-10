@@ -28,5 +28,5 @@
     "@astrojs/check": "^0.6.0",
     "typescript": "^5.3.3"
   },
-  "packageManager": "pnpm@8.15.8"
+  "packageManager": "pnpm@9.1.0"
 }
