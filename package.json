@@ -12,12 +12,12 @@
     "create": "deno run --allow-read --allow-write create.ts"
   },
   "devDependencies": {
-    "@astrojs/check": "0.6.0",
-    "@astrojs/rss": "4.0.5",
+    "@astrojs/check": "0.7.0",
+    "@astrojs/rss": "4.0.6",
     "@astrojs/tailwind": "5.1.0",
     "@types/markdown-it": "14.1.1",
     "@types/sanitize-html": "2.11.0",
-    "astro": "4.8.3",
+    "astro": "4.8.6",
     "markdown-it": "14.1.0",
     "prettier": "3.2.5",
     "prettier-plugin-astro": "0.13.0",
