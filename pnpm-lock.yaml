@@ -16,7 +16,7 @@ importers:
         version: 4.0.7
       '@astrojs/tailwind':
         specifier: 5.1.0
-        version: 5.1.0(astro@4.15.1(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)
+        version: 5.1.0(astro@4.15.2(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)
       '@types/markdown-it':
         specifier: 14.1.2
         version: 14.1.2
@@ -24,8 +24,8 @@ importers:
         specifier: 2.13.0
         version: 2.13.0
       astro:
-        specifier: 4.15.1
-        version: 4.15.1(rollup@4.21.0)(typescript@5.5.4)
+        specifier: 4.15.2
+        version: 4.15.2(rollup@4.21.0)(typescript@5.5.4)
       markdown-it:
         specifier: 14.1.0
         version: 14.1.0
@@ -169,11 +169,6 @@ packages:
   '@babel/highlight@7.24.7':
     resolution: {integrity: sha512-EStJpq4OuY8xYfhGVXngigBJRWxftKX9ksiGDnmlY3o7B/V7KIAc9X4oiK87uPJSc/vs5L869bem5fhZa8caZw==}
     engines: {node: '>=6.9.0'}
-
-  '@babel/parser@7.25.3':
-    resolution: {integrity: sha512-iLTJKDbJ4hMvFPgQwwsVoxtHyWpKKPBrxkANrSYewDPaPpT5py5yeVkgPIJ7XYXhndxJpaA3PyALSXQ7u8e/Dw==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
 
   '@babel/parser@7.25.6':
     resolution: {integrity: sha512-trGdfBdbD0l1ZPmcJ83eNxB9rbEax4ALFTF7fN386TMYbeCQbyme5cOEXQhbGXKebwGaB/J52w1mrklMcbgy6Q==}
@@ -601,8 +596,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@shikijs/core@1.14.1':
-    resolution: {integrity: sha512-KyHIIpKNaT20FtFPFjCQB5WVSTpLR/n+jQXhWHWVUMm9MaOaG9BGOG0MSyt7yA4+Lm+4c9rTc03tt3nYzeYSfw==}
+  '@shikijs/core@1.16.1':
+    resolution: {integrity: sha512-aI0hBtw+a6KsJp2jcD4YuQqKpeCbURMZbhHVozDknJpm+KJqeMRkEnfBC8BaKE/5XC+uofPgCLsa/TkTk0Ba0w==}
+
+  '@shikijs/vscode-textmate@9.2.0':
+    resolution: {integrity: sha512-5FinaOp6Vdh/dl4/yaOTh0ZeKch+rYS8DUb38V3GMKYVkdqzxw53lViRKUYkVILRiVQT7dcPC7VvAKOR73zVtQ==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -734,8 +732,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@4.15.1:
-    resolution: {integrity: sha512-XvKZ2GaDbCsMfcJess4o+4D4cCKja45GJ/9o6EJ6n96xaen8HZMRoJn3YKL9TOjIrL2NuU4mBFMG2JivPJ0foA==}
+  astro@4.15.2:
+    resolution: {integrity: sha512-UlkQ/cWRLabOm6eVe6oRwjVAKd47N3+d1ktKpEZ5lqQKwq5uYrXQUu3n0ftsm6SJ+01x2LlPmjRe9OfKAbGpXA==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1862,8 +1860,8 @@ packages:
     resolution: {integrity: sha512-vHUeXJU1UvlO/BNwTpT0x/r53WkLUVxrmb5JTgW92fdFCFk0ispLMAeu/jPO2vjkXM1fYUi3K7/qcLF47pwM1A==}
     engines: {libvips: '>=8.15.2', node: ^18.17.0 || ^20.3.0 || >=21.0.0}
 
-  shiki@1.14.1:
-    resolution: {integrity: sha512-FujAN40NEejeXdzPt+3sZ3F2dx1U24BY2XTY01+MG8mbxCiA2XukXdcbyMyLAHJ/1AUUnQd1tZlvIjefWWEJeA==}
+  shiki@1.16.1:
+    resolution: {integrity: sha512-tCJIMaxDVB1mEIJ5TvfZU7kCPB5eo9fli5+21Olc/bmyv+w8kye3JOp+LZRmGkAyT71hrkefQhTiY+o9mBikRQ==}
 
   signal-exit@4.1.0:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
@@ -1975,8 +1973,8 @@ packages:
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
 
-  tsconfck@3.1.1:
-    resolution: {integrity: sha512-00eoI6WY57SvZEVjm13stEVE90VkEdJAFGgpFLTsZbJyW/LwFQ7uQxJHWpZ2hzSWgCPKc9AnBnNP+0X7o3hAmQ==}
+  tsconfck@3.1.3:
+    resolution: {integrity: sha512-ulNZP1SVpRDesxeMLON/LtWM8HIgAJEIVpVVhBM6gsmvQ8+Rh+ZG7FWGvHh7Ah3pRABwVJWklWCr/BTZSv0xnQ==}
     engines: {node: ^18 || >=20}
     hasBin: true
     peerDependencies:
@@ -2358,7 +2356,7 @@ snapshots:
       remark-parse: 11.0.0
       remark-rehype: 11.1.0
       remark-smartypants: 3.0.2
-      shiki: 1.14.1
+      shiki: 1.16.1
       unified: 11.0.5
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.0.0
@@ -2376,9 +2374,9 @@ snapshots:
       fast-xml-parser: 4.4.0
       kleur: 4.1.5
 
-  '@astrojs/tailwind@5.1.0(astro@4.15.1(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)':
+  '@astrojs/tailwind@5.1.0(astro@4.15.2(rollup@4.21.0)(typescript@5.5.4))(tailwindcss@3.4.10)':
     dependencies:
-      astro: 4.15.1(rollup@4.21.0)(typescript@5.5.4)
+      astro: 4.15.2(rollup@4.21.0)(typescript@5.5.4)
       autoprefixer: 10.4.15(postcss@8.4.32)
       postcss: 8.4.32
       postcss-load-config: 4.0.2(postcss@8.4.32)
@@ -2417,7 +2415,7 @@ snapshots:
       '@babel/helper-compilation-targets': 7.25.2
       '@babel/helper-module-transforms': 7.25.2(@babel/core@7.25.2)
       '@babel/helpers': 7.25.0
-      '@babel/parser': 7.25.3
+      '@babel/parser': 7.25.6
       '@babel/template': 7.25.0
       '@babel/traverse': 7.25.3
       '@babel/types': 7.25.6
@@ -2492,10 +2490,6 @@ snapshots:
       js-tokens: 4.0.0
       picocolors: 1.0.1
 
-  '@babel/parser@7.25.3':
-    dependencies:
-      '@babel/types': 7.25.6
-
   '@babel/parser@7.25.6':
     dependencies:
       '@babel/types': 7.25.6
@@ -2519,14 +2513,14 @@ snapshots:
   '@babel/template@7.25.0':
     dependencies:
       '@babel/code-frame': 7.24.7
-      '@babel/parser': 7.25.3
+      '@babel/parser': 7.25.6
       '@babel/types': 7.25.6
 
   '@babel/traverse@7.25.3':
     dependencies:
       '@babel/code-frame': 7.24.7
       '@babel/generator': 7.25.0
-      '@babel/parser': 7.25.3
+      '@babel/parser': 7.25.6
       '@babel/template': 7.25.0
       '@babel/types': 7.25.6
       debug: 4.3.6
@@ -2799,13 +2793,16 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.21.0':
     optional: true
 
-  '@shikijs/core@1.14.1':
+  '@shikijs/core@1.16.1':
     dependencies:
+      '@shikijs/vscode-textmate': 9.2.0
       '@types/hast': 3.0.4
+
+  '@shikijs/vscode-textmate@9.2.0': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
-      '@babel/parser': 7.25.3
+      '@babel/parser': 7.25.6
       '@babel/types': 7.25.6
       '@types/babel__generator': 7.6.4
       '@types/babel__template': 7.4.1
@@ -2817,7 +2814,7 @@ snapshots:
 
   '@types/babel__template@7.4.1':
     dependencies:
-      '@babel/parser': 7.25.3
+      '@babel/parser': 7.25.6
       '@babel/types': 7.25.6
 
   '@types/babel__traverse@7.20.1':
@@ -2961,7 +2958,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.15.1(rollup@4.21.0)(typescript@5.5.4):
+  astro@4.15.2(rollup@4.21.0)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.10.3
       '@astrojs/internal-helpers': 0.4.1
@@ -3014,11 +3011,11 @@ snapshots:
       prompts: 2.4.2
       rehype: 13.0.1
       semver: 7.6.3
-      shiki: 1.14.1
+      shiki: 1.16.1
       string-width: 7.2.0
       strip-ansi: 7.1.0
       tinyexec: 0.3.0
-      tsconfck: 3.1.1(typescript@5.5.4)
+      tsconfck: 3.1.3(typescript@5.5.4)
       unist-util-visit: 5.0.0
       vfile: 6.0.3
       vite: 5.4.2
@@ -4383,9 +4380,10 @@ snapshots:
       '@img/sharp-win32-x64': 0.33.3
     optional: true
 
-  shiki@1.14.1:
+  shiki@1.16.1:
     dependencies:
-      '@shikijs/core': 1.14.1
+      '@shikijs/core': 1.16.1
+      '@shikijs/vscode-textmate': 9.2.0
       '@types/hast': 3.0.4
 
   signal-exit@4.1.0: {}
@@ -4513,7 +4511,7 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  tsconfck@3.1.1(typescript@5.5.4):
+  tsconfck@3.1.3(typescript@5.5.4):
     optionalDependencies:
       typescript: 5.5.4
 
