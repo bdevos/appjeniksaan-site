@@ -1,0 +1,45 @@
+{
+  "version": "3",
+  "redirects": {
+    "https://deno.land/std/datetime/mod.ts": "https://deno.land/std@0.173.0/datetime/mod.ts",
+    "https://deno.land/x/case/paramCase.ts": "https://deno.land/x/case@2.1.1/paramCase.ts"
+  },
+  "remote": {
+    "https://deno.land/std@0.173.0/datetime/_common.ts": "f5c1cb784c616151a3d8198a4ab29f65b7fe5c20a105d8979bde9558c7b52910",
+    "https://deno.land/std@0.173.0/datetime/constants.ts": "0e91a7019814e6df5ebb710b09aceb79f52cbc618bb06b34431f4f8b89d79505",
+    "https://deno.land/std@0.173.0/datetime/day_of_year.ts": "f9b9c8f1958e843fa072510fbb36e455431a3cc74ab8f39757bd0a59f4aaad10",
+    "https://deno.land/std@0.173.0/datetime/difference.ts": "556a5edb807f36f0ca334f235180650ccf05dfeb94aa2573642ef20314ef101c",
+    "https://deno.land/std@0.173.0/datetime/format.ts": "416807ca1971c5432bfa7d1e429b7c6360cb81fee598e8510dde6e7b0e819a57",
+    "https://deno.land/std@0.173.0/datetime/is_leap.ts": "cc74a158e029ffe1dfcbdd911107a6de428ee64585b1071d8fd4e1a997670d30",
+    "https://deno.land/std@0.173.0/datetime/mod.ts": "858d0d695b3a391a9c5faa561e46813e346feaef65bd6ddadb7ee2e65ac4e5a8",
+    "https://deno.land/std@0.173.0/datetime/parse.ts": "b0af5e272382e516f34dddf9dd1eda31f1197bdf8ee2ff7d93505073e97bd76b",
+    "https://deno.land/std@0.173.0/datetime/to_imf.ts": "851d072a1c86c7ec34c753e61b1951ceda50c9da805b170a0ecaea3b024dd266",
+    "https://deno.land/std@0.173.0/datetime/week_of_year.ts": "00ce4203f1efc69e2c0902ff4a4451a49d8a87a561e941b692f3b5f056f1f441",
+    "https://deno.land/x/case@2.1.1/lowerCase.ts": "86d5533f9587ed60003181591e40e648838c23f371edfa79d00288153d113b16",
+    "https://deno.land/x/case@2.1.1/normalCase.ts": "6a8b924da9ab0790d99233ae54bfcfc996d229cb91b2533639fe20972cc33dac",
+    "https://deno.land/x/case@2.1.1/paramCase.ts": "cf3101c59fd4f16ee14fd09985adb7fa3dbfb194f102499986f7407995202394",
+    "https://deno.land/x/case@2.1.1/types.ts": "8e2bd6edaa27c0d1972c0d5b76698564740f37b4d3787d58d1fb5f48de611e61",
+    "https://deno.land/x/case@2.1.1/vendor/camelCaseRegexp.ts": "7d9ff02aad4ab6429eeab7c7353f7bcdd6cc5909a8bd3dda97918c8bbb7621ae",
+    "https://deno.land/x/case@2.1.1/vendor/camelCaseUpperRegexp.ts": "292de54a698370f90adcdf95727993d09888b7f33d17f72f8e54ba75f7791787",
+    "https://deno.land/x/case@2.1.1/vendor/nonWordRegexp.ts": "c1a052629a694144b48c66b0175a22a83f4d61cb40f4e45293fc5d6b123f927e"
+  },
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:@astrojs/check@0.9.3",
+        "npm:@astrojs/rss@4.0.7",
+        "npm:@astrojs/tailwind@5.1.1",
+        "npm:@types/markdown-it@14.1.2",
+        "npm:@types/sanitize-html@2.13.0",
+        "npm:astro@4.15.9",
+        "npm:markdown-it@14.1.0",
+        "npm:prettier-plugin-astro@0.14.1",
+        "npm:prettier-plugin-tailwindcss@0.6.8",
+        "npm:prettier@3.3.3",
+        "npm:sanitize-html@2.13.0",
+        "npm:tailwindcss@3.4.13",
+        "npm:typescript@5.6.2"
+      ]
+    }
+  }
+}
