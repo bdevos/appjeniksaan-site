@@ -17,7 +17,7 @@
     "@astrojs/tailwind": "5.1.2",
     "@types/markdown-it": "14.1.2",
     "@types/sanitize-html": "2.13.0",
-    "astro": "4.16.5",
+    "astro": "4.16.6",
     "markdown-it": "14.1.0",
     "prettier": "3.3.3",
     "prettier-plugin-astro": "0.14.1",
