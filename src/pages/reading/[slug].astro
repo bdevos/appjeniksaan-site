@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntryBySlug } from 'astro:content'
+import { getCollection, getEntry } from 'astro:content'
 import Layout from '@layouts/Layout.astro'
 import { dateFormatter } from '@src/dateFormat'
 
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params
 
-const entry = await getEntryBySlug('reading', slug!)
+const entry = await getEntry('reading', slug!)
 
 if (!entry) return Astro.redirect('/404')
 ---
@@ -28,16 +28,40 @@ if (!entry) return Astro.redirect('/404')
     </h1>
     <dl class="divide-y divide-stone-200 dark:divide-stone-800 mt-6">
       <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        <dt class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200">Completed</dt>
-        <dd class="mt-1 text-md leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0">{dateFormatter.format(entry.data.completed)}</dd>
+        <dt
+          class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200"
+        >
+          Completed
+        </dt>
+        <dd
+          class="mt-1 text-md leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0"
+        >
+          {dateFormatter.format(entry.data.completed)}
+        </dd>
       </div>
       <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        <dt class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200">Author</dt>
-        <dd class="mt-1 text-md leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0">{entry.data.author}</dd>
+        <dt
+          class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200"
+        >
+          Author
+        </dt>
+        <dd
+          class="mt-1 text-md leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0"
+        >
+          {entry.data.author}
+        </dd>
       </div>
       <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-        <dt class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200">ISBN</dt>
-        <dd class="mt-1 text-sm font-mono leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0">{entry.data.isbn}</dd>
+        <dt
+          class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200"
+        >
+          ISBN
+        </dt>
+        <dd
+          class="mt-1 text-sm font-mono leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0"
+        >
+          {entry.data.isbn}
+        </dd>
       </div>
     </dl>
   </article>
