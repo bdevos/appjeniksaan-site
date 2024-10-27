@@ -31,7 +31,7 @@
         "npm:@astrojs/tailwind@5.1.2",
         "npm:@types/markdown-it@14.1.2",
         "npm:@types/sanitize-html@2.13.0",
-        "npm:astro@4.16.6",
+        "npm:astro@4.16.7",
         "npm:markdown-it@14.1.0",
         "npm:prettier-plugin-astro@0.14.1",
         "npm:prettier-plugin-tailwindcss@0.6.8",
