@@ -51,6 +51,18 @@ if (!entry) return Astro.redirect('/404')
           {entry.data.author}
         </dd>
       </div>
+      {entry.data.translation && (<div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <dt
+          class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200"
+        >
+          Translation
+        </dt>
+        <dd
+          class="mt-1 text-md leading-6 text-stone-700 dark:text-stone-400 sm:col-span-2 sm:mt-0"
+        >
+          {entry.data.translation}
+        </dd>
+      </div>)}
       <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt
           class="text-md font-medium leading-6 text-stone-900 dark:text-stone-200"

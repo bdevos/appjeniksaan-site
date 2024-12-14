@@ -23,6 +23,7 @@ const readingCollection = defineCollection({
     completed: z.date(),
     isbn: z.string(),
     title: z.string(),
+    translation: z.string().optional(),
   }),
 })
 
