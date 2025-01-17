@@ -21,7 +21,7 @@ const readingCollection = defineCollection({
   schema: z.object({
     author: z.string(),
     completed: z.date(),
-    isbn: z.string(),
+    isbn: z.union([z.string(), z.array(z.string())]),
     title: z.string(),
     translation: z.string().optional(),
   }),
