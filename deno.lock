@@ -27,18 +27,18 @@
     "packageJson": {
       "dependencies": [
         "npm:@astrojs/check@0.9.4",
-        "npm:@astrojs/rss@4.0.9",
-        "npm:@astrojs/tailwind@5.1.2",
+        "npm:@astrojs/rss@4.0.11",
+        "npm:@astrojs/tailwind@5.1.4",
         "npm:@types/markdown-it@14.1.2",
         "npm:@types/sanitize-html@2.13.0",
-        "npm:astro@4.16.7",
+        "npm:astro@5.1.7",
         "npm:markdown-it@14.1.0",
         "npm:prettier-plugin-astro@0.14.1",
-        "npm:prettier-plugin-tailwindcss@0.6.8",
-        "npm:prettier@3.3.3",
-        "npm:sanitize-html@2.13.1",
-        "npm:tailwindcss@3.4.14",
-        "npm:typescript@5.6.3"
+        "npm:prettier-plugin-tailwindcss@0.6.10",
+        "npm:prettier@3.4.2",
+        "npm:sanitize-html@2.14.0",
+        "npm:tailwindcss@3.4.17",
+        "npm:typescript@5.7.3"
       ]
     }
   }
