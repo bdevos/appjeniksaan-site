@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content'
+import { render } from 'astro:content'
+import BaseHead from '../../components/BaseHead.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts'
+import { dateFormatter } from '../../utils/dateFormat'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+
+export async function getStaticPaths() {
+  const reading = await getCollection('reading')
+
+  return reading.map((book) => ({
+    params: { slug: book.id },
+    props: book,
+  }))
+}
+
+const book = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-orange-500 text-black" data-page="reading">
+    <Header />
+    <main class="mt-8">
+      <h1 class="font-display text-3xl uppercase">
+        {book.data.title}
+      </h1>
+      <dl class="mt-4 divide-y divide-orange-400">
+        <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-orange-300">Completed</dt>
+          <dd class="mt-1 sm:col-span-2 sm:mt-0">
+            {dateFormatter.format(book.data.completed)}
+          </dd>
+        </div>
+        <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-orange-300">Author</dt>
+          <dd class="mt-1 sm:col-span-2 sm:mt-0">
+            {book.data.author}
+          </dd>
+        </div>
+        {
+          book.data.translation && (
+            <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+              <dt class="text-orange-300">Translation</dt>
+              <dd class="mt-1 sm:col-span-2 sm:mt-0">
+                {book.data.translation}
+              </dd>
+            </div>
+          )
+        }
+        <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+          <dt class="text-orange-300">ISBN</dt>
+          <dd class="mt-1 font-mono sm:col-span-2 sm:mt-0">
+            {
+              Array.isArray(book.data.isbn)
+                ? book.data.isbn.map((isbn, index) => (
+                    <>
+                      <span
+                        class="whitespace-nowrap"
+                        set:text={`${isbn}${index < book.data.isbn.length - 1 ? ',' : ''}`}
+                      />
+                    </>
+                  ))
+                : book.data.isbn
+            }
+          </dd>
+        </div>
+      </dl>
+    </main>
+    <Footer />
+  </body>
+</html>

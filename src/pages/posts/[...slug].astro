@@ -1,0 +1,44 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import { render } from 'astro:content'
+import BaseHead from '../../components/BaseHead.astro'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import Subheading from '../../components/Subheading.astro'
+import { SITE_DESCRIPTION } from '../../consts'
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts')
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: post,
+  }))
+}
+type Props = CollectionEntry<'posts'>
+
+const post = Astro.props
+const { Content } = await render(post)
+---
+
+<html
+  lang="en"
+  class="bg-neutral-200 text-neutral-600 dark:bg-neutral-900 dark:text-white"
+>
+  <head>
+    <BaseHead
+      title={post.data.title}
+      description={post.data.description ?? SITE_DESCRIPTION}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <article>
+        <h1>{post.data.title}</h1>
+        <Subheading item={post} />
+        <Content />
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

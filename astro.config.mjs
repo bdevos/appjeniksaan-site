@@ -1,14 +1,23 @@
+// @ts-check
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import sitemap from '@astrojs/sitemap'
+
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'static',
+  site: 'https://appjeniksaan.nl',
+  integrations: [sitemap()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
   markdown: {
     shikiConfig: {
-      theme: 'vitesse-dark',
+      themes: {
+        light: 'one-light',
+        dark: 'one-dark-pro',
+      },
     },
   },
-  site: 'https://appjeniksaan.nl',
-  integrations: [tailwind({ config: { applyBaseStyles: false } })],
 })

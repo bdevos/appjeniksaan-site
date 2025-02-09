@@ -1,0 +1,54 @@
+---
+import { getCollection } from 'astro:content'
+import BaseHead from '../../components/BaseHead.astro'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
+import { splitReadingByMonth } from '../../utils/splitReadingByMonth'
+import { dayFormatter, formatMonth } from '../../utils/dateFormat'
+
+const items = splitReadingByMonth(await getCollection('reading'))
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-orange-500 text-black" data-page="reading">
+    <Header />
+    <main>
+      <h1 class="font-display mt-8 mb-4 text-3xl text-orange-100 uppercase">
+        Reading Activity
+      </h1>
+      <p class="text-neutral-800">
+        As of August 2023 I started documenting my reading activity, below are
+        the books I've completed reading.
+      </p>
+      {
+        Object.keys(items).map((month) => (
+          <section class="my-8">
+            <h2 class="font-display mb-6 text-lg text-orange-200 uppercase">
+              {formatMonth(month)}
+            </h2>
+            <ul class="grid grid-cols-[auto_1fr]">
+              {items[month].map((book) => (
+                <li class="col-span-full my-2 grid grid-cols-subgrid gap-4">
+                  <div class="font-display justify-self-center text-2xl leading-10 font-light text-orange-300">
+                    {dayFormatter.format(book.data.completed)}
+                  </div>
+                  <h3 class="font-display truncate text-3xl leading-10 uppercase md:text-4xl">
+                    <a href={`/${book.collection}/${book.id}`}>
+                      {book.data.title}
+                    </a>
+                  </h3>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </main>
+    <Footer ignoreDark />
+  </body>
+</html>

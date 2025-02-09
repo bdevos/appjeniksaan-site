@@ -1,17 +1,28 @@
 ---
 title: Privacy Policy
-layout: ../layouts/Page.astro
+description: Privacy policy for our website - we collect no personal data, use no cookies, and do not track visitors.
+layout: ../layouts/Article.astro
 ---
 
-Because I do not like complicated privacy policies, I want to keep this one as simple as I possibly can.
+## What We Don't Collect or Use
 
-# Privacy Policy
+- We do not collect any personal data
+- We do not track your activities
+- We do not use cookies
+- We do not use analytics tools
 
-1. This website does not collect any personal data
-2. This website does not track you
-3. This website does not use cookies
-4. This website does not use client-side analytics
+## Policy Updates
 
-If I change this policy in the future, I will let visitors know on the homepage of this website.
+We will notify visitors of any changes to this privacy policy through a notice on our homepage.
 
-In case you have any concerns or think I am missing something, please reach out to [berry@appjeniksaan.nl](mailto:berry@appjeniksaan.nl).
+## Third-Party Services
+
+This website is hosted on [Deno Deploy](https://deno.com/deploy), which may maintain standard server logs. You can review their privacy policy at https://docs.deno.com/deploy/manual/privacy-policy/.
+
+## Contact Information
+
+If you have questions or concerns about this privacy policy, please contact us at:
+
+- Email: [berry@appjeniksaan.nl](mailto:berry@appjeniksaan.nl)
+
+Last updated: February 8, 2025

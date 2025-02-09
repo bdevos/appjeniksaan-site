@@ -1,0 +1,85 @@
+@import 'tailwindcss';
+
+@import './fonts.css' layer(base);
+
+@theme {
+  --font-display: 'GortonPerfected', 'Helvetica Neue', Helvetica, sans-serif;
+  --font-display--font-feature-settings: 'ss01', 'ss04';
+
+  --font-mono: 'BerkeleyMono', 'ui-monospace', 'SF Mono', 'Monaco', 'monospace';
+  --font-sans: 'Author', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+body:not([data-page='reading']) {
+  @apply bg-neutral-200 text-neutral-800 dark:bg-black dark:text-neutral-200 sm:dark:bg-neutral-800;
+}
+
+main,
+footer,
+header {
+  @apply mx-auto max-w-4xl px-4;
+}
+
+blockquote {
+  @apply my-6 border-l-4 border-teal-300 pl-4;
+}
+
+blockquote p:last-of-type {
+  @apply mb-0;
+}
+
+hr {
+  @apply my-12 border-t-2 border-neutral-100 dark:border-neutral-700;
+}
+
+article {
+  @apply mb-20;
+
+  h1 {
+    @apply font-display mt-8 truncate text-3xl leading-10 text-balance text-neutral-800 uppercase md:text-4xl dark:text-neutral-300;
+  }
+  h2 {
+    @apply font-display mt-12 mb-6 text-2xl text-balance text-neutral-800 uppercase dark:text-neutral-500 [h1+&]:mt-8;
+  }
+  h3 {
+    @apply font-display my-4 text-xl text-balance text-neutral-700 dark:text-neutral-500;
+  }
+  p {
+    @apply mb-8 text-pretty dark:text-neutral-200;
+
+    a {
+      @apply underline hover:text-teal-600 dark:hover:text-teal-300;
+    }
+  }
+  ol {
+    @apply mb-8 ml-8 list-decimal;
+  }
+  ul {
+    @apply mb-8 ml-8 list-disc;
+  }
+  img {
+    @apply mx-auto my-8 max-h-[40rem] rounded shadow-md;
+  }
+  code {
+    @apply font-mono;
+  }
+  :not(pre) > code {
+    @apply rounded bg-neutral-300 px-1 py-0.5 dark:bg-neutral-800;
+  }
+  pre {
+    @apply mb-8 rounded-md p-2 inset-shadow-sm drop-shadow-xs;
+  }
+}
+
+.astro-code,
+.astro-code span {
+  background-color: var(--color-neutral-100) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--color-neutral-900) !important;
+  }
+}

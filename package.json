@@ -1,30 +1,23 @@
 {
   "name": "appjeniksaan-site",
+  "type": "module",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "deno run --allow-read --allow-net https://deno.land/std@0.106.0/http/file_server.ts dist",
-    "astro": "astro",
-    "format": "prettier --check .",
-    "create": "deno run --allow-read --allow-write create.ts"
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/rss": "4.0.11",
+    "@astrojs/sitemap": "3.2.1",
+    "@tailwindcss/vite": "4.0.2",
+    "astro": "5.2.3",
+    "tailwindcss": "4.0.2"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.4",
-    "@astrojs/rss": "4.0.11",
-    "@astrojs/tailwind": "5.1.5",
-    "@types/markdown-it": "14.1.2",
-    "@types/sanitize-html": "2.13.0",
-    "astro": "5.2.1",
-    "markdown-it": "14.1.0",
     "prettier": "3.4.2",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.6.11",
-    "sanitize-html": "2.14.0",
-    "tailwindcss": "3.4.17",
-    "typescript": "5.7.3"
-  },
-  "packageManager": "pnpm@9.15.4"
+    "prettier-plugin-tailwindcss": "0.6.11"
+  }
 }

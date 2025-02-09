@@ -1,0 +1,44 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content'
+import { render } from 'astro:content'
+import Header from '../../components/Header.astro'
+import Footer from '../../components/Footer.astro'
+import BaseHead from '../../components/BaseHead.astro'
+import Subheading from '../../components/Subheading.astro'
+
+export async function getStaticPaths() {
+  const linked = await getCollection('linked')
+
+  return linked.map((link) => ({
+    params: { slug: link.id },
+    props: link,
+  }))
+}
+type Props = CollectionEntry<'linked'>
+
+const linked = Astro.props
+const { Content } = await render(linked)
+---
+
+<html
+  lang="en"
+  class="bg-neutral-200 text-neutral-600 dark:bg-neutral-900 dark:text-white"
+>
+  <head>
+    <BaseHead
+      title={linked.data.title}
+      description={`Linked to: ${linked.data.href}`}
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <article>
+        <h1>{linked.data.title}</h1>
+        <Subheading item={linked} />
+        <Content />
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

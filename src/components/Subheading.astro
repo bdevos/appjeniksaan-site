@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import DateBlock from '@components/DateBlock.astro'
-import { extractDomain } from '@src/extractDomain'
+import { extractDomain } from '../utils/extractDomain'
+import DateBlock from './DateBlock.astro'
 
 interface Props {
   item: CollectionEntry<'linked'> | CollectionEntry<'posts'>
@@ -10,16 +10,20 @@ interface Props {
 const { item } = Astro.props
 ---
 
-<div class="mb-4">
+<div class="mt-2 mb-6 font-mono text-sm text-neutral-500 dark:text-neutral-400">
   {
-    item.collection === 'linked' && (
-      <span class="font-light text-stone-600 dark:text-stone-400">
-        Source:
-        <a href={item.data.href} class="font-display no-underline">
-          {extractDomain(item.data.href)}
-        </a>
-        &mdash;
+    item.collection === 'linked' ? (
+      <span>
+        <span class="">&gt;</span>
+        <a
+          href={item.data.href}
+          class="underline"
+          set:text={extractDomain(item.data.href)}
+        />
+        <span>&mdash;</span>
       </span>
+    ) : (
+      <span>&lt;</span>
     )
   }
 
