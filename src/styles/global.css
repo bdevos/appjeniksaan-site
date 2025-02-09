@@ -10,7 +10,7 @@
   --font-sans: 'Author', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-body:not([data-page='reading']) {
+body {
   @apply bg-neutral-200 text-neutral-800 dark:bg-black dark:text-neutral-200 sm:dark:bg-neutral-800;
 }
 
