@@ -1,7 +1,0 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
-@import './colors.css' layer(base);
-@import './fonts.css' layer(base);
-@import './astro.css' layer(base);

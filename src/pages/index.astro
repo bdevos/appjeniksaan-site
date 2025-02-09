@@ -1,11 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
-
-import Layout from '@layouts/Layout.astro'
-import About from '@components/About.astro'
-import Item from '@components/Item.astro'
-
-import { sortAndLimit } from '@src/sortAndLimit'
+import About from '../components/About.astro'
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import { sortAndLimit } from '../utils/sortAndLimit'
+import LinkItem from '../components/LinkItem.astro'
+import PostItem from '../components/PostItem.astro'
 
 const linked = getCollection('linked')
 const posts = getCollection('posts')
@@ -13,10 +15,32 @@ const posts = getCollection('posts')
 const items = sortAndLimit(await linked, await posts, 10)
 ---
 
-<Layout>
-  <main>
-    {items.map((item) => <Item item={item} />)}
-  </main>
-
-  <About />
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      {
+        items.map((item) => (
+          <article>
+            <h1>
+              <a href={item.data.href ?? `${item.collection}/${item.id}`}>
+                {item.data.title}
+              </a>
+            </h1>
+            {item.collection === 'linked' ? (
+              <LinkItem item={item} />
+            ) : (
+              <PostItem item={item} />
+            )}
+          </article>
+        ))
+      }
+      <About />
+    </main>
+    <Footer />
+  </body>
+</html>

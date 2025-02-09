@@ -1,23 +1,18 @@
 @font-face {
-  font-family: 'Londrina Solid';
-  src: url(/fonts/LondrinaSolid-Light.woff2) format('woff2');
-  font-weight: 300;
+  font-family: 'GortonPerfected';
+  src: url(/fonts/gorton-perfected.woff2) format('woff2');
+  font-weight: 300 400 600;
 }
 
 @font-face {
-  font-family: 'Londrina Shadow';
-  src: url(/fonts/LondrinaShadow-Regular.woff2) format('woff2');
+  font-family: 'BerkeleyMono';
+  src: url(/fonts/berkeley-mono-regular.woff2) format('woff2');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Satoshi';
-  src: url(/fonts/Satoshi-Regular.woff2) format('woff2');
+  font-family: 'Author';
+  src: url(/fonts/author-regular.woff2) format('woff2');
   font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Satoshi';
-  src: url(/fonts/Satoshi-Light.woff2) format('woff2');
-  font-weight: 300;
+  size-adjust: 120%;
 }

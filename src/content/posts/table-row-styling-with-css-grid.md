@@ -7,7 +7,7 @@ Recently I ran into styling issues with a table layout where a lot of columns ha
 
 ## An example table
 
-<table class="rounded shadow-md border border-stone-200 dark:border-stone-700">
+<table class="rounded inset-shadow-sm border border-neutral-300 bg-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 drop-shadow-xs">
   <thead>
     <tr>
       <th>Programming Language</div>
@@ -41,7 +41,7 @@ To create the table above, we can use the HTML:
 ```html
 <table>
   <thead>
-    <tr>  
+    <tr>
       <th>Programming Language</th>
       <th>Creator</th>
       <th>First Release</th>
@@ -62,15 +62,18 @@ And the styling to make it into a CSS Grid based table:
 
 ```css
 table {
-  display: grid; 
+  display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns of even width */
 }
-thead, tbody, tr {
-  display: grid; 
+thead,
+tbody,
+tr {
+  display: grid;
   grid-template-columns: subgrid; /* thead, tbody and tr are subgrid */
   grid-column: 1 / -1; /* from the first to the last column */
 }
-thead tr, tbody tr:nth-of-type(even) {
+thead tr,
+tbody tr:nth-of-type(even) {
   background-color: white; /* the header and even rows get alternative background-color */
 }
 th {
@@ -82,12 +85,12 @@ The code above is a very simplified example, but with `CSS Grid` and `subgrid` t
 
 <style type="text/css">
 table {
-  display: grid; 
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 thead, tbody, tr {
-  display: grid; 
-  grid-template-columns: subgrid; 
+  display: grid;
+  grid-template-columns: subgrid;
   grid-column: 1 / -1;
 }
 tr {
@@ -95,7 +98,7 @@ tr {
   padding-block: 0.25em;
 }
 thead tr, tbody tr:nth-of-type(even) {
-  background-color: rgb(231, 229, 228);
+  background-color: var(--color-neutral-300);
 }
 th {
   text-align: start;
@@ -104,7 +107,7 @@ th {
 }
 @media (prefers-color-scheme: dark) {
   thead tr, tbody tr:nth-of-type(even) {
-    background-color: rgb(68, 64, 60);
+    background-color: var(--color-neutral-700);
   }
 }
 </style>

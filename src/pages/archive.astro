@@ -1,30 +1,56 @@
 ---
 import { getCollection } from 'astro:content'
-import Layout from '@layouts/Layout.astro'
-import ArchiveItem from '@components/ArchiveItem.astro'
-import MonthHeader from '@components/MonthHeader.astro'
-import { sortAndLimit, splitPostByMonth } from '@src/sortAndLimit'
-
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import { sortAndLimit, splitPostByMonth } from '../utils/sortAndLimit'
+import { dayFormatter, formatMonth } from '../utils/dateFormat'
 const linked = getCollection('linked')
 const posts = getCollection('posts')
 
 const items = splitPostByMonth(sortAndLimit(await linked, await posts))
+
+const formatDay = (pubDate: string) => dayFormatter.format(new Date(pubDate))
 ---
 
-<Layout title="Archive">
-  <main>
-    <h1>Archive</h1>
-    {
-      Object.keys(items).map((month) => (
-        <section>
-          <MonthHeader month={month} />
-          <ul>
-            {items[month].map((item) => (
-              <ArchiveItem item={item} />
-            ))}
-          </ul>
-        </section>
-      ))
-    }
-  </main>
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1
+        class="font-display mt-8 mb-4 text-3xl text-teal-500 uppercase dark:text-teal-300"
+      >
+        Archive
+      </h1>
+      {
+        Object.keys(items).map((month) => (
+          <section class="my-8">
+            <h2 class="font-display mb-6 text-lg text-neutral-400 uppercase dark:text-neutral-600">
+              {formatMonth(month)}
+            </h2>
+            <ul class="grid grid-cols-[auto_1fr]">
+              {items[month].map((item) => (
+                <li class="col-span-full my-2 grid grid-cols-subgrid gap-4">
+                  <div class="font-display justify-self-center text-2xl leading-10 font-light text-neutral-500">
+                    {formatDay(item.data.pubDate)}
+                  </div>
+                  <h3 class="font-display text-3xl leading-10 text-pretty uppercase md:text-4xl dark:text-neutral-300">
+                    <a href={`/${item.collection}/${item.id}`}>
+                      {item.data.title}
+                    </a>
+                  </h3>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,29 +1,16 @@
 ---
 import type { CollectionEntry } from 'astro:content'
-import { dateFormatter } from '@src/dateFormat'
+import { dateFormatter } from '../utils/dateFormat'
 
 interface Props {
   item: CollectionEntry<'linked'> | CollectionEntry<'posts'>
 }
 
 const { item } = Astro.props
-const { pathname } = Astro.url
-
-const itemPath = `/${item.collection}/${item.slug}`
-
-const href = itemPath !== pathname ? itemPath : undefined
-
-const date = dateFormatter.format(new Date(item.data.pubDate))
 ---
 
-<date class="inline-block font-light text-stone-700 dark:text-stone-300">
-  {
-    !!href ? (
-      <a href={href} class="no-underline">
-        {date}
-      </a>
-    ) : (
-      date
-    )
-  }
-</date>
+<time datetime={item.data.pubDate}>
+  <a href={`/${item.collection}/${item.id}`} class="underline">
+    {dateFormatter.format(new Date(item.data.pubDate))}
+  </a>
+</time>

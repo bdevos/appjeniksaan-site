@@ -1,20 +1,14 @@
 ---
-import type { CollectionEntry } from 'astro:content'
-import Subheading from '@components/Subheading.astro'
+import { getEntry, render, type CollectionEntry } from 'astro:content'
+import Subheading from './Subheading.astro'
 
 interface Props {
   item: CollectionEntry<'posts'>
 }
 
 const { item } = Astro.props
-const { Content } = await item.render()
-const href = item.data.href ? item.data.href : `${item.collection}/${item.slug}`
+const { Content } = await render(item)
 ---
 
-<>
-  <h1><a href={href}>{item.data.title}</a></h1>
-  <Subheading item={item} />
-
-  {item.data.description && <p>{item.data.description}</p>}
-  {!item.data.description && <Content />}
-</>
+<Subheading item={item} />
+{item.data.description ? <p>{item.data.description}</p> : <Content />}

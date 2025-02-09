@@ -1,16 +1,9 @@
 import rss from '@astrojs/rss'
-import { CollectionEntry, getCollection } from 'astro:content'
-import sanitizeHtml from 'sanitize-html'
-import MarkdownIt from 'markdown-it'
-import { site } from '@src/constants'
-
-import type { LinkedOrPosts } from '@src/sortAndLimit'
+import { getCollection, render, type CollectionEntry } from 'astro:content'
 import type { APIContext } from 'astro'
-
-const parser = new MarkdownIt()
-
-const sortByDate = (a: LinkedOrPosts, b: LinkedOrPosts) =>
-  a.data.pubDate.localeCompare(b.data.pubDate) * -1
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+import { experimental_AstroContainer } from 'astro/container'
+import { sortAndLimit } from '../utils/sortAndLimit'
 
 const parseLinkedAsEnclosure = (item: CollectionEntry<'linked'>) => ({
   length: item.data.href.length,
@@ -19,25 +12,34 @@ const parseLinkedAsEnclosure = (item: CollectionEntry<'linked'>) => ({
 })
 
 export async function GET(context: APIContext) {
-  const linked = getCollection('linked')
   const posts = getCollection('posts')
+  const linked = getCollection('linked')
 
-  const items = [...(await linked), ...(await posts)].sort(sortByDate)
+  const container = await experimental_AstroContainer.create()
+
+  const items = await Promise.all(
+    sortAndLimit(await linked, await posts, 10).map(async (item) => {
+      const { Content } = await render(item)
+      const html = await container.renderToString(Content)
+
+      return { ...item, html }
+    }),
+  )
 
   return rss({
-    title: site.title,
-    description: site.description,
-    site: context.site?.toString() ?? '',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    site: context.site!,
     items: items.map((item) => ({
-      link: `${item.collection}/${item.slug}`,
-      title: item.data.title,
+      ...item.data,
       pubDate: new Date(item.data.pubDate),
+      link: `${item.collection}/${item.id}`,
       enclosure:
         item.collection === 'linked' ? parseLinkedAsEnclosure(item) : undefined,
       description:
         item.collection === 'posts' && item.data.description
           ? item.data.description
-          : sanitizeHtml(parser.render(item.body)),
+          : item.html,
     })),
   })
 }

@@ -1,0 +1,14 @@
+---
+import { render, type CollectionEntry } from 'astro:content'
+import Subheading from './Subheading.astro'
+
+interface Props {
+  item: CollectionEntry<'linked'>
+}
+
+const { item } = Astro.props
+const { Content } = await render(item)
+---
+
+<Subheading item={item} />
+<Content />
