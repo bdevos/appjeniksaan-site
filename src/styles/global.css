@@ -11,7 +11,7 @@
 }
 
 body {
-  @apply bg-neutral-200 text-neutral-800 dark:bg-black dark:text-neutral-200 sm:dark:bg-neutral-800;
+  @apply min-h-screen bg-neutral-200 text-neutral-800 dark:bg-black dark:text-neutral-200 sm:dark:bg-neutral-800;
 }
 
 main,
@@ -36,7 +36,7 @@ article {
   @apply mb-20;
 
   h1 {
-    @apply font-display mt-8 truncate text-3xl leading-10 text-balance text-neutral-800 uppercase md:text-4xl dark:text-neutral-300;
+    @apply font-display mt-8 text-3xl leading-10 text-balance text-neutral-800 uppercase md:text-4xl dark:text-neutral-300;
   }
   h2 {
     @apply font-display mt-12 mb-6 text-2xl text-balance text-neutral-800 uppercase dark:text-neutral-500 [h1+&]:mt-8;
