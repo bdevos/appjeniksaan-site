@@ -1,21 +1,28 @@
 ---
 import { SITE_TITLE } from '../consts'
+
+interface Props {
+  bg?: string
+}
+
+const {
+  bg = '[&_div]:bg-conic/decreasing [&_div]:from-slate-200 [&_div]:via-slate-50 [&_div]:to-slate-200 hover:[&_div]:via-cyan-100',
+} = Astro.props
 ---
 
 <header class="flex justify-center pt-2 sm:justify-start">
   <a
-    class="grid grid-cols-1 grid-rows-1 subpixel-antialiased drop-shadow-xs *:col-span-full *:row-span-full *:rounded-full sm:-ml-3 [&_div]:bg-conic/decreasing [&_div]:from-emerald-100 [&_div]:via-cyan-100 [&_div]:to-emerald-100 hover:[&_div]:via-cyan-200"
+    class={` grid grid-cols-1 grid-rows-1 drop-shadow-[0_0.5px_0.5px_rgba(0,0,0,0.2)] *:col-span-full *:row-span-full *:rounded-full sm:-ml-3 ${bg}`}
     href="/"
   >
     <div></div>
-    <span
-      class="border-6 border-transparent bg-linear-to-br from-neutral-950 via-teal-950/90 to-black bg-clip-padding"
+    <span class="border-6 border-transparent bg-black/80 bg-clip-padding"
     ></span>
     <div
-      class="font-display bg-clip-text px-4 py-2 text-center font-semibold text-transparent uppercase"
+      class="font-display bg-clip-text px-4 py-2 text-center font-black text-transparent uppercase subpixel-antialiased"
     >
       {SITE_TITLE}
     </div>
-    <span class="border border-white/10 inset-shadow-xs"></span>
+    <span class="border border-white/50 inset-shadow-xs"></span>
   </a>
 </header>

@@ -7,6 +7,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts'
 import { splitReadingByMonth } from '../../utils/splitReadingByMonth'
 import { dayFormatter, formatMonth } from '../../utils/dateFormat'
 
+// <!-- bg="[&_div]:bg-gradient-to-br [&_div]:from-orange-200 [&_div]:via-orange-100 [&_div]:to-orange-200 hover:[&_div]:via-orange-200" -->
+
 const items = splitReadingByMonth(await getCollection('reading'))
 ---
 
@@ -16,7 +18,9 @@ const items = splitReadingByMonth(await getCollection('reading'))
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body class="!bg-orange-500 !text-black">
-    <Header />
+    <Header
+      bg="[&_div]:bg-gradient-to-br [&_div]:from-orange-200 [&_div]:via-orange-100 [&_div]:to-orange-200"
+    />
     <main>
       <h1 class="font-display mt-8 mb-4 text-3xl text-orange-100 uppercase">
         Reading Activity
