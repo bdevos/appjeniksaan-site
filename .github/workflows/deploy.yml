@@ -29,5 +29,4 @@ jobs:
         uses: denoland/deployctl@v1
         with:
           project: 'appjeniksaan'
-          entrypoint: 'jsr:@std/http/file-server'
-          root: 'dist'
+          entrypoint: 'server.ts'
