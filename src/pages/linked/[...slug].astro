@@ -34,7 +34,7 @@ const { Content } = await render(linked)
     <Header />
     <main>
       <article>
-        <h1>{linked.data.title}</h1>
+        <h1><a href={linked.data.href}>{linked.data.title}</a></h1>
         <Subheading item={linked} />
         <Content />
       </article>
