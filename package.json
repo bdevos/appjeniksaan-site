@@ -11,9 +11,9 @@
   "dependencies": {
     "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.2.1",
-    "@tailwindcss/vite": "4.0.11",
+    "@tailwindcss/vite": "4.0.12",
     "astro": "5.4.2",
-    "tailwindcss": "4.0.11"
+    "tailwindcss": "4.0.12"
   },
   "devDependencies": {
     "prettier": "3.5.3",
