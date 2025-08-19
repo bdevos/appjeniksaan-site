@@ -10,14 +10,14 @@ interface Props {
 const { item } = Astro.props
 ---
 
-<div class="mt-2 mb-6 font-mono text-sm text-neutral-500 dark:text-neutral-400">
+<div class="mt-2 mb-6 font-mono text-sm text-lime-200">
   {
     item.collection === 'linked' ? (
       <span>
         <span class="">&gt;</span>
         <a
           href={item.data.href}
-          class="underline"
+          class="underline hover:text-lime-300"
           set:text={extractDomain(item.data.href)}
         />
         <span>&mdash;</span>

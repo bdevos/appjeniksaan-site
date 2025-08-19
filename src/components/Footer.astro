@@ -1,55 +1,32 @@
----
-interface Props {
-  ignoreDark?: boolean
-}
-
-const { ignoreDark = false } = Astro.props
----
-
 <footer
-  class={`py-16 flex flex-col items-center text-center md:flex-row-reverse md:items-end md:justify-between md:text-start ${ignoreDark ? '' : 'dark:text-neutral-400'}`}
+  class="py-16 flex flex-col items-center text-center md:flex-row-reverse md:items-end md:justify-between md:text-start"
 >
   <ul class="mb-16 flex flex-col items-center gap-1 md:mb-0 md:items-start">
     <li>
-      <a
-        class="underline hover:text-teal-600 dark:hover:text-teal-300"
-        href="/archive">Archive</a
-      >
+      <a href="/archive">Archive</a>
     </li>
     <li>
-      <a
-        class="underline hover:text-teal-600 dark:hover:text-teal-300"
-        href="/reading">Reading</a
-      >
+      <a href="/reading">Reading</a>
     </li>
     <li>
-      <a
-        class="underline hover:text-teal-600 dark:hover:text-teal-300"
-        href="/feed.xml">RSS</a
-      >
+      <a href="/feed.xml">RSS</a>
     </li>
     <li>
-      <a
-        class="underline hover:text-teal-600 dark:hover:text-teal-300"
-        href="https://github.com/bdevos/appjeniksaan-site">Code</a
-      >
+      <a href="https://github.com/bdevos/appjeniksaan-site">Code</a>
     </li>
     <li>
-      <a
-        class="underline hover:text-teal-600 dark:hover:text-teal-300"
-        href="/privacy">Privacy</a
-      >
+      <a href="/privacy">Privacy</a>
     </li>
   </ul>
   <div class="flex flex-row items-center gap-[0.5ch]">
     <span>Made with</span>
     <a
       href="https://astro.build/"
-      class="flex flex-row items-center gap-[0.5ch] underline hover:text-teal-600 dark:hover:text-teal-300"
+      class="flex flex-row items-center gap-[0.5ch]"
     >
       <span>Astro</span>
       <svg
-        class={`h-5 w-5 fill-white ${ignoreDark ? '' : 'dark:fill-black'}`}
+        class="h-5 w-5 fill-white"
         viewBox="0 0 85 107"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -81,12 +58,12 @@ const { ignoreDark = false } = Astro.props
     <span> + Hosted on</span>
     <a
       href="https://deno.com/deploy"
-      class="flex flex-row items-center gap-[0.5ch] underline hover:text-teal-600 dark:hover:text-teal-300"
+      class="flex flex-row items-center gap-[0.5ch]"
     >
       <span>Deno</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class={`h-5 w-5 fill-white ${ignoreDark ? '' : 'dark:fill-black'}`}
+        class="h-5 w-5 fill-white"
         viewBox="0 0 5120 5120"
       >
         <path

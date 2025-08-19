@@ -1,29 +1,9 @@
 ---
 import { SITE_TITLE } from '../consts'
-
-interface Props {
-  bg?: string
-}
-
-const {
-  bg = '[&_div]:bg-conic/decreasing [&_div]:from-slate-200 [&_div]:via-emerald-50 [&_div]:to-slate-200 hover:[&_div]:via-emerald-100',
-} = Astro.props
 ---
 
 <header class="flex justify-center pt-2 sm:justify-start">
-  <a
-    class={` grid grid-cols-1 grid-rows-1 *:col-span-full *:row-span-full *:rounded-full sm:-ml-3 ${bg}`}
-    href="/"
-  >
-    <div></div>
-    <span
-      class="border-4 border-transparent bg-black/80 bg-clip-padding dark:bg-black"
-    ></span>
-    <div
-      class="font-display bg-clip-text px-3 py-1 text-center font-semibold text-transparent uppercase subpixel-antialiased"
-    >
-      {SITE_TITLE}
-    </div>
-    <span class="border border-white/10 inset-shadow-xs"></span>
+  <a href="/" class="font-display text-center uppercase text-red-50 dark:text-red-950 hover:text-lime-300">
+    {SITE_TITLE}
   </a>
 </header>

@@ -10,7 +10,7 @@ const { item } = Astro.props
 ---
 
 <time datetime={item.data.pubDate}>
-  <a href={`/${item.collection}/${item.id}`} class="underline">
+  <a href={`/${item.collection}/${item.id}`} class="underline hover:text-lime-300">
     {dateFormatter.format(new Date(item.data.pubDate))}
   </a>
 </time>

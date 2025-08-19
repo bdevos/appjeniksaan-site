@@ -11,7 +11,7 @@
 }
 
 body {
-  @apply min-h-screen bg-neutral-200 text-neutral-800 dark:bg-black dark:text-neutral-200 sm:dark:bg-neutral-800;
+  @apply min-h-screen bg-red-500 text-red-950;
 }
 
 main,
@@ -21,7 +21,7 @@ header {
 }
 
 blockquote {
-  @apply my-6 border-l-4 border-teal-300 pl-4;
+  @apply my-6 border-l-4 border-red-400 pl-4 dark:border-red-600;
 }
 
 blockquote p:last-of-type {
@@ -36,19 +36,19 @@ article {
   @apply mb-20;
 
   h1 {
-    @apply font-display mt-8 text-3xl leading-10 text-balance text-neutral-800 uppercase md:text-4xl dark:text-neutral-300;
+    @apply font-display mt-8 text-3xl leading-10 text-balance text-red-50 uppercase md:text-4xl dark:text-red-950;
   }
   h2 {
-    @apply font-display mt-12 mb-6 text-2xl text-balance text-neutral-800 uppercase dark:text-neutral-500 [h1+&]:mt-8;
+    @apply font-display mt-12 mb-6 text-2xl text-balance text-red-200 uppercase dark:text-red-900 [h1+&]:mt-8;
   }
   h3 {
     @apply font-display my-4 text-xl text-balance text-neutral-700 dark:text-neutral-500;
   }
   p {
-    @apply mb-8 text-pretty dark:text-neutral-200;
+    @apply mb-8 text-pretty;
 
     a {
-      @apply underline hover:text-teal-600 dark:hover:text-teal-300;
+      @apply underline hover:text-lime-300;
     }
   }
   ol {
@@ -64,22 +64,28 @@ article {
     @apply font-mono;
   }
   :not(pre) > code {
-    @apply rounded bg-neutral-300 px-1 py-0.5 dark:bg-neutral-800;
+    @apply rounded bg-red-600 px-1 py-0.5;
   }
   pre {
     @apply mb-8 rounded-md p-2 inset-shadow-sm drop-shadow-xs;
   }
 }
 
+footer {
+  a {
+    @apply underline hover:text-lime-300;
+  }
+}
+
 .astro-code,
 .astro-code span {
-  background-color: var(--color-neutral-100) !important;
+  background-color: var(--color-lime-50) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {
     color: var(--shiki-dark) !important;
-    background-color: var(--color-neutral-900) !important;
+    background-color: var(--color-red-900) !important;
   }
 }
