@@ -36,10 +36,10 @@ const formatDay = (pubDate: string) => dayFormatter.format(new Date(pubDate))
             <ul class="grid grid-cols-[auto_1fr]">
               {items[month].map((item) => (
                 <li class="col-span-full my-2 grid grid-cols-subgrid gap-4">
-                  <div class="font-display justify-self-center text-2xl leading-10 font-light text-red-200 dark:text-red-900">
+                  <div class="font-display justify-self-center text-xl md:text-2xl leading-10 font-light text-red-200 dark:text-red-900">
                     {formatDay(item.data.pubDate)}
                   </div>
-                  <h3 class="font-display text-3xl leading-10 text-pretty uppercase md:text-4xl text-red-50 dark:text-red-950">
+                  <h3 class="font-display text-2xl leading-10 text-pretty uppercase md:text-4xl text-red-50 dark:text-red-950">
                     <a href={`/${item.collection}/${item.id}`}>
                       {item.data.title}
                     </a>
