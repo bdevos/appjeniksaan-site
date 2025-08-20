@@ -34,7 +34,7 @@ const items = splitReadingByMonth(await getCollection('reading'))
             <ul class="grid grid-cols-[auto_1fr]">
               {items[month].map((book) => (
                 <li class="col-span-full my-2 grid grid-cols-subgrid gap-4">
-                  <div class="font-display justify-self-center text-xl md:text-2xl leading-10 font-light text-orange-300">
+                  <div class="font-display justify-self-center text-xl leading-10 font-light text-orange-300 md:text-2xl">
                     {dayFormatter.format(book.data.completed)}
                   </div>
                   <h3 class="font-display text-2xl leading-10 uppercase md:text-4xl">

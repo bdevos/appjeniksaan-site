@@ -10,4 +10,4 @@ Right after the purge all was great, but over time more and more books started t
 
 To hopefully help get a better grasp of how I am making progress I started [logging the books I've been reading](/reading) on this domain.
 
-The *interesting* thing about this approach is that it will get more challenging with time. At the beginning I got to read through books like the [`The Hitchhiker's Guide to the Galaxy`](/reading/the-hitchhikers-guide-to-the-galaxy/), but at some point I will have to dive into `Pale Fire` and `The Divine Comedy`. So fingers crossed for this new approach 🤞.
+The _interesting_ thing about this approach is that it will get more challenging with time. At the beginning I got to read through books like the [`The Hitchhiker's Guide to the Galaxy`](/reading/the-hitchhikers-guide-to-the-galaxy/), but at some point I will have to dive into `Pale Fire` and `The Divine Comedy`. So fingers crossed for this new approach 🤞.

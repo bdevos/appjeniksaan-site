@@ -32,20 +32,19 @@ jobs:
     timeout-minutes: 3
 
     steps:
-    - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-    - uses: denoland/setup-deno@v1
-      with:
-        deno-version: v1.x
-    
-    - run: deno task updateEntries
-      env:
-        DENO_KV_URL: ${{ vars.DENO_KV_URL }}
-        DENO_KV_ACCESS_TOKEN: ${{ secrets.DENO_KV_ACCESS_TOKEN }}
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
 
+      - run: deno task updateEntries
+        env:
+          DENO_KV_URL: ${{ vars.DENO_KV_URL }}
+          DENO_KV_ACCESS_TOKEN: ${{ secrets.DENO_KV_ACCESS_TOKEN }}
 ```
 
-After configuring the above, I stumbled upon Deno's recent introduction of [`Deno.cron`](https://deno.land/api@v1.38.0?s=Deno.cron&unstable=). I had no idea what it was, but it sounded like something that would be similar. As it turns out, it is. 
+After configuring the above, I stumbled upon Deno's recent introduction of [`Deno.cron`](https://deno.land/api@v1.38.0?s=Deno.cron&unstable=). I had no idea what it was, but it sounded like something that would be similar. As it turns out, it is.
 
 By adding a `Deno.cron()` call in my the [`main.ts`](https://github.com/bdevos/theshook.one/blob/a87adb091bb9b0e7f5395c8a5e7531b9835a4f47/main.ts#L15) file of my project, [Deno Deploy](https://deno.com/deploy) will execute my update task based on the provided cron schedule. The beauty of this approach is that there's no need to provide Deno KV credentials, and the output is conveniently logged in the Deno Deploy logs.
 
