@@ -29,7 +29,7 @@ blockquote p:last-of-type {
 }
 
 hr {
-  @apply my-12 border-t-2 border-neutral-100 dark:border-neutral-700;
+  @apply my-12 border-t-2 border-red-400 dark:border-red-600;
 }
 
 article {
@@ -39,10 +39,10 @@ article {
     @apply font-display mt-8 text-3xl leading-10 text-balance text-red-50 uppercase md:text-4xl dark:text-red-950;
   }
   h2 {
-    @apply font-display mt-12 mb-6 text-2xl text-balance text-red-200 uppercase dark:text-red-900 [h1+&]:mt-8;
+    @apply font-display mt-12 mb-6 text-2xl text-balance text-red-100 uppercase dark:text-red-900 [h1+&]:mt-8;
   }
   h3 {
-    @apply font-display my-4 text-xl text-balance text-neutral-700 dark:text-neutral-500;
+    @apply font-display my-4 text-xl text-balance text-red-200 dark:text-red-800;
   }
   p {
     @apply mb-8 text-pretty;

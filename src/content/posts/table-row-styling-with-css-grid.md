@@ -7,7 +7,7 @@ Recently I ran into styling issues with a table layout where a lot of columns ha
 
 ## An example table
 
-<table class="rounded inset-shadow-sm border border-neutral-300 bg-neutral-200 dark:bg-neutral-800 dark:border-neutral-700 drop-shadow-xs">
+<table class="rounded inset-shadow-sm border border-red-300 bg-red-200 dark:bg-red-500 dark:border-red-600 drop-shadow-xs">
   <thead>
     <tr>
       <th>Programming Language</div>
@@ -98,7 +98,7 @@ tr {
   padding-block: 0.25em;
 }
 thead tr, tbody tr:nth-of-type(even) {
-  background-color: var(--color-neutral-300);
+  background-color: var(--color-red-300);
 }
 th {
   text-align: start;
@@ -107,7 +107,7 @@ th {
 }
 @media (prefers-color-scheme: dark) {
   thead tr, tbody tr:nth-of-type(even) {
-    background-color: var(--color-neutral-700);
+    background-color: var(--color-red-600);
   }
 }
 </style>

@@ -20,10 +20,7 @@ const post = Astro.props
 const { Content } = await render(post)
 ---
 
-<html
-  lang="en"
-  class="bg-neutral-200 text-neutral-600 dark:bg-neutral-900 dark:text-white"
->
+<html lang="en">
   <head>
     <BaseHead
       title={post.data.title}
