@@ -4,6 +4,7 @@ import type { APIContext } from 'astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 import { experimental_AstroContainer } from 'astro/container'
 import { sortAndLimit } from '../utils/sortAndLimit'
+import { amsDate } from '../utils/dateFormat'
 
 const parseLinkedAsEnclosure = (item: CollectionEntry<'linked'>) => ({
   length: item.data.href.length,
@@ -32,7 +33,7 @@ export async function GET(context: APIContext) {
     site: context.site!,
     items: items.map((item) => ({
       ...item.data,
-      pubDate: new Date(item.data.pubDate),
+      pubDate: amsDate(item.data.pubDate),
       link: `${item.collection}/${item.id}`,
       enclosure:
         item.collection === 'linked' ? parseLinkedAsEnclosure(item) : undefined,
