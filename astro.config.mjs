@@ -10,6 +10,12 @@ export default defineConfig({
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      rollupOptions: {
+        // Override assets filename, so CSS is in styles.hash.css, instead of privacy.hash.css
+        output: { assetFileNames: 'assets/styles.[hash][extname]' },
+      },
+    },
   },
   markdown: {
     shikiConfig: {
