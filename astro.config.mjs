@@ -8,7 +8,6 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   site: 'https://appjeniksaan.nl',
   integrations: [sitemap()],
-
   vite: {
     plugins: [tailwindcss()],
   },

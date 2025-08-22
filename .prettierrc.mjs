@@ -8,6 +8,12 @@ export default {
         parser: 'astro',
       },
     },
+    {
+      files: '*.jsonc',
+      options: {
+        trailingComma: 'none',
+      },
+    },
   ],
   semi: false,
   singleQuote: true,
