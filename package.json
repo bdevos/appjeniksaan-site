@@ -10,10 +10,10 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@astrojs/rss": "4.0.13",
+    "@astrojs/rss": "4.0.14",
     "@astrojs/sitemap": "3.6.0",
     "@tailwindcss/vite": "4.1.17",
-    "astro": "5.15.4",
+    "astro": "5.16.0",
     "tailwindcss": "4.1.17"
   },
   "devDependencies": {
