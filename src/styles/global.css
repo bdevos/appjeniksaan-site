@@ -15,9 +15,12 @@ body {
 }
 
 main,
-footer,
-header {
-  @apply mx-auto max-w-4xl px-4;
+footer {
+  @apply mx-auto max-w-xl px-4;
+}
+
+main {
+  @apply lg:-mt-8;
 }
 
 blockquote {
@@ -45,7 +48,7 @@ article {
     @apply font-display my-4 text-xl text-balance text-red-200 dark:text-red-800;
   }
   p {
-    @apply mb-8 text-pretty;
+    @apply mb-8 text-justify text-pretty;
 
     a {
       @apply underline hover:text-lime-300;
@@ -56,6 +59,10 @@ article {
   }
   ul {
     @apply mb-8 ml-8 list-disc;
+
+    a {
+      @apply underline hover:text-lime-300;
+    }
   }
   img {
     @apply mx-auto my-8 max-h-[40rem] rounded shadow-md;
