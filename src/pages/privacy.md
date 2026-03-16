@@ -1,6 +1,6 @@
 ---
 title: Privacy Policy
-description: Privacy policy for our website - we collect no personal data, use no cookies, and do not track visitors.
+description: Privacy policy for this website - we collect no personal data, use no cookies, and do not track visitors.
 layout: ../layouts/Article.astro
 ---
 
