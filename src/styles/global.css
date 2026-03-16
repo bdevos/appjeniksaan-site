@@ -2,6 +2,8 @@
 
 @import './fonts.css' layer(base);
 
+@source inline('from-red-500 from-orange-500');
+
 @theme {
   --font-display: 'GortonPerfected', 'Helvetica Neue', Helvetica, sans-serif;
   --font-display--font-feature-settings: 'ss01', 'ss04';
