@@ -8,11 +8,12 @@
   font-family: 'BerkeleyMono';
   src: url(/fonts/berkeley-mono-regular.woff2) format('woff2');
   font-weight: 400;
+  size-adjust: 86%;
 }
 
 @font-face {
-  font-family: 'Author';
-  src: url(/fonts/author-regular.woff2) format('woff2');
+  font-family: 'Quicksand';
+  src: url(/fonts/quicksand-regular.woff2) format('woff2');
   font-weight: 400;
-  size-adjust: 120%;
+  font-style: normal;
 }

@@ -13,3 +13,11 @@ Thank you Dolf, for coming up with this crazy name. The original idea was that A
 This website is made with [Astro](https://astro.build/), would highly recommend this framework for anyone building for the web. If you are curious about the code for this website, it is publicly accessible on [Github](https://github.com/bdevos/appjeniksaan-site).
 
 Hosting this website is done on [Cloudflare Workers](https://workers.cloudflare.com/). I have been super impressed with how easy (and cheap, I'm Dutch 🇳🇱) it is to host simple things, like this site, to complex projects on Cloudflare.
+
+## Fonts
+
+The following fonts are used on this website:
+
+- [Gorton Perfected](https://shifthappens.site/store/#fonts)
+- [Quicksand](https://www.fontshare.com/fonts/quicksand)
+- [Berkeley Mono](https://usgraphics.com/products/berkeley-mono)

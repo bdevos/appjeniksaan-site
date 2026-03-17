@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content'
-import { render } from 'astro:content'
 import BaseHead from '../../components/BaseHead.astro'
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts'
 import { dateFormatter } from '../../utils/dateFormat'
@@ -24,21 +23,23 @@ const book = Astro.props
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="!bg-orange-500">
-    <Header bg="orange-500" />
-    <main class="mt-8">
-      <h1 class="font-display text-3xl uppercase">
+  <body>
+    <Header />
+    <main class="my-16">
+      <h1
+        class="mt-8 mb-4 text-3xl text-mist-700 lg:text-4xl dark:text-mist-200"
+      >
         {book.data.title}
       </h1>
-      <dl class="mt-4 divide-y divide-orange-400">
+      <dl class="mt-4 divide-y divide-mist-200 dark:divide-mist-800">
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-orange-300">Completed</dt>
+          <dt class="text-mist-500">Completed</dt>
           <dd class="mt-1 sm:col-span-2 sm:mt-0">
             {dateFormatter.format(book.data.completed)}
           </dd>
         </div>
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-orange-300">Author</dt>
+          <dt class="text-mist-500">Author</dt>
           <dd class="mt-1 sm:col-span-2 sm:mt-0">
             {book.data.author}
           </dd>
@@ -46,7 +47,7 @@ const book = Astro.props
         {
           book.data.translation && (
             <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt class="text-orange-300">Translation</dt>
+              <dt class="text-mist-500">Translation</dt>
               <dd class="mt-1 sm:col-span-2 sm:mt-0">
                 {book.data.translation}
               </dd>
@@ -54,7 +55,7 @@ const book = Astro.props
           )
         }
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-orange-300">ISBN</dt>
+          <dt class="text-mist-500">ISBN</dt>
           <dd class="mt-1 font-mono sm:col-span-2 sm:mt-0">
             {
               Array.isArray(book.data.isbn)

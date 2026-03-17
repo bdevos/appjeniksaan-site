@@ -9,10 +9,10 @@ interface Props {
 const { item } = Astro.props
 ---
 
-<time datetime={item.data.pubDate}>
+<time datetime={item.data.pubDate} class="flex">
   <a
     href={`/${item.collection}/${item.id}`}
-    class="underline hover:text-lime-300"
+    class="hover:text-sky-900 dark:hover:text-sky-500"
   >
     {dateFormatter.format(new Date(item.data.pubDate))}
   </a>

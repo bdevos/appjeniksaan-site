@@ -15,26 +15,28 @@ const items = splitReadingByMonth(await getCollection('reading'))
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
-  <body class="!bg-orange-500">
-    <Header bg="orange-500" />
+  <body>
+    <Header />
     <main>
-      <h1 class="font-display mt-8 mb-4 text-3xl text-orange-100 uppercase">
+      <h1
+        class="mt-8 mb-4 text-3xl text-mist-700 lg:text-4xl dark:text-mist-200"
+      >
         Reading Activity
       </h1>
-      <p class="text-orange-950">
+      <p>
         Since August 2023, I have been documenting my reading activity. Below
         are the books I have completed.
       </p>
       {
         Object.keys(items).map((month) => (
           <section class="my-8">
-            <h2 class="font-display mb-6 text-lg text-orange-200 uppercase">
+            <h2 class="font-display mb-6 text-lg text-mist-700 uppercase dark:text-mist-400">
               {formatMonth(month)}
             </h2>
             <ul class="grid grid-cols-[auto_1fr]">
               {items[month].map((book) => (
                 <li class="col-span-full my-2 grid grid-cols-subgrid gap-4">
-                  <div class="font-display justify-self-center text-xl leading-10 font-light text-orange-300 md:text-2xl">
+                  <div class="font-display justify-self-center text-xl leading-10 font-light text-mist-500 md:text-2xl">
                     {dayFormatter.format(book.data.completed)}
                   </div>
                   <h3 class="font-display text-2xl leading-10 uppercase md:text-4xl">

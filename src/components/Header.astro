@@ -1,55 +1,37 @@
 ---
 import { SITE_TITLE } from '../consts'
-
-interface Props {
-  bg?: string
-}
-
-const { bg = 'red-500' } = Astro.props
 ---
 
 <header
-  class="relative mx-auto grid max-w-xl grid-cols-[1fr_auto_1fr] px-4 py-2 lg:sticky lg:top-0 lg:mx-0 lg:max-w-none lg:grid-cols-[1fr_36rem_1fr] lg:px-0 lg:py-4"
+  class="relative mx-auto grid max-w-xl grid-cols-[1fr_auto_1fr] px-4 py-4 lg:sticky lg:top-0 lg:mx-0 lg:max-w-none lg:grid-cols-[1fr_36rem_1fr] lg:px-0"
 >
-  <!-- Blur layers -->
   <div
-    class="pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,black_0%,black_50%,transparent_100%)] backdrop-blur-[1px]"
+    class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,black_50%,transparent_100%)] backdrop-blur-[1px] lg:block"
   >
   </div>
   <div
-    class="pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,black_0%,transparent_50%)] backdrop-blur-[3px]"
+    class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,transparent_50%)] backdrop-blur-[3px] lg:block"
   >
   </div>
   <div
-    class="pointer-events-none absolute inset-0 [mask-image:linear-gradient(to_bottom,black_0%,transparent_25%)] backdrop-blur-[6px]"
-  >
-  </div>
-
-  <!-- Color gradient overlay -->
-  <div
-    class={`pointer-events-none absolute inset-0 bg-linear-to-b from-${bg} to-transparent`}
+    class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,transparent_25%)] backdrop-blur-[6px] lg:block"
   >
   </div>
 
-  <!-- Your content (naturally above the absolute layers) -->
+  <div
+    class="pointer-events-none absolute inset-0 hidden bg-linear-to-b from-mist-100 to-transparent lg:block dark:from-mist-900"
+  >
+  </div>
+
   <a
     href="/"
-    class="font-display relative text-red-50 uppercase hover:text-lime-300 lg:justify-self-end"
+    class="font-display relative text-sky-500 uppercase hover:text-sky-950 lg:justify-self-end dark:text-sky-600 dark:hover:text-sky-500"
     >{SITE_TITLE}</a
   >
   <div></div>
   <a
     href="/work"
-    class="relative self-center justify-self-end text-xs text-red-50 uppercase hover:text-lime-300 lg:justify-self-start lg:text-base"
+    class="relative self-center justify-self-end text-sm text-sky-700 hover:text-sky-950 lg:justify-self-start lg:text-base dark:text-sky-700 dark:hover:text-sky-600"
     >Apps & Experiments</a
   >
 </header>
-
-<!-- <header class="flex justify-center pt-2 sm:justify-start">
-  <a
-    href="/"
-    class="font-display text-center text-red-50 uppercase hover:text-lime-300 dark:text-red-950"
-  >
-    {SITE_TITLE}
-  </a>
-</header> -->

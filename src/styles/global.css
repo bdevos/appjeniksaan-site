@@ -2,18 +2,17 @@
 
 @import './fonts.css' layer(base);
 
-@source inline('from-red-500 from-orange-500');
-
 @theme {
   --font-display: 'GortonPerfected', 'Helvetica Neue', Helvetica, sans-serif;
   --font-display--font-feature-settings: 'ss01', 'ss04';
 
   --font-mono: 'BerkeleyMono', 'ui-monospace', 'SF Mono', 'Monaco', 'monospace';
-  --font-sans: 'Author', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-sans:
+    'Quicksand', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 body {
-  @apply min-h-screen bg-red-500 text-red-950;
+  @apply min-h-screen bg-mist-50 text-mist-900 dark:bg-mist-900 dark:text-mist-100;
 }
 
 main,
@@ -26,7 +25,7 @@ main {
 }
 
 blockquote {
-  @apply my-6 border-l-4 border-red-400 pl-4 dark:border-red-600;
+  @apply my-6 border-l-4 border-sky-300 pl-4 dark:border-sky-700;
 }
 
 blockquote p:last-of-type {
@@ -34,26 +33,26 @@ blockquote p:last-of-type {
 }
 
 hr {
-  @apply my-12 border-t-2 border-red-400 dark:border-red-600;
+  @apply my-12 border-t-2 border-mist-200 dark:border-sky-950;
 }
 
 article {
   @apply mb-20;
 
   h1 {
-    @apply font-display mt-8 text-3xl leading-10 text-balance text-red-50 uppercase md:text-4xl dark:text-red-950;
+    @apply mt-8 text-3xl leading-10 text-balance text-mist-700 lg:text-4xl dark:text-mist-200;
   }
   h2 {
-    @apply font-display mt-12 mb-6 text-2xl text-balance text-red-100 uppercase dark:text-red-900 [h1+&]:mt-8;
+    @apply font-display mt-12 mb-6 text-lg text-balance text-mist-600 uppercase dark:text-mist-300 [h1+&]:mt-8;
   }
   h3 {
-    @apply font-display my-4 text-xl text-balance text-red-200 dark:text-red-800;
+    @apply font-display my-4 text-lg text-balance text-mist-600 dark:text-mist-300;
   }
   p {
-    @apply mb-8 text-justify text-pretty;
+    @apply mb-6 text-justify text-pretty;
 
     a {
-      @apply underline hover:text-lime-300;
+      @apply text-sky-700 underline hover:text-sky-950 dark:text-sky-100 dark:hover:text-sky-400;
     }
   }
   ol {
@@ -63,7 +62,7 @@ article {
     @apply mb-8 ml-8 list-disc;
 
     a {
-      @apply underline hover:text-lime-300;
+      @apply text-sky-700 underline hover:text-sky-950 dark:text-sky-100 dark:hover:text-sky-400;
     }
   }
   img {
@@ -73,28 +72,28 @@ article {
     @apply font-mono;
   }
   :not(pre) > code {
-    @apply rounded bg-red-600 px-1 py-0.5;
+    @apply rounded bg-sky-100 px-1 py-0.5 dark:bg-sky-950;
   }
   pre {
-    @apply mb-8 rounded-md p-2 inset-shadow-sm drop-shadow-xs;
+    @apply -mx-2 mb-8 rounded-md border-1 border-mist-100 p-2 dark:border-mist-800;
   }
 }
 
 footer {
   a {
-    @apply underline hover:text-lime-300;
+    @apply text-sky-700 hover:text-sky-950 dark:hover:text-sky-600;
   }
 }
 
 .astro-code,
 .astro-code span {
-  background-color: var(--color-lime-50) !important;
+  background-color: var(--color-white) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   .astro-code,
   .astro-code span {
     color: var(--shiki-dark) !important;
-    background-color: var(--color-red-900) !important;
+    background-color: var(--color-mist-950) !important;
   }
 }
