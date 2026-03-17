@@ -12,7 +12,7 @@
 }
 
 body {
-  @apply min-h-screen bg-mist-50 text-mist-900 dark:bg-mist-900 dark:text-mist-100;
+  @apply min-h-screen bg-mist-50 text-mist-900 dark:bg-mist-950 dark:text-mist-100;
 }
 
 main,
@@ -72,7 +72,7 @@ article {
     @apply font-mono;
   }
   :not(pre) > code {
-    @apply rounded bg-sky-100 px-1 py-0.5 dark:bg-sky-950;
+    @apply rounded bg-sky-100 px-1 py-0.5 dark:bg-sky-900;
   }
   pre {
     @apply -mx-2 mb-8 rounded-md border-1 border-mist-100 p-2 dark:border-mist-800;
@@ -95,5 +95,15 @@ footer {
   .astro-code span {
     color: var(--shiki-dark) !important;
     background-color: var(--color-mist-950) !important;
+  }
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
   }
 }
