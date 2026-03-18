@@ -25,7 +25,12 @@ main {
 }
 
 blockquote {
-  @apply my-6 border-l-4 border-sky-300 pl-4 dark:border-sky-700;
+  @apply relative my-6 pl-4;
+}
+
+blockquote::before {
+  content: '';
+  @apply absolute top-0 bottom-0 left-0 w-0.5 rounded-full bg-sky-500 dark:bg-sky-600;
 }
 
 blockquote p:last-of-type {
@@ -79,18 +84,12 @@ article {
   }
 }
 
-footer {
-  a {
-    @apply text-sky-700 hover:text-sky-950 dark:hover:text-sky-600;
-  }
-}
-
 .astro-code,
 .astro-code span {
   background-color: var(--color-white) !important;
 }
 
-@media (prefers-color-scheme: dark) {
+@variant dark {
   .astro-code,
   .astro-code span {
     color: var(--shiki-dark) !important;
