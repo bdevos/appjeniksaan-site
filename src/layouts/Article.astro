@@ -4,7 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
 const { frontmatter } = Astro.props
-const { title, description } = frontmatter
+const { title, description, hideTitle = false } = frontmatter
 ---
 
 <html lang="en">
@@ -16,7 +16,7 @@ const { title, description } = frontmatter
       <Header />
       <main>
         <article>
-          <h1>{title}</h1>
+          {!hideTitle && <h1>{title}</h1>}
           <slot />
         </article>
       </main>

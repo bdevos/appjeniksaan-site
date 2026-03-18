@@ -1,8 +1,15 @@
 ---
-title: Apps & Experiments
+title: Work
+hideTitle: true
 description: Overview of Projects
 layout: ../layouts/Article.astro
 ---
+
+<div class="flex flex-col rounded border-1 border-sky-100 mt-4 lg:mt-12 bg-sky-50 p-4 text-xs lg:text-sm leading-6 text-center font-display uppercase dark:bg-sky-950/50 dark:border-sky-950">
+Open to interesting opportunities <span>~</span> <a href="mailto:hello@appjeniksaan.nl" class="hover:text-sky-500 dark:hover:text-sky-600">hello@appjeniksaan.nl</a>
+</div>
+
+# Apps
 
 ## [ZenSpan](https://zenspan.app)
 
@@ -17,6 +24,10 @@ I wanted an app that could store QR codes and barcodes, but not do much else. Th
 
 - Platform: iOS
 - Website: [peekcard.app](https://peekcard.app)
+
+---
+
+# Experiments
 
 ## [theshook.one](https://theshook.one)
 
