@@ -16,16 +16,16 @@ const { item } = Astro.props
   {
     item.collection === 'linked' ? (
       <>
-        <span class="text-lg">⇥</span>
+        <span class="pt-px text-lg">⇥</span>
         <a
           href={item.data.href}
           class="hover:text-sky-900 dark:hover:text-sky-500"
           set:text={extractDomain(item.data.href)}
         />
-        <span class="text-base">~</span>
+        <span class="pt-px text-base">~</span>
       </>
     ) : (
-      <span class="text-lg">⇤</span>
+      <span class="pt-px text-lg">⇤</span>
     )
   }
 
