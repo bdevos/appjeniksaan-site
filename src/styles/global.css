@@ -6,7 +6,7 @@
   --font-display: 'GortonPerfected', 'Helvetica Neue', Helvetica, sans-serif;
   --font-display--font-feature-settings: 'ss01', 'ss04';
 
-  --font-mono: 'BerkeleyMono', 'ui-monospace', 'SF Mono', 'Monaco', 'monospace';
+  --font-mono: 'ui-monospace', 'SF Mono', 'Monaco', 'monospace';
   --font-sans:
     'Quicksand', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
 }
@@ -74,7 +74,7 @@ article {
     @apply mx-auto my-8 max-h-[40rem] rounded shadow-md;
   }
   code {
-    @apply font-mono;
+    @apply font-mono text-sm;
   }
   :not(pre) > code {
     @apply rounded bg-sky-100 px-1 py-0.5 dark:bg-sky-900;
