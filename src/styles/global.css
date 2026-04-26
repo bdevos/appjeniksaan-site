@@ -42,7 +42,7 @@ hr {
 }
 
 p {
-  @apply text-justify font-serif leading-7 text-pretty;
+  @apply text-justify font-serif text-pretty;
 }
 
 article {
