@@ -1,6 +1,6 @@
 /favicon.ico
   Cache-Control: public, max-age=604800, immutable
-/fonts/quicksand-regular.woff2
+/fonts/latin-modern-mono-regular.woff2
   Cache-Control: public, max-age=31536000, immutable
 /fonts/gorton-perfected.woff2
   Cache-Control: public, max-age=31536000, immutable

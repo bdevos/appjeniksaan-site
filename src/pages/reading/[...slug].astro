@@ -27,11 +27,11 @@ const book = Astro.props
     <Header />
     <main class="my-16">
       <h1
-        class="mt-8 mb-4 text-3xl text-mist-700 lg:text-4xl dark:text-mist-200"
+        class="font-display mt-8 mb-4 text-3xl text-mist-700 lg:text-4xl dark:text-mist-200"
       >
         {book.data.title}
       </h1>
-      <dl class="mt-4 divide-y divide-mist-200 dark:divide-mist-800">
+      <dl class="mt-4 divide-y divide-mist-200 font-serif dark:divide-mist-800">
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
           <dt class="text-mist-500">Completed</dt>
           <dd class="mt-1 sm:col-span-2 sm:mt-0">
@@ -56,7 +56,7 @@ const book = Astro.props
         }
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
           <dt class="text-mist-500">ISBN</dt>
-          <dd class="mt-1 font-mono sm:col-span-2 sm:mt-0">
+          <dd class="mt-1 font-mono text-sm sm:col-span-2 sm:mt-0">
             {
               Array.isArray(book.data.isbn)
                 ? book.data.isbn.map((isbn, index) => (

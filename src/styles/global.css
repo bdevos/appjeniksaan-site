@@ -7,8 +7,8 @@
   --font-display--font-feature-settings: 'ss01', 'ss04';
 
   --font-mono: 'ui-monospace', 'SF Mono', 'Monaco', 'monospace';
-  --font-sans:
-    'Quicksand', -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-serif: 'LatinModernMono', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 body {
@@ -41,20 +41,24 @@ hr {
   @apply my-12 border-t-2 border-mist-200 dark:border-sky-950;
 }
 
+p {
+  @apply text-justify font-serif leading-7 text-pretty;
+}
+
 article {
   @apply mb-20;
 
   h1 {
-    @apply mt-8 text-3xl leading-10 text-balance text-mist-700 lg:text-4xl dark:text-mist-200;
+    @apply font-display mt-8 text-2xl leading-10 text-balance text-mist-700 lg:text-3xl dark:text-mist-200;
   }
   h2 {
-    @apply font-display mt-12 mb-6 text-lg text-balance text-mist-600 uppercase dark:text-mist-300 [h1+&]:mt-8;
+    @apply font-display mt-12 mb-6 text-xl text-balance text-mist-600 dark:text-mist-300 [h1+&]:mt-8;
   }
   h3 {
     @apply font-display my-4 text-lg text-balance text-mist-600 dark:text-mist-300;
   }
   p {
-    @apply mb-6 text-justify text-pretty;
+    @apply mb-6;
 
     a {
       @apply text-sky-700 underline hover:text-sky-950 dark:text-sky-100 dark:hover:text-sky-400;
@@ -64,7 +68,7 @@ article {
     @apply mb-8 ml-8 list-decimal;
   }
   ul {
-    @apply mb-8 ml-8 list-disc;
+    @apply mb-8 ml-8 list-disc font-serif;
 
     a {
       @apply text-sky-700 underline hover:text-sky-950 dark:text-sky-100 dark:hover:text-sky-400;

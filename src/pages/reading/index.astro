@@ -19,7 +19,7 @@ const items = splitReadingByMonth(await getCollection('reading'))
     <Header />
     <main>
       <h1
-        class="mt-8 mb-4 text-3xl text-mist-700 lg:text-4xl dark:text-mist-200"
+        class="font-display mt-8 mb-4 text-3xl text-mist-700 uppercase lg:text-4xl dark:text-mist-200"
       >
         Reading Activity
       </h1>
@@ -39,7 +39,7 @@ const items = splitReadingByMonth(await getCollection('reading'))
                   <div class="font-display justify-self-center text-xl leading-10 font-light text-mist-500 md:text-2xl">
                     {dayFormatter.format(book.data.completed)}
                   </div>
-                  <h3 class="font-display text-2xl leading-10 uppercase md:text-4xl">
+                  <h3 class="font-display text-2xl leading-10 uppercase md:text-3xl">
                     <a href={`/${book.collection}/${book.id}`}>
                       {book.data.title}
                     </a>

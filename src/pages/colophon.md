@@ -19,4 +19,4 @@ Hosting this website is done on [Cloudflare Workers](https://workers.cloudflare.
 The following fonts are used on this website:
 
 - [Gorton Perfected](https://shifthappens.site/store/#fonts)
-- [Quicksand](https://www.fontshare.com/fonts/quicksand)
+- [Latin Modern Mono](https://www.gust.org.pl/projects/e-foundry/latin-modern)

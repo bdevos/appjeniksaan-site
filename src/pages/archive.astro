@@ -22,7 +22,9 @@ const formatDay = (pubDate: string) => dayFormatter.format(new Date(pubDate))
   <body>
     <Header />
     <main>
-      <h1 class="mt-8 text-3xl text-mist-700 lg:text-4xl dark:text-mist-300">
+      <h1
+        class="font-display mt-8 text-3xl text-mist-700 uppercase lg:text-4xl dark:text-mist-300"
+      >
         Archive
       </h1>
       {
@@ -37,7 +39,7 @@ const formatDay = (pubDate: string) => dayFormatter.format(new Date(pubDate))
                   <div class="font-display self-baseline text-xl leading-8 font-light text-mist-500 lg:text-xl lg:leading-10">
                     {formatDay(item.data.pubDate)}
                   </div>
-                  <h3 class="text-2xl text-pretty text-sky-700 lg:text-3xl dark:text-sky-300">
+                  <h3 class="font-display text-2xl text-pretty text-sky-700 uppercase lg:text-3xl dark:text-sky-300">
                     <a
                       href={`/${item.collection}/${item.id}`}
                       class="hover:text-sky-950 dark:hover:text-sky-100"
