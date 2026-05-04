@@ -13,12 +13,12 @@
     "@astrojs/rss": "4.0.18",
     "@astrojs/sitemap": "3.7.2",
     "@tailwindcss/vite": "4.2.4",
-    "astro": "6.1.9",
+    "astro": "6.2.1",
     "tailwindcss": "4.2.4"
   },
   "devDependencies": {
     "prettier": "3.8.3",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.7.3"
+    "prettier-plugin-tailwindcss": "0.8.0"
   }
 }
