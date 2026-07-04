@@ -23,7 +23,7 @@ const linked = defineCollection({
 const reading = defineCollection({
   loader: glob({ base: './src/content/reading', pattern: '**/*.md' }),
   schema: z.object({
-    author: z.string(),
+    author: z.union([z.string(), z.array(z.string())]),
     completed: z.date(),
     isbn: z.union([z.string(), z.array(z.string())]),
     title: z.string(),
