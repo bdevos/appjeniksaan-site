@@ -44,12 +44,7 @@ const book = Astro.props
             {
               Array.isArray(book.data.author)
                 ? book.data.author.map((author, index) => (
-                    <>
-                      <span
-                        class="whitespace-nowrap"
-                        set:text={`${author}${index < book.data.author.length - 1 ? ', ' : ''}`}
-                      />
-                    </>
+                    <>{index > 0 && ', '}<span>{author}</span></>
                   ))
                 : book.data.author
             }
