@@ -47,7 +47,7 @@ const book = Astro.props
                     <>
                       <span
                         class="whitespace-nowrap"
-                        set:text={`${author}${index < book.data.author.length - 1 ? ',' : ''}`}
+                        set:text={`${author}${index < book.data.author.length - 1 ? ', ' : ''}`}
                       />
                     </>
                   ))
@@ -67,7 +67,7 @@ const book = Astro.props
         }
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
           <dt class="text-mist-500">ISBN</dt>
-          <dd class="mt-1 font-mono text-sm sm:col-span-2 sm:mt-0">
+          <dd class="mt-1 sm:col-span-2 sm:mt-0">
             {
               Array.isArray(book.data.isbn)
                 ? book.data.isbn.map((isbn, index) => (
