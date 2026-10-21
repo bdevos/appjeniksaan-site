@@ -1,0 +1,14 @@
+---
+title: I Don't Want to Talk to My Computer
+pubDate: 2026-10-21 09:04
+---
+
+With the announcement of Apple HomeView a lot of the online discourse I follow has been about talking to your computer. [Ben Thompson](https://stratechery.com/) mentioned in a podcast that he wants to control his house by giving voice commands. My house at one point had all lights controlled through apps, but I disliked the interaction so much that I installed Hue wall switch modules so I could move back to my traditional switches. I think for something as simple as turning on the lights, or raising the temperature through the thermostat, I like the hardware we have for this. That does not mean that I think we shouldn't have API control of these things, but I have the feeling that the software companies want to replace these handy hardware interfaces with voice control.
+
+With the HomeView announcement Apple also introduced a new Apple TV. My first-generation Apple TV 4K now no longer updates to the latest tvOS and I had already prepared myself for a new one being expensive. At the last price increase it had gotten to €300 ($337). But with the announcement for the new hardware it is now €350 ($393) and even though I spend €50 on random purchases almost without thinking, this price increase has mentally done something that will make me just stick with tvOS 26 till something stops working. What's sort of triggering is the main justification for the price increase: microphones, so I can talk to my computer.
+
+When I updated my phone to iOS 27, somehow Siri got disabled. I don't remember doing that, but probably skipped a step that should have kept it enabled. The first time I got into my car after updating and connected CarPlay, I got a warning that without Siri (talking to my computer) my car would be unable to play music or show my navigation. I think I barely even listen to what the navigation voice says. For me the voice is just a trigger to glance at the screen to see what I should be doing. But apparently nothing can work without enabling talking to my computer.
+
+On iOS 27 I was trying to get Image Playground working (please don't ask why), but the app kept saying that because my Siri language did not match my phone language, it could not download the model required to do anything. My phone's primary language was set to "English", but Siri was set to "English (US)". But Siri doesn't have an "English" option. So the solution was to change my phone from "English" to "English (US)". It worked. I still don't know why I had to.
+
+I feel that Apple goes all-in on talking to my computer, but with every step they force me to take I just feel less and less at home in Apple's ecosystem. But it's probably just me. I also don't like talking with people, so maybe that explains something.
