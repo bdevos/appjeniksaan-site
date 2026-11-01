@@ -2,36 +2,24 @@
 import { SITE_TITLE } from '../consts'
 ---
 
-<header
-  class="relative mx-auto grid max-w-xl grid-cols-[1fr_auto_1fr] px-4 py-4 lg:sticky lg:top-0 lg:mx-0 lg:max-w-none lg:grid-cols-[1fr_36rem_1fr] lg:px-0"
->
-  <div
-    class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,black_50%,transparent_100%)] backdrop-blur-[1px] lg:block"
-  >
-  </div>
-  <div
-    class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,transparent_50%)] backdrop-blur-[3px] lg:block"
-  >
-  </div>
-  <div
-    class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,transparent_25%)] backdrop-blur-[6px] lg:block"
-  >
-  </div>
+<header class="relative mx-auto grid max-w-xl grid-cols-[1fr_auto_1fr] px-4 py-4 lg:sticky lg:top-0 lg:mx-0 lg:max-w-none lg:grid-cols-[1fr_36rem_1fr] lg:px-0">
+  <div class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,black_50%,transparent_100%)] backdrop-blur-[1px] lg:block"></div>
+  <div class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,transparent_50%)] backdrop-blur-[3px] lg:block"></div>
+  <div class="pointer-events-none absolute inset-0 hidden [mask-image:linear-gradient(to_bottom,black_0%,transparent_25%)] backdrop-blur-[6px] lg:block"></div>
 
-  <div
-    class="pointer-events-none absolute inset-0 hidden bg-linear-to-b from-mist-50 to-transparent lg:block dark:from-mist-950"
-  >
-  </div>
+  <div class="pointer-events-none absolute inset-0 hidden bg-linear-to-b from-mist-50 to-transparent lg:block dark:from-mist-950"></div>
 
   <a
     href="/"
     class="font-display relative text-sky-500 uppercase hover:text-sky-950 lg:justify-self-end dark:text-sky-600 dark:hover:text-sky-500"
-    >{SITE_TITLE}</a
   >
+    {SITE_TITLE}
+  </a>
   <div></div>
   <a
     href="/work"
     class="font-display relative self-center justify-self-end text-xs text-sky-950 underline hover:text-sky-700 lg:justify-self-start lg:text-sm dark:text-sky-50 dark:hover:text-sky-300"
-    >Apps & Experiments</a
   >
+    Projects
+  </a>
 </header>
