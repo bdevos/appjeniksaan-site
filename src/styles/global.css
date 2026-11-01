@@ -6,9 +6,10 @@
   --font-display: 'GortonPerfected', 'Helvetica Neue', Helvetica, sans-serif;
   --font-display--font-feature-settings: 'ss01', 'ss04';
 
-  --font-mono: 'ui-monospace', 'SF Mono', 'Monaco', 'monospace';
-  --font-serif: 'LatinModernMono', ui-serif, Georgia, 'Times New Roman', serif;
-  --font-sans: -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Monaco', 'monospace';
+  --font-serif: ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans:
+    ui-rounded, -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
 body {
@@ -42,20 +43,20 @@ hr {
 }
 
 p {
-  @apply text-justify font-serif text-pretty;
+  @apply text-justify text-lg font-light tracking-wide text-pretty;
 }
 
 article {
   @apply mb-20;
 
   h1 {
-    @apply font-display mt-8 text-2xl leading-10 text-balance text-mist-700 lg:text-3xl dark:text-mist-200;
+    @apply font-display mt-8 text-2xl leading-10 tracking-tight text-balance text-mist-700 lg:text-3xl dark:text-mist-200;
   }
   h2 {
-    @apply font-display mt-12 mb-6 text-xl text-balance text-mist-600 dark:text-mist-300 [h1+&]:mt-8;
+    @apply font-display mt-12 mb-6 text-xl tracking-tight text-balance text-mist-600 dark:text-mist-300 [h1+&]:mt-8;
   }
   h3 {
-    @apply font-display my-4 text-lg text-balance text-mist-600 dark:text-mist-300;
+    @apply font-display my-4 text-lg tracking-tight text-balance text-mist-600 dark:text-mist-300;
   }
   p {
     @apply mb-6;
@@ -68,7 +69,7 @@ article {
     @apply mb-8 ml-8 list-decimal;
   }
   ul {
-    @apply mb-8 ml-8 list-disc font-serif;
+    @apply mb-8 ml-8 list-disc text-lg font-light tracking-wide text-pretty;
 
     a {
       @apply text-sky-700 underline hover:text-sky-950 dark:text-sky-100 dark:hover:text-sky-400;

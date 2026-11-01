@@ -16,7 +16,6 @@ Hosting this website is done on [Cloudflare Workers](https://workers.cloudflare.
 
 ## Fonts
 
-The following fonts are used on this website:
+The following font is used on this website:
 
 - [Gorton Perfected](https://shifthappens.site/store/#fonts)
-- [Latin Modern Mono](https://www.gust.org.pl/projects/e-foundry/latin-modern)

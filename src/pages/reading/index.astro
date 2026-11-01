@@ -18,38 +18,34 @@ const items = splitReadingByMonth(await getCollection('reading'))
   <body>
     <Header />
     <main>
-      <h1
-        class="font-display mt-8 mb-4 text-3xl text-mist-700 uppercase lg:text-4xl dark:text-mist-200"
-      >
+      <h1 class="font-display mt-8 mb-4 text-3xl text-mist-700 uppercase lg:text-4xl dark:text-mist-200">
         Reading Activity
       </h1>
       <p>
         Since August 2023, I have been documenting my reading activity. Below
         are the books I have completed.
       </p>
-      {
-        Object.keys(items).map((month) => (
-          <section class="my-8">
-            <h2 class="font-display mb-6 text-lg text-mist-700 uppercase dark:text-mist-400">
-              {formatMonth(month)}
-            </h2>
-            <ul class="grid grid-cols-[auto_1fr]">
-              {items[month].map((book) => (
-                <li class="col-span-full my-2 grid grid-cols-subgrid gap-4">
-                  <div class="font-display justify-self-center text-xl leading-10 font-light text-mist-500 md:text-2xl">
-                    {dayFormatter.format(book.data.completed)}
-                  </div>
-                  <h3 class="font-display text-2xl leading-10 uppercase md:text-3xl">
-                    <a href={`/${book.collection}/${book.id}`}>
-                      {book.data.title}
-                    </a>
-                  </h3>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))
-      }
+      {Object.keys(items).map((month) => (
+        <section class="my-8">
+          <h2 class="font-display mb-6 text-lg text-mist-700 uppercase dark:text-mist-400">
+            {formatMonth(month)}
+          </h2>
+          <ul class="grid grid-cols-[auto_1fr]">
+            {items[month].map((book) => (
+              <li class="col-span-full my-2 grid grid-cols-subgrid gap-4">
+                <div class="font-display justify-self-center text-xl leading-10 font-light text-mist-500 md:text-2xl">
+                  {dayFormatter.format(book.data.completed)}
+                </div>
+                <h3 class="font-display text-2xl leading-10 uppercase md:text-3xl tracking-tighter">
+                  <a href={`/${book.collection}/${book.id}`}>
+                    {book.data.title}
+                  </a>
+                </h3>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
     </main>
     <Footer />
   </body>

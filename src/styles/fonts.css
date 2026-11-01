@@ -3,10 +3,3 @@
   src: url(/fonts/gorton-perfected.woff2) format('woff2');
   font-weight: 300 400 600;
 }
-
-@font-face {
-  font-family: 'LatinModernMono';
-  src: url(/fonts/latin-modern-mono-regular.woff2) format('woff2');
-  font-weight: 400;
-  font-style: normal;
-}

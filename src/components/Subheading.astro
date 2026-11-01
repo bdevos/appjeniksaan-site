@@ -10,24 +10,20 @@ interface Props {
 const { item } = Astro.props
 ---
 
-<div
-  class="font-display my-2 flex flex-row items-center gap-2 text-xs text-sky-500 dark:text-sky-600"
->
-  {
-    item.collection === 'linked' ? (
-      <>
-        <span class="pt-px text-lg">⇥</span>
-        <a
-          href={item.data.href}
-          class="hover:text-sky-900 dark:hover:text-sky-500"
-          set:text={extractDomain(item.data.href)}
-        />
-        <span class="pt-px text-base">~</span>
-      </>
-    ) : (
-      <span class="pt-px text-lg">⇤</span>
-    )
-  }
+<div class="font-display my-2 flex flex-row items-center gap-2 text-xs text-sky-500 dark:text-sky-600 tracking-tighter">
+  {item.collection === 'linked' ? (
+    <>
+      <span class="pt-px text-lg">⇥</span>
+      <a
+        href={item.data.href}
+        class="hover:text-sky-900 dark:hover:text-sky-500"
+        set:text={extractDomain(item.data.href)}
+      />
+      <span class="pt-px text-base">~</span>
+    </>
+  ) : (
+    <span class="pt-px text-lg">⇤</span>
+  )}
 
   <DateBlock item={item} />
 </div>

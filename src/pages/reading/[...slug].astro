@@ -26,55 +26,50 @@ const book = Astro.props
   <body>
     <Header />
     <main class="my-16">
-      <h1
-        class="font-display mt-8 mb-4 text-3xl text-mist-700 lg:text-4xl dark:text-mist-200"
-      >
+      <h1 class="font-display mt-8 mb-4 text-3xl text-mist-700 lg:text-4xl dark:text-mist-200 tracking-tighter">
         {book.data.title}
       </h1>
-      <dl class="mt-4 divide-y divide-mist-200 font-serif dark:divide-mist-800">
+      <dl class="mt-4 divide-y divide-mist-200 dark:divide-mist-800">
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-mist-500">Completed</dt>
-          <dd class="mt-1 sm:col-span-2 sm:mt-0">
+          <dt class="text-mist-500 font-medium">Completed</dt>
+          <dd class="mt-1 sm:col-span-2 sm:mt-0 font-light">
             {dateFormatter.format(book.data.completed)}
           </dd>
         </div>
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-mist-500">Author</dt>
-          <dd class="mt-1 sm:col-span-2 sm:mt-0">
-            {
-              Array.isArray(book.data.author)
-                ? book.data.author.map((author, index) => (
-                    <>{index > 0 && ', '}<span>{author}</span></>
-                  ))
-                : book.data.author
-            }
+          <dt class="text-mist-500 font-medium">Author</dt>
+          <dd class="mt-1 sm:col-span-2 sm:mt-0 font-light">
+            {Array.isArray(book.data.author)
+              ? book.data.author.map((author, index) => (
+                  <>
+                    {index > 0 && ', '}
+                    <span>{author}</span>
+                  </>
+                ))
+              : book.data.author}
           </dd>
         </div>
-        {
-          book.data.translation && (
-            <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-              <dt class="text-mist-500">Translation</dt>
-              <dd class="mt-1 sm:col-span-2 sm:mt-0">
-                {book.data.translation}
-              </dd>
-            </div>
-          )
-        }
+        {book.data.translation && (
+          <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt class="text-mist-500 font-medium">Translation</dt>
+            <dd class="mt-1 sm:col-span-2 sm:mt-0 font-light">
+              {book.data.translation}
+            </dd>
+          </div>
+        )}
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-mist-500">ISBN</dt>
-          <dd class="mt-1 sm:col-span-2 sm:mt-0">
-            {
-              Array.isArray(book.data.isbn)
-                ? book.data.isbn.map((isbn, index) => (
-                    <>
-                      <span
-                        class="whitespace-nowrap"
-                        set:text={`${isbn}${index < book.data.isbn.length - 1 ? ',' : ''}`}
-                      />
-                    </>
-                  ))
-                : book.data.isbn
-            }
+          <dt class="text-mist-500 font-medium">ISBN</dt>
+          <dd class="mt-1 sm:col-span-2 sm:mt-0 font-mono font-light">
+            {Array.isArray(book.data.isbn)
+              ? book.data.isbn.map((isbn, index) => (
+                  <>
+                    <span
+                      class="whitespace-nowrap"
+                      set:text={`${isbn}${index < book.data.isbn.length - 1 ? ',' : ''}`}
+                    />
+                  </>
+                ))
+              : book.data.isbn}
           </dd>
         </div>
       </dl>
