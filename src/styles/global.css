@@ -7,9 +7,9 @@
   --font-display--font-feature-settings: 'ss01', 'ss04';
 
   --font-mono: ui-monospace, 'SF Mono', 'Monaco', 'monospace';
-  --font-serif: ui-serif, Georgia, 'Times New Roman', serif;
   --font-sans:
-    ui-rounded, -apple-system, 'Helvetica Neue', Helvetica, sans-serif;
+    system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    sans-serif;
 }
 
 body {
@@ -43,7 +43,7 @@ hr {
 }
 
 p {
-  @apply text-justify text-lg font-light tracking-wide text-pretty;
+  @apply text-base font-extralight text-pretty;
 }
 
 article {
@@ -69,7 +69,7 @@ article {
     @apply mb-8 ml-8 list-decimal;
   }
   ul {
-    @apply mb-8 ml-8 list-disc text-lg font-light tracking-wide text-pretty;
+    @apply mb-8 ml-8 list-disc font-extralight text-pretty;
 
     a {
       @apply text-sky-700 underline hover:text-sky-950 dark:text-sky-100 dark:hover:text-sky-400;

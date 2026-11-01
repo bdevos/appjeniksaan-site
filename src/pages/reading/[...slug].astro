@@ -31,13 +31,13 @@ const book = Astro.props
       </h1>
       <dl class="mt-4 divide-y divide-mist-200 dark:divide-mist-800">
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-mist-500 font-medium">Completed</dt>
+          <dt class="text-mist-500 font-display tracking-tighter">Completed</dt>
           <dd class="mt-1 sm:col-span-2 sm:mt-0 font-light">
             {dateFormatter.format(book.data.completed)}
           </dd>
         </div>
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-mist-500 font-medium">Author</dt>
+          <dt class="text-mist-500 font-display tracking-tighter">Author</dt>
           <dd class="mt-1 sm:col-span-2 sm:mt-0 font-light">
             {Array.isArray(book.data.author)
               ? book.data.author.map((author, index) => (
@@ -51,14 +51,16 @@ const book = Astro.props
         </div>
         {book.data.translation && (
           <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt class="text-mist-500 font-medium">Translation</dt>
+            <dt class="text-mist-500 font-display tracking-tighter">
+              Translation
+            </dt>
             <dd class="mt-1 sm:col-span-2 sm:mt-0 font-light">
               {book.data.translation}
             </dd>
           </div>
         )}
         <div class="py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-          <dt class="text-mist-500 font-medium">ISBN</dt>
+          <dt class="text-mist-500 font-display tracking-tighter">ISBN</dt>
           <dd class="mt-1 sm:col-span-2 sm:mt-0 font-mono font-light">
             {Array.isArray(book.data.isbn)
               ? book.data.isbn.map((isbn, index) => (

@@ -14,7 +14,7 @@ This website is made with [Astro](https://astro.build/), would highly recommend 
 
 Hosting this website is done on [Cloudflare Workers](https://workers.cloudflare.com/). I have been super impressed with how easy (and cheap, I'm Dutch 🇳🇱) it is to host simple things, like this site, to complex projects on Cloudflare.
 
-## Fonts
+## Font
 
 The following font is used on this website:
 
