@@ -43,20 +43,20 @@ hr {
 }
 
 p {
-  @apply text-base font-extralight text-pretty;
+  @apply text-base font-extralight;
 }
 
 article {
   @apply mb-20;
 
   h1 {
-    @apply font-display mt-8 text-2xl leading-10 tracking-tight text-balance text-mist-700 lg:text-3xl dark:text-mist-200;
+    @apply font-display mt-8 text-2xl tracking-tighter text-balance text-mist-700 uppercase lg:text-3xl lg:leading-10 dark:text-mist-200;
   }
   h2 {
-    @apply font-display mt-12 mb-6 text-xl tracking-tight text-balance text-mist-600 dark:text-mist-300 [h1+&]:mt-8;
+    @apply font-display mt-12 mb-6 text-xl tracking-tight text-pretty text-mist-600 dark:text-mist-300 [h1+&]:mt-8;
   }
   h3 {
-    @apply font-display my-4 text-lg tracking-tight text-balance text-mist-600 dark:text-mist-300;
+    @apply font-display my-4 text-lg tracking-tight text-pretty text-mist-600 dark:text-mist-300;
   }
   p {
     @apply mb-6;

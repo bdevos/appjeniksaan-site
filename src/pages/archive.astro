@@ -22,7 +22,7 @@ const formatDay = (pubDate: string) => dayFormatter.format(new Date(pubDate))
   <body>
     <Header />
     <main>
-      <h1 class="font-display mt-8 text-3xl text-mist-700 uppercase lg:text-4xl dark:text-mist-300">
+      <h1 class="font-display mt-8 text-3xl text-mist-700 uppercase lg:text-4xl dark:text-mist-300 tracking-tighter">
         Archive
       </h1>
       {Object.keys(items).map((month) => (
@@ -33,10 +33,10 @@ const formatDay = (pubDate: string) => dayFormatter.format(new Date(pubDate))
           <ul class="grid grid-cols-[auto_1fr]">
             {items[month].map((item) => (
               <li class="col-span-full my-2 grid grid-cols-subgrid gap-4">
-                <div class="font-display self-baseline text-xl leading-8 font-light text-mist-500 lg:text-xl lg:leading-10">
+                <div class="font-display self-baseline text-xl font-light text-mist-500">
                   {formatDay(item.data.pubDate)}
                 </div>
-                <h3 class="font-display text-2xl text-pretty text-sky-700 uppercase lg:text-3xl dark:text-sky-300 tracking-tighter">
+                <h3 class="font-display text-2xl text-balance text-sky-700 uppercase lg:text-3xl dark:text-sky-300 tracking-tighter">
                   <a
                     href={`/${item.collection}/${item.id}`}
                     class="hover:text-sky-950 dark:hover:text-sky-100"
